@@ -11,18 +11,19 @@ The project can be accessed via our website or on a local server.
 
 ### Option 1 --- Website (Recommended)
 
-Our project site is hosted on GitHub. Open the following link in a browser: `https://XXXX`
+Our project site is hosted on GitHub. Open the following link in a browser: (https://natalieyzhang.github.io/cs1710finalproject/)
 
 ### Option 2 --- VS Code Live Server
 
-Navigate to `project-root/scrolly/index.html`, right-click on the file, and select **Open with Live Server**. Refer to the folder structure below to ensure that all required files are present.
+Navigate to `project-root/index.html` in VS Code, right-click on the file, and select **Open with Live Server**. Refer to the folder structure below to ensure that all required files are present.
 
 ## Folder Structure
 
     project-root/
     │
+    ├── index.html
+    |
     ├── scrolly/
-    │   ├── index.html
     │   ├── scrolly.css
     │   └── scrolly.js
     │
@@ -92,7 +93,7 @@ The scrollytelling website takes the viewer on a journey through:
  - How people met their partners across the decades: `project-root/viz/rankedmeetingmethods.html`
  - What dating apps people are using: `project-root/viz/datingapps.html`
  - Meeting long-term partners through online dating: `project-root/viz/datingeasierorharder.html`
- - The gamification of online dating: directly in `project-root/scrolly/index.html`
+ - The gamification of online dating: directly in `project-root/index.html`
  - How men and women swipe (and match): `project-root/viz/swipesuccessbygender.html`
  - Is online dating overwhelming and causing insecurities?: `project-root/viz/balance.html`
  - People still value connection: `project-root/viz/connection_word_map_combined.html`
@@ -100,7 +101,7 @@ The scrollytelling website takes the viewer on a journey through:
  - Negative experiences on dating apps: `project-root/viz/negativeexperiences.html`
  - How do your online dating habits compare with those of Harvard students?: `project-root/viz/endingsurvey.html`
 
-Each file in `/viz` is a self-contained HTML file embedded as an iframe in the final `project-root/scrolly/index.html` file.
+Each file in `/viz` is a self-contained HTML file embedded as an iframe in the final `project-root/index.html` file.
 
 ## Communication Between Scrolly + Viz Files
 
