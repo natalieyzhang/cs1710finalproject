@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+
+<style>
+:root{
+  --ink:#8f304e;
+    --muted:#a34b65;
+    --grid:#e5e7eb;
+  }
+
+/* Card will control the outer size; we just fill it */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+/* This wrapper fills the card and scales the viz-root uniformly */
+.viz-scale-wrapper{
+    width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: visible; /* Changed from hidden to visible to prevent clipping */
+}
+
+/* Base logical size of the viz (in px). Everything inside scales together. */
+/* Aspect ratio matches card: 1600/910 = 1.758241758... */
+.viz-root{
+  width: 1200px;
+  height: 682.5px; /* 1200 / (1600/910) = 682.5 to match exact card aspect ratio */
+  transform-origin: center center;
+    display: flex;
+    flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+  color: var(--ink);
+  }
+
+/* Intro text at the top */
+  .intro{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .intro h2{
+    margin: 0;
+  font-size: 40px; /* Increased from 34px */
+    font-weight: 650;
+    letter-spacing: 0.3px;
+  white-space: nowrap; /* Prevent wrapping */
+  }
+
+  .intro p{
+    margin: 0;
+  font-size: 26px; /* Increased from 22px */
+    line-height: 1.7;
+    color: var(--muted);
+  }
+
+/* Chart area: white card with border and rounded corners */
+.chart-area{
+  height: 70%; /* Fixed percentage of card height instead of flex auto */
+  position: relative;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(31,41,55,0.08);
+  padding: 10px 20px 10px 20px;
+  box-sizing: border-box;
+  transition: padding 0.2s ease;
+}
+
+/* Reduced left padding when Harvard data is shown, increased right padding for method labels */
+.chart-area.harvard-visible {
+  padding: 10px 50px 10px 00px; /* Reduced left padding, minimal right padding for method labels like "School/College" */
+}
+
+/* SVG fills chart area; viewBox keeps aspect and lets it scale */
+svg{
+  width: 100%;
+  height: 100%;
+  display: block;
+    overflow: visible;
+  }
+
+/* Axes styles */
+  .axis path, .axis line{
+    stroke: var(--grid);
+  }
+  .axis text{
+    fill: var(--muted);
+  font-size: 14px;
+  }
+
+  .y-axis-label{
+  font-size: 14px !important;
+  }
+
+/* Legend area above the chart */
+.legend-wrap{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px; /* Small margin between legend and chart */
+}
+
+/* Harvard note at bottom */
+.harvard-note {
+  text-align: center;
+  margin-top: 4px;
+  margin-bottom: 0;
+  }
+
+/* Reduce gap in viz-root when Harvard note is visible to prevent overflow */
+.viz-root:has(#harvard-note[style*="block"]) {
+    gap: 8px;
+}
+
+.harvard-note p {
+  margin: 0;
+  font-size: 21px;
+  color: var(--muted);
+  font-weight: bold;
+}
+
+  .legend{
+    display: flex;
+    flex-wrap: wrap;
+  gap: 10px 18px;
+    align-items: center;
+  }
+
+/* Legend pill buttons */
+  button.legend-item{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+  border-radius: 999px;
+    border: 1px solid var(--grid);
+    background: #fff;
+    white-space: nowrap;
+    cursor: pointer;
+    font: inherit;
+    color: var(--ink);
+  font-size: 16px;
+  transition: background 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease, transform 0.2s ease,
+              box-shadow 0.2s ease;
+  }
+
+  button.legend-item:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.12);
+  }
+
+  button.legend-item:focus-visible{
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  button.legend-item.active{
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+
+  button.legend-item.active .legend-label{
+    color: #fff;
+  }
+
+  button.legend-item.active .swatch{
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .swatch{
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,.08);
+    flex: 0 0 14px;
+  }
+
+  .legend-label{
+  font-size: 16px;
+    color: var(--ink);
+  }
+
+  /* Tooltip */
+  .tooltip {
+    position: absolute;
+    background: var(--ink);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+  font-size: 15px;
+    font-weight: 500;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  z-index: 5;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    white-space: nowrap;
+  }
+
+  .tooltip.show {
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<!-- This whole thing goes inside your card with locked aspect ratio -->
+<div class="viz-scale-wrapper">
+  <div class="viz-root">
+    <div class="intro">
+      <h2>Online dating quickly became the #1 way couples meet!</h2>
+      <p>Explore the ways couples met through the decades, ranked by frequency.</p>
+    </div>
+
+    <!-- Legend with toggles above the chart -->
+    <div class="legend-wrap" aria-label="Meeting method legend">
+      <div id="legend" class="legend"></div>
+    </div>
+
+    <!-- Chart (bars + white background) lives here -->
+    <div class="chart-area" id="main-chart-area">
+      <svg id="chart" role="img" aria-label="How couples met by decade"></svg>
+      <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <!-- Harvard note at bottom -->
+    <div class="harvard-note" id="harvard-note" style="display: none;">
+      <p>At Harvard, meeting through mutual friends or college-related events are still more popular.</p>
+    </div>
+    </div>
+  </div>
+
+<script>
+// ---- UNIFORM SCALING FOR THE WHOLE VIZ ------------------------------------
+// Aspect ratio matches card: 1600/910 = 1.758241758...
+const BASE_WIDTH = 1200;
+const BASE_HEIGHT = 682.5; // 1200 / (1600/910) = 682.5 to match exact card aspect ratio
+const wrapper = document.querySelector(".viz-scale-wrapper");
+const root = document.querySelector(".viz-root");
+
+function resizeViz(){
+  if (!wrapper || !root) return;
+  const rect = wrapper.getBoundingClientRect();
+  // Scale to fill width, ensuring we don't exceed height
+  // This ensures the visualization spans the full width of the card
+  const scaleX = rect.width / BASE_WIDTH;
+  const scaleY = rect.height / BASE_HEIGHT;
+  const scale = Math.min(scaleX, scaleY);
+  
+  // Position absolutely and center
+  root.style.position = 'absolute';
+  root.style.left = '50%';
+  root.style.top = '50%';
+  root.style.transform = `translate(-50%, -50%) scale(${scale})`;
+  root.style.transformOrigin = 'center center';
+}
+
+// Resize on load + whenever parent card changes size
+if (typeof ResizeObserver !== "undefined") {
+  const ro = new ResizeObserver(resizeViz);
+  ro.observe(wrapper);
+} else {
+  window.addEventListener("resize", resizeViz);
+}
+resizeViz();
+
+// ---- D3 CHART -------------------------------------------------------------
+d3.csv("../data/rankedmeetingmethods.csv").then(raw => {
+  raw.forEach(d => d.frequency = +d.frequency);
+  let filtered = raw.filter(d => d.meeting_method !== "Other/Unspecified");
+
+  const decadeOrder = ["1950s","1960s","1970s","1980s","1990s","2000s","2010s","2020s"];
+  filtered = filtered.filter(d => decadeOrder.includes(d.decade_met));
+
+  const decades = Array.from(new Set(filtered.map(d => d.decade_met)))
+    .sort((a,b)=> decadeOrder.indexOf(a) - decadeOrder.indexOf(b));
+
+  const methods = Array.from(new Set(filtered.map(d => d.meeting_method)));
+  
+  // Create color mapping BEFORE reordering to preserve original colors
+  const originalColorScale = d3.scaleOrdinal()
+    .domain(methods)
+    .range(d3.schemeTableau10);
+  const colorMap = {};
+  methods.forEach(method => {
+    colorMap[method] = originalColorScale(method);
+  });
+  
+  // Reorder methods: Online first, Friends second, Work third, then the rest
+  const methodOrder = ["Online", "Friends", "Work"];
+  methods.sort((a, b) => {
+    const aIndex = methodOrder.indexOf(a);
+    const bIndex = methodOrder.indexOf(b);
+    
+    // If both are in the priority list, sort by their order
+    if (aIndex !== -1 && bIndex !== -1) {
+      return aIndex - bIndex;
+    }
+    // If only a is in the priority list, it comes first
+    if (aIndex !== -1) return -1;
+    // If only b is in the priority list, it comes first
+    if (bIndex !== -1) return 1;
+    // If neither is in the priority list, maintain original order
+    return 0;
+  });
+
+  // Totals by decade
+  const totalsByDecade = {};
+  decades.forEach(dec => {
+    totalsByDecade[dec] = d3.sum(
+      filtered.filter(d => d.decade_met === dec),
+      d => d.frequency
+    );
+  });
+
+  // Percentage table (long->wide)
+  const percentageData = methods.map(m => {
+    const row = { Method: m };
+    decades.forEach(dec => {
+      if (m === "Online" && (dec === "1960s" || dec === "1970s")) {
+        row[dec] = 0;
+      } else {
+        const rec = filtered.find(d => d.decade_met === dec && d.meeting_method === m);
+        const freq = rec ? rec.frequency : 0;
+        if (dec === "2020s") {
+          row[dec] = freq;
+        } else {
+        const total = totalsByDecade[dec] || 1;
+        row[dec] = (freq / total) * 100;
+        }
+      }
+    });
+    return row;
+  });
+
+  // Use the color mapping to preserve original colors regardless of order
+  const color = (method) => colorMap[method] || d3.schemeTableau10[0];
+
+  // Base chart dimensions INSIDE the chart-area (logical units)
+  const chartArea = document.querySelector(".chart-area");
+  const svgNode = document.getElementById("chart");
+
+  let margin = { top: 40, right: 48, bottom: 30, left: 64 };
+  const originalMargin = { top: 40, right: 48, bottom: 30, left: 64 };
+  const harvardMargin = { top: 40, right: 48, bottom: 30, left: 40 }; // Reduced left margin for Harvard
+  const rankCount = methods.length;
+
+  // Logical width/height based on our base size
+  const innerLogicalWidth = BASE_WIDTH - margin.left - margin.right - 64;  // minus chart-area padding
+  const innerLogicalHeight = 320; // Reduced from 360 to make graph height smaller relative to heading
+
+  const width = innerLogicalWidth;
+  const height = innerLogicalHeight;
+
+  // Ensure viewBox includes space for y-axis label on the left (add extra padding for "Rank" label)
+  const labelPadding = 20; // Extra space for "Rank" label
+  const svg = d3.select(svgNode)
+    .attr("viewBox", `${-labelPadding} 0 ${width + margin.left + margin.right + labelPadding} ${height + margin.top + margin.bottom}`)
+    .attr("preserveAspectRatio", "xMidYMid meet");
+
+  const g = svg.append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
+  // Scales - include Harvard column when visible
+  let chartDecades = decades;
+  let harvardVisible = false;
+  
+  // Bar width multiplier - reduced to 0.75 of original (3 * 0.75 = 2.25)
+  let barWidthMultiplier = 2.25;
+  
+  const x = d3.scaleBand()
+    .domain(chartDecades)
+    .range([0, width])
+    .padding(0.2);
+
+  // Adjust y scale to add padding at top and bottom for equal spacing
+  // This ensures rank 1 has the same space above it as other ranks
+  const yPadding = 12; // Padding at top and bottom
+  const y = d3.scaleLinear()
+    .domain([1, rankCount])
+    .range([yPadding, height - yPadding]);
+
+  const barHeight = 24; // Keep original bar height
+  const barPadding = 6; // Keep original bar padding
+
+  // Axes
+  const xAxis = d3.axisTop(x);
+  g.append("g")
+    .attr("class", "axis x-axis")
+    .attr("transform", `translate(0,-16)`)
+    .call(xAxis)
+    .selectAll("text")
+    .style("font-size", "16px")
+    .style("font-weight", "bold");
+
+  // Y-axis aligned with first column (x=0 in g coordinate system)
+  const yAxisG = g.append("g")
+    .attr("class", "axis y-axis")
+    .attr("transform", `translate(0,0)`)
+    .call(
+      d3.axisLeft(
+        d3.scaleLinear().domain([1, rankCount]).range([yPadding, height - yPadding])
+      ).ticks(rankCount).tickFormat(d3.format("d"))
+    );
+
+  // Rank label positioned to the left of y-axis, within viewBox
+  yAxisG.append("text")
+    .attr("class", "label y-axis-label")
+    .attr("fill", "var(--muted)")
+    .attr("x", -8)
+    .attr("y", -28)
+    .attr("text-anchor", "end")
+    .text("Rank");
+
+  // Gridlines
+  g.selectAll(".rank-grid")
+    .data(d3.range(1, rankCount + 1))
+    .enter()
+    .append("line")
+    .attr("class", "rank-grid")
+    .attr("x1", 0)
+    .attr("x2", width)
+    .attr("y1", d => y(d) + (barHeight + barPadding)/2)
+    .attr("y2", d => y(d) + (barHeight + barPadding)/2)
+    .attr("stroke", "#eef1f5")
+    .attr("stroke-width", 1);
+
+  const tooltip = d3.select("#tooltip");
+  const methodPoints = new Map();
+  let originalMethodPoints = null; // Store original methodPoints before Harvard view
+  let labelData = []; // Store label data to draw after connection lines
+  
+  // Function to map method names for display
+  function getDisplayName(method) {
+    if (method === "Friends") return "Friends";
+    if (method === "Religious/Volunteer") return "Religious";
+    return method;
+  }
+
+  // Draw bars per decade
+  decades.forEach(decade => {
+    const values = percentageData
+      .map(d => ({ method: d.Method, value: d[decade] }))
+      .sort((a, b) => d3.descending(a.value, b.value))
+      .map((d, i) => ({ ...d, rank: i + 1 }));
+
+    const col = g.append("g")
+      .attr("transform", `translate(${x(decade)},0)`)
+      .attr("data-decade", decade);
+
+    const colWidth = x.bandwidth();
+
+    // Hover areas
+    col.selectAll("rect.hover-area")
+      .data(values)
+      .enter()
+      .append("rect")
+      .attr("class", "hover-area")
+      .attr("x", 0)
+      .attr("y", d => y(d.rank) - barHeight/2)
+      .attr("width", d => {
+        if (d.value < 15) return (15/100) * colWidth * barWidthMultiplier;
+        return (d.value/100) * colWidth * barWidthMultiplier;
+      })
+      .attr("height", barHeight)
+      .attr("fill", "transparent")
+      .attr("pointer-events", "all")
+      .on("mouseover", function(event, d) {
+        const methodName = getDisplayName(d.method);
+        const connector = d.method === "Online" ? " " : " through ";
+        tooltip
+          .html(`<strong>${d.value.toFixed(1)}%</strong> of couples met${connector}${methodName}`)
+          .classed("show", true);
+      })
+      .on("mousemove", function(event, d) {
+        const barY = y(d.rank);
+        const barX = x(decade);
+        const svgRect = svgNode.getBoundingClientRect();
+
+        // Left edge of the bar in screen coordinates
+        const tooltipX = svgRect.left + margin.left + barX;
+        // Top of the bar in screen coordinates: barY is center, so top is barY - barHeight/2
+        const barTopY = svgRect.top + margin.top + barY - barHeight/2;
+        // Bottom of the bar in screen coordinates (for fallback positioning)
+        const barBottomY = svgRect.top + margin.top + barY + barHeight/2;
+
+        const tooltipNode = tooltip.node();
+        tooltip.style("left", "0px").style("top", "0px");
+        const tooltipRect = tooltipNode.getBoundingClientRect();
+        const tooltipWidth = tooltipRect.width || 200;
+        const tooltipHeight = tooltipRect.height || 40;
+        
+        // Start with left-aligned position
+        let left = tooltipX;
+        // Position tooltip above the bar (10px gap)
+        let top = barTopY - tooltipHeight - 10;
+        
+        // If tooltip would go off the right edge, position it on the left side
+        if (tooltipX + tooltipWidth > window.innerWidth) {
+          left = window.innerWidth - tooltipWidth - 10;
+        }
+        // If tooltip would go off the left edge, keep it at minimum position
+        if (tooltipX < 0) {
+          left = 10;
+        }
+        // If tooltip would go off the top, position it below the bar as fallback
+        if (top < 0) {
+          top = barBottomY + 20;
+        }
+        
+        tooltip
+          .style("left", left + "px")
+          .style("top", top + "px");
+      })
+      .on("mouseout", function() {
+        tooltip.classed("show", false);
+      })
+      .on("click", function(event, d) {
+        if (activeMethod === d.method) {
+          activeMethod = null;
+          setMethodEmphasis(null);
+        } else {
+          activeMethod = d.method;
+          setMethodEmphasis(d.method);
+        }
+      });
+
+    // Visible bars
+    col.selectAll("rect.bar")
+      .data(values)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", 0)
+      .attr("y", d => y(d.rank) - barHeight/2)
+      .attr("width", d => (d.value/100) * colWidth * barWidthMultiplier)
+      .attr("height", barHeight)
+      .attr("fill", d => color(d.method))
+      .attr("rx", 5).attr("ry", 5)
+      .attr("pointer-events", "none");
+
+    // Store label data for later (will be drawn after connection lines)
+    values.forEach(val => {
+      if (!labelData) labelData = [];
+      labelData.push({
+        decade: decade,
+        method: val.method,
+        value: val.value,
+        rank: val.rank,
+        x: x(decade),
+        colWidth: colWidth
+      });
+    });
+
+    // Collect points for connection lines
+    values.forEach(val => {
+      const columnLeft = x(decade);
+      const barWidth = (val.value / 100) * colWidth * barWidthMultiplier;
+      const centerY = y(val.rank);
+      if (!methodPoints.has(val.method)) {
+        methodPoints.set(val.method, []);
+      }
+      methodPoints.get(val.method).push({
+        decade,
+        left: columnLeft,
+        right: columnLeft + barWidth,
+        y: centerY,
+        value: val.value
+      });
+    });
+  });
+
+  const connectionLayer = g.append("g").attr("class", "connection-layer");
+  const connectionLayers = {};
+  methods.forEach(method => {
+    connectionLayers[method] = connectionLayer.append("g").attr("data-method", method);
+  });
+
+  function drawConnections(method) {
+    const layer = connectionLayers[method];
+    layer.selectAll("*").remove();
+    if (!methodPoints.has(method)) return;
+
+    const points = methodPoints.get(method)
+      .filter(p => p.value > 0)
+      .sort((a, b) => decadeOrder.indexOf(a.decade) - decadeOrder.indexOf(b.decade));
+
+    if (points.length < 2) return;
+
+    const lineColor = color(method);
+    const pairs = d3.pairs(points);
+
+    layer.selectAll("line")
+      .data(pairs)
+      .enter()
+      .append("line")
+      .attr("x1", d => d[0].right) // Right edge of first bar
+        .attr("y1", d => d[0].y)
+      .attr("x2", d => d[1].left) // Left edge of second bar
+        .attr("y2", d => d[1].y)
+        .attr("stroke", lineColor)
+        .attr("stroke-width", 3)
+      .attr("stroke-opacity", 0.585)
+        .attr("stroke-linecap", "round");
+  }
+
+  // Legend
+  const legend = d3.select("#legend");
+  const legendItems = legend.selectAll("button.legend-item")
+    .data(methods, d => d)
+    .enter()
+    .append("button")
+      .attr("type", "button")
+      .attr("class", "legend-item")
+      .attr("aria-label", d => `Highlight ${d} across decades`)
+      .attr("aria-pressed", "false");
+
+  legendItems.append("span")
+    .attr("class", "swatch")
+    .style("background", d => color(d));
+
+  legendItems.append("span")
+    .attr("class", "legend-label")
+    .text(d => getDisplayName(d));
+
+  methods.forEach(method => drawConnections(method));
+
+  // Create label layer after connection layer so labels appear on top
+  const labelLayer = g.append("g").attr("class", "label-layer");
+  
+  // Draw all percentage labels in the label layer (on top of connection lines)
+  labelLayer.selectAll("text.bar-label")
+    .data(labelData)
+    .enter()
+    .append("text")
+    .attr("class", "bar-label")
+    .attr("data-method", d => d.method) // Store method for filtering
+    .attr("x", d => {
+      const barWidth = (d.value/100) * d.colWidth * barWidthMultiplier;
+      if (d.value >= 20) {
+        // Center on bar for bars >= 20%
+        return d.x + barWidth / 2;
+      } else {
+        // Right side of bar for bars < 20%
+        return d.x + barWidth + 6;
+      }
+    })
+    .attr("y", d => y(d.rank))
+    .attr("text-anchor", d => d.value >= 20 ? "middle" : "start")
+    .attr("dominant-baseline", "middle")
+    .attr("fill", d => d.value >= 20 ? "#ffffff" : "var(--ink)") // White for bars >= 20%, ink color for smaller bars
+    .attr("font-size", "13px")
+    .attr("font-weight", "600")
+    .style("opacity", 0) // Initially hidden
+    .style("pointer-events", "none") // Prevent labels from interfering with hover
+    .text(d => d.value.toFixed(1) + "%");
+
+  let activeMethod = null;
+
+  function setMethodEmphasis(method) {
+    const active = method;
+    legendItems
+      .classed("active", d => d === active)
+      .attr("aria-pressed", d => (d === active ? "true" : "false"));
+
+    svg.selectAll("rect.bar")
+      .transition().duration(200)
+      .style("opacity", function() {
+        const rectData = d3.select(this).datum();
+        if (!active) return 1;
+        return rectData.method === active ? 1 : 0.3;
+      });
+
+    // Show/hide percentage labels based on active method
+    // Exception: Harvard labels are always visible
+    svg.selectAll("text.bar-label")
+      .transition().duration(200)
+      .style("opacity", function() {
+        // Always show Harvard labels
+        if (d3.select(this).attr("data-harvard") === "true") {
+          return 1;
+        }
+        const labelMethod = d3.select(this).attr("data-method");
+        if (!active) return 0; // Hide all if no method selected (except Harvard)
+        return labelMethod === active ? 1 : 0; // Show only for active method
+      });
+
+    Object.entries(connectionLayers).forEach(([name, layer]) => {
+      layer
+        .transition().duration(200)
+        .style("opacity", !active || name === active ? 1 : 0.3);
+    });
+  }
+
+  legendItems.on("click", (event, method) => {
+    if (activeMethod === method) {
+      activeMethod = null;
+    } else {
+      activeMethod = method;
+    }
+    setMethodEmphasis(activeMethod);
+  });
+
+  // Start with Online highlighted
+  activeMethod = "Online";
+  setMethodEmphasis("Online");
+
+  // ---- HARVARD DATA COLUMN ------------------------------------------------
+  let harvardDataLoaded = false;
+  let harvardMethods = [];
+  let harvardColorMap = {};
+  let harvardDataCache = null; // Cache the processed data for redrawing
+
+  function normalizeHarvardMethod(method) {
+    if (!method || method.trim() === "") return null;
+    const lower = method.toLowerCase();
+    if (lower.includes("school") || lower.includes("college")) {
+      return "School/College";
+    }
+    if (lower.includes("friend") || lower.includes("mutual")) {
+      return "Friends"; // Changed from "Mutual friends" to "Friends"
+    }
+    if (lower.includes("online") || lower.includes("dating app")) {
+      return "Online";
+    }
+    if (lower === "other") {
+      return "Other";
+    }
+    return "Other"; // Default fallback
+  }
+
+  function loadHarvardData() {
+    // If already loaded, just redraw using cached data
+    if (harvardDataLoaded && harvardDataCache) {
+      drawHarvardColumn(harvardDataCache);
+      harvardDataShown = true;
+      harvardVisible = true;
+      // Show the Harvard note
+      const harvardNote = document.getElementById("harvard-note");
+      if (harvardNote) {
+        harvardNote.style.display = "block";
+      }
+      return;
+    }
+    
+    d3.csv("../data/rankedmeetingmethodsharvard.csv").then(raw => {
+      // Filter out empty rows
+      const validData = raw.filter(d => d.method && d.method.trim() !== "");
+      
+      // Group and count frequencies, excluding offline dating services
+      const methodCounts = {};
+      validData.forEach(d => {
+        const normalized = normalizeHarvardMethod(d.method);
+        if (normalized && !normalized.toLowerCase().includes("offline")) {
+          methodCounts[normalized] = (methodCounts[normalized] || 0) + 1;
+        }
+      });
+
+      const total = Object.values(methodCounts).reduce((a, b) => a + b, 0);
+      
+      // Calculate percentages and create data structure
+      // Always show: Friends, Online, School/College
+      const requiredMethods = ["Friends", "Online", "School/College"];
+      const harvardData = requiredMethods.map(methodName => {
+        const count = methodCounts[methodName] || 0;
+        return {
+          method: methodName,
+          count: count,
+          percentage: (count / total) * 100
+        };
+      });
+
+      harvardMethods = harvardData.map(d => d.method);
+      
+      // Map Harvard methods to original method colors
+      harvardColorMap = {};
+      const colorScheme = d3.schemeTableau10;
+      harvardMethods.forEach((harvardMethod, idx) => {
+        // Try to match with original methods for color consistency
+        let matchedColor = null;
+        if (harvardMethod === "Online") {
+          matchedColor = color("Online");
+        } else if (harvardMethod === "Friends") {
+          // Try to find Friends or Mutual friends in original methods
+          const friendMatch = methods.find(m => m.includes("Friend") || m.includes("Mutual"));
+          matchedColor = friendMatch ? color(friendMatch) : colorScheme[idx % colorScheme.length];
+        } else if (harvardMethod === "School/College") {
+          // Try to find School or College in original methods
+          const schoolMatch = methods.find(m => m.includes("School") || m.includes("College"));
+          matchedColor = schoolMatch ? color(schoolMatch) : colorScheme[idx % colorScheme.length];
+        } else {
+          // For Other, try to match or use scheme
+          const otherMatch = methods.find(m => m.toLowerCase() === harvardMethod.toLowerCase());
+          matchedColor = otherMatch ? color(otherMatch) : colorScheme[idx % colorScheme.length];
+        }
+        harvardColorMap[harvardMethod] = matchedColor || colorScheme[idx % colorScheme.length];
+      });
+
+      // Cache the data for future redraws
+      harvardDataCache = harvardData;
+      drawHarvardColumn(harvardData);
+      harvardDataLoaded = true;
+      harvardDataShown = true;
+      
+      // Show the Harvard note
+      const harvardNote = document.getElementById("harvard-note");
+      if (harvardNote) {
+        harvardNote.style.display = "block";
+      }
+    });
+  }
+
+  function drawHarvardColumn(data) {
+    // Always set harvardVisible to true when drawing
+    harvardVisible = true;
+    
+    // Save original methodPoints if not already saved
+    if (originalMethodPoints === null) {
+      originalMethodPoints = new Map();
+      methodPoints.forEach((points, method) => {
+        originalMethodPoints.set(method, points.map(p => ({ ...p }))); // Deep copy
+      });
+    }
+    
+    // Add "At Harvard" to the x scale domain with spacing
+    // Only set up scale if not already included
+    if (!chartDecades.includes("At Harvard")) {
+      chartDecades = [...decades, "At Harvard"];
+      
+      // Update x scale to include Harvard column with extra spacing
+      const spacing = 60; // Spacing before Harvard column to create gap after longest bar
+      // Calculate new total width: original width + spacing + one more column width
+      const originalBandWidth = width / (decades.length * (1 + 0.2 * 2)); // Account for padding
+      const totalWidth = width + spacing + originalBandWidth;
+      
+      x.domain(chartDecades)
+        .range([0, totalWidth])
+        .padding(0.2);
+      
+      // Adjust "At Harvard" position to add spacing
+      // We'll manually position it after the last decade with spacing
+      const lastDecadePos = x(decades[decades.length - 1]);
+      const lastDecadeWidth = x.bandwidth();
+      const harvardStart = lastDecadePos + lastDecadeWidth + spacing;
+      
+      // Create custom positioning for Harvard column
+      x.domain(chartDecades.slice(0, -1)); // Temporarily remove Harvard
+      const harvardColWidth = x.bandwidth();
+      x.domain(chartDecades); // Add it back
+      
+      // Reduce left margin to create more space
+      margin.left = harvardMargin.left;
+      
+      // Add class to reduce chart area left padding
+      const chartArea = document.querySelector(".chart-area");
+      if (chartArea) {
+        chartArea.classList.add("harvard-visible");
+      }
+      
+      // Get the correct column width for decades (without Harvard in domain)
+      // Temporarily set domain to just decades to get correct bandwidth
+      x.domain(decades);
+      const decadeColWidth = x.bandwidth();
+      x.domain(chartDecades); // Restore full domain with Harvard
+      
+      // Redraw all bars with new multiplier using correct column width
+      decades.forEach(decade => {
+        const col = g.select(`g[data-decade="${decade}"]`);
+        if (!col.empty()) {
+          const values = percentageData
+            .map(d => ({ method: d.Method, value: d[decade] }))
+            .sort((a, b) => d3.descending(a.value, b.value))
+            .map((d, i) => ({ ...d, rank: i + 1 }));
+          
+          // Update bar widths using correct column width
+          col.selectAll("rect.bar")
+            .data(values)
+            .attr("width", d => (d.value/100) * decadeColWidth * barWidthMultiplier);
+          
+          // Update hover area widths using correct column width
+          col.selectAll("rect.hover-area")
+            .data(values)
+            .attr("width", d => {
+              if (d.value < 15) return (15/100) * decadeColWidth * barWidthMultiplier;
+              return (d.value/100) * decadeColWidth * barWidthMultiplier;
+            });
+        }
+      });
+      
+      // Recalculate methodPoints by reading actual bar positions from DOM after bars are updated
+      methodPoints.clear();
+      decades.forEach(decade => {
+        const col = g.select(`g[data-decade="${decade}"]`);
+        if (col.empty()) return;
+        
+        // Get the column's transform to find its x position
+        const transform = col.attr("transform");
+        const columnX = parseFloat(transform.match(/translate\(([^,]+)/)[1]);
+        
+        // Get all bars in this column and read their actual positions
+        col.selectAll("rect.bar").each(function(d) {
+          if (!d || !d.method) return; // Skip if no data
+          
+          const barElement = d3.select(this);
+          const barWidth = parseFloat(barElement.attr("width"));
+          const barY = parseFloat(barElement.attr("y")) + parseFloat(barElement.attr("height")) / 2; // Center Y
+          
+          const method = d.method;
+          if (!methodPoints.has(method)) {
+            methodPoints.set(method, []);
+          }
+          methodPoints.get(method).push({
+            decade,
+            left: columnX, // Actual left edge of bar (column x position, bar is at x=0 within column)
+            right: columnX + barWidth, // Actual right edge of bar
+            y: barY, // Actual center Y of bar
+            value: d.value
+          });
+        });
+      });
+      
+      // Redraw all connection lines with updated points based on actual bar positions
+      methods.forEach(method => drawConnections(method));
+      
+      // Update label positions using correct column width
+      labelData.forEach(d => {
+        d.colWidth = decadeColWidth; // Use the correct column width
+      });
+      labelLayer.selectAll("text.bar-label")
+        .attr("x", d => {
+          const barWidth = (d.value/100) * d.colWidth * barWidthMultiplier;
+          if (d.value >= 20) {
+            return d.x + barWidth / 2;
+          } else {
+            return d.x + barWidth + 6;
+          }
+        });
+      
+      // Update SVG viewBox to accommodate Harvard column (include label padding for "Rank" label)
+      const labelPadding = 20;
+      // Add extra padding for method labels (especially "School/College" which is the longest)
+      const methodLabelPadding = 50; // Minimal extra space for method name labels to the right of bars
+      svg.attr("viewBox", `${-labelPadding} 0 ${harvardStart + harvardColWidth + margin.left + margin.right + labelPadding + methodLabelPadding} ${height + margin.top + margin.bottom}`);
+      
+      // Y-axis stays at x=0 (aligned with first column)
+      g.selectAll("g.y-axis").attr("transform", `translate(0,0)`);
+      
+      // Update y-axis label position (stays to the left of axis)
+      g.selectAll("text.y-axis-label")
+        .attr("x", -8);
+      
+      // Update x-axis - draw decades and Harvard separately with broken axis line
+      // Only remove x-axis, not y-axis
+      g.selectAll("g.x-axis").remove();
+      const axisG = g.append("g")
+        .attr("class", "axis x-axis")
+        .attr("transform", `translate(0,-16)`);
+      
+      // Draw axis for decades (with line that stops before Harvard)
+      decades.forEach(decade => {
+        axisG.append("text")
+          .attr("x", x(decade) + x.bandwidth() / 2)
+          .attr("y", 0)
+          .attr("text-anchor", "middle")
+          .attr("fill", "var(--muted)")
+          .attr("font-size", "16px")
+          .attr("font-weight", "bold")
+          .text(decade);
+      });
+      
+      // Draw axis line for decades only (stops before Harvard gap)
+      const decadeAxisEnd = x(decades[decades.length - 1]) + x.bandwidth();
+      axisG.append("line")
+        .attr("x1", 0)
+        .attr("x2", decadeAxisEnd)
+        .attr("y1", 2)
+        .attr("y2", 2)
+        .attr("stroke", "var(--grid)")
+        .attr("stroke-width", 1);
+      
+      // Draw "At Harvard" label separately
+      axisG.append("text")
+        .attr("x", harvardStart + harvardColWidth / 2)
+        .attr("y", 0)
+        .attr("text-anchor", "middle")
+        .attr("fill", "var(--muted)")
+        .attr("font-size", "16px")
+        .attr("font-weight", "bold")
+        .text("At Harvard (2020s)");
+      
+      // Draw separate axis line for Harvard column (doesn't connect to decades)
+      axisG.append("line")
+        .attr("x1", harvardStart)
+        .attr("x2", harvardStart + harvardColWidth)
+        .attr("y1", 2)
+        .attr("y2", 2)
+        .attr("stroke", "var(--grid)")
+        .attr("stroke-width", 1);
+      
+      // Update gridlines - break them at the gap between decades and Harvard
+      const decadeEndPos = x(decades[decades.length - 1]) + x.bandwidth();
+      g.selectAll(".rank-grid")
+        .each(function() {
+          const line = d3.select(this);
+          const currentX2 = parseFloat(line.attr("x2"));
+          // If line extends past the last decade, break it
+          if (currentX2 > decadeEndPos) {
+            // Create a new line segment for Harvard column
+            const lineG = d3.select(this.parentNode);
+            line.attr("x2", decadeEndPos); // Stop at end of decades
+            // Add new line segment for Harvard
+            lineG.append("line")
+              .attr("class", "rank-grid harvard-grid")
+              .attr("x1", harvardStart)
+              .attr("x2", harvardStart + harvardColWidth)
+              .attr("y1", line.attr("y1"))
+              .attr("y2", line.attr("y2"))
+              .attr("stroke", line.attr("stroke"))
+              .attr("stroke-width", line.attr("stroke-width"));
+          }
+        });
+    }
+
+    // Remove existing Harvard column if it exists (for re-drawing)
+    g.selectAll("g[data-decade='At Harvard']").remove();
+
+    // Calculate Harvard column position with spacing (recalculate if already visible)
+    const lastDecadePos = x(decades[decades.length - 1]);
+    const lastDecadeWidth = x.bandwidth();
+    const spacing = 60; // Spacing to match the initial setup
+    const harvardStart = lastDecadePos + lastDecadeWidth + spacing;
+    const harvardColWidth = x.bandwidth();
+
+    // Draw Harvard column in main chart
+    const harvardCol = g.append("g")
+      .attr("transform", `translate(${harvardStart},0)`)
+      .attr("data-decade", "At Harvard");
+
+    const colWidth = harvardColWidth;
+    
+    // Sort Harvard data by percentage descending and assign ranks 1, 2, 3
+    // Data already contains all three methods: Mutual friends, Online, School/College
+    const rankedHarvardData = data
+      .sort((a, b) => d3.descending(a.percentage, b.percentage))
+      .map((d, i) => ({
+        ...d,
+        rank: i + 1
+      }));
+    
+    // Map Harvard methods to main chart methods for color matching
+    const alignedData = rankedHarvardData.map(harvardItem => {
+      // Find matching method in main chart for color
+      const mainMethod = methods.find(method => {
+        const harvardMethod = harvardItem.method;
+        return (harvardMethod === method) ||
+               (harvardMethod === "Online" && method === "Online") ||
+               (harvardMethod === "Friends" && (method.includes("Friend") || method.includes("Mutual"))) ||
+               (harvardMethod === "School/College" && (method.includes("School") || method.includes("College")));
+      });
+      
+      return {
+        method: mainMethod || harvardItem.method, // Use main chart method name for color matching
+        harvardMethod: harvardItem.method, // Keep original for display
+        percentage: harvardItem.percentage,
+        rank: harvardItem.rank // Use rank from sorted Harvard data (1, 2, 3, etc.)
+      };
+    });
+
+    // Draw bars aligned with main chart ranks - use exact same y values
+    harvardCol.selectAll("rect.bar")
+      .data(alignedData)
+      .enter()
+      .append("rect")
+      .attr("class", "bar")
+      .attr("x", 0)
+      .attr("y", d => y(d.rank) - barHeight/2) // Uses same y scale as main chart
+      .attr("width", d => (d.percentage/100) * colWidth * barWidthMultiplier)
+      .attr("height", barHeight) // Same bar height as main chart
+      .attr("fill", d => {
+        // Use color from main chart if method matches
+        if (methods.includes(d.method)) {
+          return color(d.method);
+        }
+        // Fallback color
+        return d3.schemeTableau10[alignedData.indexOf(d) % d3.schemeTableau10.length];
+      })
+      .attr("rx", 5).attr("ry", 5)
+      .attr("pointer-events", "none");
+
+    // Add percentage labels (always visible for Harvard bars)
+    harvardCol.selectAll("text.bar-label")
+      .data(alignedData)
+      .enter()
+      .append("text")
+      .attr("class", "bar-label harvard-label")
+      .attr("data-harvard", "true") // Mark as Harvard label for easy selection
+      .attr("x", d => {
+        const barWidth = (d.percentage/100) * colWidth * barWidthMultiplier;
+        if (d.percentage >= 20) {
+          return barWidth / 2;
+        } else {
+          return barWidth + 6;
+        }
+      })
+      .attr("y", d => y(d.rank))
+      .attr("text-anchor", d => d.percentage >= 20 ? "middle" : "start")
+      .attr("dominant-baseline", "middle")
+      .attr("fill", d => d.percentage >= 20 ? "#ffffff" : "var(--ink)")
+      .attr("font-size", "13px")
+      .attr("font-weight", "600")
+      .style("pointer-events", "none")
+      .style("opacity", 1) // Always visible for Harvard labels
+      .text(d => d.percentage.toFixed(1) + "%");
+    
+    // Add method name labels to the right of percentage
+    harvardCol.selectAll("text.method-label")
+      .data(alignedData)
+      .enter()
+      .append("text")
+      .attr("class", "method-label")
+      .attr("x", d => {
+        const barWidth = (d.percentage/100) * colWidth * barWidthMultiplier;
+        if (d.percentage >= 20) {
+          // Percentage is inside bar, method goes after bar
+          return barWidth + 8;
+        } else {
+          // Percentage is outside bar, method goes after percentage text
+          // Estimate percentage text width (roughly 40px for "9.5%")
+          return barWidth + 6 + 45; // barWidth + gap + percentage text width
+        }
+      })
+      .attr("y", d => y(d.rank))
+      .attr("text-anchor", "start")
+      .attr("dominant-baseline", "middle")
+      .attr("fill", "var(--ink)")
+      .attr("font-size", "13px")
+      .attr("font-weight", "500")
+      .style("pointer-events", "none")
+      .text(d => getDisplayName(d.harvardMethod));
+
+    // Don't add y-axis for Harvard - ranks are already shown in main chart
+    // The alignment will match because we use the same y scale
+  }
+
+  let harvardDataShown = false;
+
+  function hideHarvardData() {
+    if (harvardVisible) {
+      harvardVisible = false;
+      chartDecades = decades;
+      
+      // Remove Harvard column from x scale
+      x.domain(chartDecades)
+        .range([0, width])
+        .padding(0.2);
+      
+      // Remove Harvard column from chart
+      g.selectAll("g[data-decade='At Harvard']").remove();
+      
+      // Restore original left margin
+      margin.left = originalMargin.left;
+      
+      // Remove class to restore original chart area padding
+      const chartArea = document.querySelector(".chart-area");
+      if (chartArea) {
+        chartArea.classList.remove("harvard-visible");
+      }
+      
+      // Restore original methodPoints instead of recalculating
+      if (originalMethodPoints !== null) {
+        methodPoints.clear();
+        originalMethodPoints.forEach((points, method) => {
+          methodPoints.set(method, points.map(p => ({ ...p }))); // Deep copy
+        });
+      } else {
+        // Fallback: recalculate if original wasn't saved (shouldn't happen)
+        methodPoints.clear();
+        decades.forEach(decade => {
+          const col = g.select(`g[data-decade="${decade}"]`);
+          if (col.empty()) return;
+          
+          const transform = col.attr("transform");
+          const columnX = parseFloat(transform.match(/translate\(([^,]+)/)[1]);
+          
+          col.selectAll("rect.bar").each(function(d) {
+            if (!d || !d.method) return;
+            
+            const barElement = d3.select(this);
+            const barWidth = parseFloat(barElement.attr("width"));
+            const barY = parseFloat(barElement.attr("y")) + parseFloat(barElement.attr("height")) / 2;
+            
+            const method = d.method;
+            if (!methodPoints.has(method)) {
+              methodPoints.set(method, []);
+            }
+            methodPoints.get(method).push({
+              decade,
+              left: columnX,
+              right: columnX + barWidth,
+              y: barY,
+              value: d.value
+            });
+          });
+        });
+      }
+      
+      // Redraw all connection lines with restored original points
+      methods.forEach(method => drawConnections(method));
+      
+      // Update bar widths
+      decades.forEach(decade => {
+        const col = g.select(`g[data-decade="${decade}"]`);
+        if (!col.empty()) {
+          const colWidth = x.bandwidth();
+          const values = percentageData
+            .map(d => ({ method: d.Method, value: d[decade] }))
+            .sort((a, b) => d3.descending(a.value, b.value))
+            .map((d, i) => ({ ...d, rank: i + 1 }));
+          
+          col.selectAll("rect.bar")
+            .data(values)
+            .attr("width", d => (d.value/100) * colWidth * barWidthMultiplier);
+          
+          col.selectAll("rect.hover-area")
+            .data(values)
+            .attr("width", d => {
+              if (d.value < 15) return (15/100) * colWidth * barWidthMultiplier;
+              return (d.value/100) * colWidth * barWidthMultiplier;
+            });
+        }
+      });
+      
+      // Update label positions
+      labelData.forEach(d => {
+        d.colWidth = x.bandwidth(); // Use current bandwidth
+      });
+      labelLayer.selectAll("text.bar-label")
+        .attr("x", d => {
+          const barWidth = (d.value/100) * d.colWidth * barWidthMultiplier;
+          if (d.value >= 20) {
+            return d.x + barWidth / 2;
+          } else {
+            return d.x + barWidth + 6;
+          }
+        });
+      
+      // Remove Harvard gridlines
+      g.selectAll(".harvard-grid").remove();
+      
+      // Update x-axis - only remove x-axis, not y-axis
+      g.selectAll("g.x-axis").remove();
+      const xAxis = d3.axisTop(x);
+      g.append("g")
+        .attr("class", "axis x-axis")
+        .attr("transform", `translate(0,-16)`)
+        .call(xAxis)
+        .selectAll("text")
+        .style("font-size", "16px")
+        .style("font-weight", "bold");
+      
+      // Y-axis stays at x=0 (aligned with first column)
+      g.selectAll("g.y-axis").attr("transform", `translate(0,0)`);
+      
+      // Update y-axis label position (stays to the left of axis)
+      g.selectAll("text.y-axis-label")
+        .attr("x", -8);
+      
+      // Update SVG viewBox back to original (after margin is restored, include label padding)
+      const labelPadding = 20;
+      svg.attr("viewBox", `${-labelPadding} 0 ${width + margin.left + margin.right + labelPadding} ${height + margin.top + margin.bottom}`);
+      
+      // Update gridlines back to original width
+      g.selectAll(".rank-grid")
+        .attr("x2", width);
+    }
+    
+    harvardDataShown = false;
+    
+    // Hide the Harvard note
+    const harvardNote = document.getElementById("harvard-note");
+    if (harvardNote) {
+      harvardNote.style.display = "none";
+    }
+  }
+
+  function showHarvardData() {
+    // Always call loadHarvardData - it will handle both initial load and redraw
+    loadHarvardData();
+  }
+
+  // Listen for message from parent window to show/hide Harvard data
+  window.addEventListener("message", (event) => {
+    if (event.data === "showHarvardData") {
+      // Only show if not already visible
+      if (!harvardVisible) {
+        showHarvardData();
+      }
+    } else if (event.data === "hideHarvardData") {
+      // Only hide if currently visible
+      if (harvardVisible) {
+        hideHarvardData();
+      }
+    }
+  });
+  
+  // Expose state getter for parent window to check current state
+  window.getHarvardState = () => harvardVisible;
+
+  // Also expose functions for direct calls
+  window.showHarvardData = loadHarvardData;
+  window.hideHarvardData = hideHarvardData;
+});
+</script>
+</body>
+</html>

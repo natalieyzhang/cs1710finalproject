@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Retro Dating Survey</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    html {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+    
+    body {
+      font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #8f304e;
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    /* Wrapper that fills the card and scales the content uniformly */
+    .viz-scale-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: visible;
+    }
+
+    /* Base logical size - everything inside scales together */
+    /* Aspect ratio matches card: 1600/910 = 1.758241758... */
+    .viz-root {
+      width: 1200px;
+      height: 682.5px; /* 1200 / (1600/910) = 682.5 to match exact card aspect ratio */
+      transform-origin: center center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      box-sizing: border-box;
+    }
+
+    .content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .question-container {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 16px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    /* Custom scrollbar with hearts pattern */
+    .question-container::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    .question-container::-webkit-scrollbar-track {
+      background: rgba(163, 75, 101, 0.1);
+      border-radius: 7px;
+    }
+
+    .question-container::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg, #8f304e 0%, #a34b65 100%);
+      border-radius: 7px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .question-container::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg, #a34b65 0%, #8f304e 100%);
+    }
+
+    /* Firefox scrollbar */
+    .question-container {
+      scrollbar-width: thin;
+      scrollbar-color: #8f304e rgba(163, 75, 101, 0.1);
+    }
+
+    .question {
+      font-size: 22px;
+      margin-bottom: 16px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+    
+    .question-number {
+      font-size: 18px;
+      color: #a34b65;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .options {
+      width: 100%;
+    }
+
+    .options button {
+      background-color: #a34b65;
+      border: 3px solid #a34b65;
+      color: white;
+      font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+      font-size: 16px;
+      margin: 4px 0;
+      padding: 10px 16px;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      transition: all 0.2s ease;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .options button:hover {
+      background-color: #a34b65;
+      border-color: #a34b65;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 3px 3px 0 #8f304e;
+    }
+    
+    .options button.selected {
+      background-color: #6b1f3a;
+      border-color: #6b1f3a;
+      box-shadow: 0 0 0 3px #d4a5a5, 3px 3px 0 #8f304e;
+      font-weight: 600;
+    }
+    
+    .options button.selected:hover {
+      background-color: #6b1f3a;
+      border-color: #6b1f3a;
+    }
+
+    .charts {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .chart-container {
+      background-color: #fff;
+      border: none;
+      padding: 10px;
+      box-shadow: 4px 4px 0 #a34b65;
+      height: auto;
+      min-height: 180px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .chart-title {
+      font-size: 14px;
+      margin-bottom: 8px;
+      text-align: center;
+      font-weight: 700;
+      color: #8f304e;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 160px !important;
+      flex: 1;
+      pointer-events: auto;
+    }
+
+    #nextBtn {
+      margin-top: 12px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #8f304e;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: fit-content;
+      align-self: flex-start;
+      opacity: 0;
+      transition: opacity 0.4s ease, background-color 0.2s ease;
+      font-weight: 600;
+    }
+
+    #nextBtn:hover {
+      background-color: #a34b65;
+      transform: translateY(-1px);
+    }
+    
+    #nextBtn:active {
+      transform: translateY(0);
+    }
+
+    @keyframes pixelate {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .pixel-animation {
+      animation: pixelate 0.3s ease;
+    }
+
+    .analysis-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
+
+    .analysis-container.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .analysis-line {
+      font-size: clamp(28px, 3.5vw + 2vh, 36px);
+      margin: 15px 0;
+      text-align: center;
+      font-weight: 700;
+      color: #8f304e;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .analysis-line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .play-again-btn {
+      margin-top: 40px;
+      padding: 15px 30px;
+      font-size: clamp(22px, 2.5vw + 1.5vh, 28px);
+      background-color: #8f304e;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.3s ease;
+    }
+
+    .play-again-btn:hover {
+      background-color: #a34b65;
+      transform: translateY(-2px);
+    }
+
+    .play-again-btn.visible {
+      opacity: 1;
+    }
+    
+    .intro-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    
+    .intro-title {
+      font-size: 42px;
+      font-weight: 700;
+      color: #8f304e;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+    
+    .intro-subtext {
+      font-size: 20px;
+      color: #a34b65;
+      margin-bottom: 40px;
+      line-height: 1.5;
+      max-width: 600px;
+    }
+    
+    .start-btn {
+      width: 120px;
+      height: 110px;
+      padding: 0;
+      font-size: 16px;
+      background-color: transparent;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+    }
+    
+    .start-btn::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 96px;
+      background-color: #8f304e;
+      border-radius: 60px 60px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+      left: 60px;
+      top: 0;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    
+    .start-btn::after {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 96px;
+      background-color: #8f304e;
+      border-radius: 60px 60px 0 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+      left: 0;
+      top: 0;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    
+    .start-btn span {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-top: -15px;
+      white-space: nowrap;
+    }
+    
+    .start-btn:hover::before {
+      background-color: #a34b65;
+      transform: rotate(-45deg) translateY(-2px);
+    }
+    
+    .start-btn:hover::after {
+      background-color: #a34b65;
+      transform: rotate(45deg) translateY(-2px);
+    }
+    
+    .start-btn:active::before {
+      transform: rotate(-45deg) translateY(0);
+    }
+    
+    .start-btn:active::after {
+      transform: rotate(45deg) translateY(0);
+    }
+    
+    .intro-container.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="viz-scale-wrapper">
+    <div class="viz-root">
+      <div class="intro-container" id="intro-container">
+        <div class="intro-title">Dating App Diagnostic Survey!</div>
+        <div class="intro-subtext">Compare your (online) dating habits with those of Harvard students and other dating app users. This survey is purely for fun, so none of your answers will be saved.</div>
+        <button class="start-btn" onclick="startSurvey()"><span>START</span></button>
+      </div>
+
+      <div class="content" id="content" style="display: none;">
+    <div class="question-container" id="question-container"></div>
+
+    <div class="charts" id="charts">
+      <div class="chart-container">
+        <div class="chart-title">HARVARD STUDENTS</div>
+        <canvas id="chartHarvard"></canvas>
+      </div>
+      <div class="chart-container">
+        <div class="chart-title">GENERAL POPULATION</div>
+        <canvas id="chartGeneral"></canvas>
+      </div>
+
+      <button id="nextBtn" onclick="goToNext()">NEXT QUESTION →</button>
+    </div>
+  </div>
+
+  <div class="analysis-container" id="analysis-container">
+    <!-- Analysis lines will be added here dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---- UNIFORM SCALING FOR THE WHOLE VIZ ------------------------------------
+    // Aspect ratio matches card: 1600/910 = 1.758241758...
+    const BASE_WIDTH = 1200;
+    const BASE_HEIGHT = 682.5; // 1200 / (1600/910) = 682.5 to match exact card aspect ratio
+    const wrapper = document.querySelector(".viz-scale-wrapper");
+    const root = document.querySelector(".viz-root");
+
+    function resizeViz(){
+      if (!wrapper || !root) return;
+      const rect = wrapper.getBoundingClientRect();
+      // Scale to fill width, ensuring we don't exceed height
+      const scaleX = rect.width / BASE_WIDTH;
+      const scaleY = rect.height / BASE_HEIGHT;
+      const scale = Math.min(scaleX, scaleY);
+      
+      // Position absolutely and center
+      root.style.position = 'absolute';
+      root.style.left = '50%';
+      root.style.top = '50%';
+      root.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      root.style.transformOrigin = 'center center';
+    }
+
+    // Resize on load + whenever parent card changes size
+    if (typeof ResizeObserver !== "undefined") {
+      const resizeObserver = new ResizeObserver(resizeViz);
+      if (wrapper) resizeObserver.observe(wrapper);
+    }
+    window.addEventListener('resize', resizeViz);
+    resizeViz();
+
+    const questions = [
+      {
+        text: "What are you primarily looking for on dating apps? If you’ve never used one, what would you look for if you did?",
+        options: ["A long-term relationship", "Something casual", "A friendship", "Nothing in particular"],
+        harvardData: [45, 15, 25, 15],
+        generalData: [40, 20, 30, 10]
+      },
+      {
+        text: "How often do you use dating apps? If you’ve never used one, how often do you think you would you use it if you did?",
+        options: ["Daily", "Weekly", "Monthly", "Rarely", "Never"],
+        harvardData: [25, 35, 20, 15, 5],
+        generalData: [20, 30, 25, 20, 5]
+      },
+      {
+        text: "How did you meet your current or most recent partner / crush?",
+        options: ["Dating app", "Through mutual friends", "At school/work", "Other/Never had a partner"],
+        harvardData: [35, 30, 25, 10],
+        generalData: [30, 35, 20, 15]
+      }
+    ];
+
+    let current = 0;
+    let chartHarvard, chartGeneral;
+    let userAnswers = [];
+
+    const questionContainer = document.getElementById("question-container");
+    const chartsDiv = document.getElementById("charts");
+    const nextBtn = document.getElementById("nextBtn");
+    const analysisContainer = document.getElementById("analysis-container");
+    const introContainer = document.getElementById("intro-container");
+    const contentDiv = document.getElementById("content");
+
+    function startSurvey() {
+      introContainer.style.display = 'none';
+      contentDiv.style.display = 'flex';
+      showQuestion();
+      setTimeout(resizeViz, 100);
+    }
+
+    function showQuestion() {
+      const q = questions[current];
+      nextBtn.style.opacity = 0;
+
+      // Update button text based on current question
+      if (current === questions.length - 1) {
+        nextBtn.textContent = "VIEW RESULTS →";
+      } else {
+        nextBtn.textContent = "NEXT QUESTION →";
+      }
+
+      questionContainer.innerHTML = `
+        <div class="question-number">Question ${current + 1} of ${questions.length}</div>
+        <div class="question">${q.text}</div>
+        <div class="options">
+          ${q.options.map(opt => `<button onclick="selectOption('${opt}')">${opt}</button>`).join("")}
+        </div>
+      `;
+      
+      // Reset chart titles
+      const harvardTitle = document.querySelector('#chartHarvard').parentElement.querySelector('.chart-title');
+      const generalTitle = document.querySelector('#chartGeneral').parentElement.querySelector('.chart-title');
+      if (harvardTitle) {
+        harvardTitle.textContent = 'HARVARD STUDENTS';
+      }
+      if (generalTitle) {
+        generalTitle.textContent = 'GENERAL POPULATION';
+      }
+      
+      chartsDiv.style.opacity = 0;
+    }
+
+    function selectOption(option) {
+      questionContainer.classList.add('pixel-animation');
+      setTimeout(() => questionContainer.classList.remove('pixel-animation'), 300);
+
+      // Remove selected class from all buttons
+      const allButtons = questionContainer.querySelectorAll('.options button');
+      allButtons.forEach(btn => btn.classList.remove('selected'));
+
+      // Add selected class to clicked button
+      const clickedButton = Array.from(allButtons).find(btn => btn.textContent.trim() === option);
+      if (clickedButton) {
+        clickedButton.classList.add('selected');
+      }
+
+      // Store user's answer
+      userAnswers[current] = option;
+
+      const q = questions[current];
+      const userIndex = q.options.indexOf(option);
+
+      // Create array of indices with their data values for sorting
+      const indicesWithData = q.options.map((_, i) => ({
+        index: i,
+        option: q.options[i],
+        harvardValue: q.harvardData[i],
+        generalValue: q.generalData[i],
+        isSelected: i === userIndex
+      }));
+
+      // Sort by Harvard data value (descending - highest first)
+      indicesWithData.sort((a, b) => b.harvardValue - a.harvardValue);
+
+      // Extract sorted arrays
+      const sortedOptions = indicesWithData.map(item => item.option);
+      const sortedHarvardData = indicesWithData.map(item => item.harvardValue);
+      const sortedGeneralData = indicesWithData.map(item => item.generalValue);
+      
+      // Create colors array based on sorted order (highlight selected answer)
+      const sortedColors = indicesWithData.map(item => 
+        item.isSelected ? '#8f304e' : '#d4a5a5'
+      );
+
+      if (chartHarvard) chartHarvard.destroy();
+      if (chartGeneral) chartGeneral.destroy();
+
+      // Generate tooltip text based on question
+      const questionText = q.text.toLowerCase();
+      let actionPhrase = '';
+      
+      if (questionText.includes('looking for')) {
+        actionPhrase = 'are looking for';
+      } else if (questionText.includes('how often')) {
+        actionPhrase = 'use dating apps';
+      } else if (questionText.includes('how did you meet')) {
+        actionPhrase = 'met their partner through';
+      } else {
+        // Default fallback
+        actionPhrase = 'selected';
+      }
+
+      // Find the index of selected answer in sorted array
+      const selectedIndexInSorted = sortedOptions.indexOf(option);
+      
+      // Get percentages for the selected answer
+      const harvardPercentage = sortedHarvardData[selectedIndexInSorted];
+      const generalPercentage = sortedGeneralData[selectedIndexInSorted];
+
+      const harvardCtx = document.getElementById('chartHarvard').getContext('2d');
+      chartHarvard = new Chart(harvardCtx, {
+        type: 'bar',
+        data: {
+          labels: sortedOptions,
+          datasets: [{
+            data: sortedHarvardData,
+            backgroundColor: sortedColors,
+            borderColor: 'transparent',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false
+          },
+          plugins: { 
+            legend: { display: false },
+            tooltip: {
+              displayColors: false,
+              enabled: true,
+              callbacks: {
+                label: function(context) {
+                  const percentage = context.parsed.y;
+                  const option = context.label;
+                  return `${percentage}% of Harvard Students ${actionPhrase} ${option}`;
+                }
+              }
+            },
+            selectedBarMarker: {
+              id: 'selectedBarMarker',
+              afterDraw: function(chart) {
+                const ctx = chart.ctx;
+                const meta = chart.getDatasetMeta(0);
+                
+                if (selectedIndexInSorted >= 0 && selectedIndexInSorted < meta.data.length) {
+                  const selectedBar = meta.data[selectedIndexInSorted];
+                  
+                  if (selectedBar && selectedBar.x !== undefined && selectedBar.y !== undefined) {
+                    const x = selectedBar.x;
+                    const y = selectedBar.y - 8;
+                    
+                    ctx.save();
+                    ctx.font = 'bold 14px Arial';
+                    ctx.fillStyle = '#8f304e';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+                    ctx.fillText('❤️', x, y - 12);
+                    ctx.font = 'bold 10px Arial';
+                    ctx.fillText('you are here', x, y);
+                    ctx.restore();
+                  }
+                }
+              }
+            }
+          },
+          scales: { 
+            y: { 
+              beginAtZero: true, 
+              max: 100,
+              grid: {
+                display: true,
+                color: '#f0f0f0'
+              },
+              ticks: {
+                font: {
+                  size: 11
+                }
+              }
+            },
+            x: {
+              ticks: {
+                maxRotation: 0,
+                minRotation: 0,
+                autoSkip: false,
+                font: {
+                  size: 11
+                },
+                callback: function(value, index) {
+                  const label = this.getLabelForValue(value);
+                  // Split long labels into multiple lines
+                  const maxLength = 15;
+                  if (label.length > maxLength) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                      if ((currentLine + word).length <= maxLength) {
+                        currentLine += (currentLine ? ' ' : '') + word;
+                      } else {
+                        if (currentLine) lines.push(currentLine);
+                        currentLine = word;
+                      }
+                    });
+                    if (currentLine) lines.push(currentLine);
+                    return lines;
+                  }
+                  return label;
+                }
+              },
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+
+      const generalCtx = document.getElementById('chartGeneral').getContext('2d');
+      chartGeneral = new Chart(generalCtx, {
+        type: 'bar',
+        data: {
+          labels: sortedOptions,
+          datasets: [{
+            data: sortedGeneralData,
+            backgroundColor: sortedColors,
+            borderColor: 'transparent',
+            borderWidth: 0
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: {
+            mode: 'index',
+            intersect: false
+          },
+          plugins: { 
+            legend: { display: false },
+            tooltip: {
+              displayColors: false,
+              enabled: true,
+              callbacks: {
+                label: function(context) {
+                  const percentage = context.parsed.y;
+                  const option = context.label;
+                  return `${percentage}% of Dating App Users ${actionPhrase} ${option}`;
+                }
+              }
+            },
+            selectedBarMarker2: {
+              id: 'selectedBarMarker2',
+              afterDraw: function(chart) {
+                const ctx = chart.ctx;
+                const meta = chart.getDatasetMeta(0);
+                
+                if (selectedIndexInSorted >= 0 && selectedIndexInSorted < meta.data.length) {
+                  const selectedBar = meta.data[selectedIndexInSorted];
+                  
+                  if (selectedBar && selectedBar.x !== undefined && selectedBar.y !== undefined) {
+                    const x = selectedBar.x;
+                    const y = selectedBar.y - 8;
+                    
+                    ctx.save();
+                    ctx.font = 'bold 14px Arial';
+                    ctx.fillStyle = '#8f304e';
+                    ctx.textAlign = 'center';
+                    ctx.textBaseline = 'bottom';
+                    ctx.fillText('❤️', x, y - 12);
+                    ctx.font = 'bold 10px Arial';
+                    ctx.fillText('you are here', x, y);
+                    ctx.restore();
+                  }
+                }
+              }
+            }
+          },
+          scales: { 
+            y: { 
+              beginAtZero: true, 
+              max: 100,
+              grid: {
+                display: true,
+                color: '#f0f0f0'
+              },
+              ticks: {
+                font: {
+                  size: 11
+                }
+        }
+            },
+            x: {
+              ticks: {
+                maxRotation: 0,
+                minRotation: 0,
+                autoSkip: false,
+                font: {
+                  size: 11
+                },
+                callback: function(value, index) {
+                  const label = this.getLabelForValue(value);
+                  // Split long labels into multiple lines
+                  const maxLength = 15;
+                  if (label.length > maxLength) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                      if ((currentLine + word).length <= maxLength) {
+                        currentLine += (currentLine ? ' ' : '') + word;
+                      } else {
+                        if (currentLine) lines.push(currentLine);
+                        currentLine = word;
+                      }
+                    });
+                    if (currentLine) lines.push(currentLine);
+                    return lines;
+                  }
+                  return label;
+                }
+              },
+              grid: {
+                display: false
+              }
+            }
+          }
+        }
+      });
+
+      // Update chart titles with percentages
+      const harvardTitle = document.querySelector('#chartHarvard').parentElement.querySelector('.chart-title');
+      const generalTitle = document.querySelector('#chartGeneral').parentElement.querySelector('.chart-title');
+      if (harvardTitle) {
+        harvardTitle.textContent = `${harvardPercentage}% of Harvard students answered the same`;
+      }
+      if (generalTitle) {
+        generalTitle.textContent = `${generalPercentage}% of general dating app users answered the same`;
+      }
+
+      chartsDiv.style.opacity = 1;
+      setTimeout(() => { nextBtn.style.opacity = 1; }, 400);
+    }
+
+    function goToNext() {
+      chartsDiv.style.opacity = 0;
+
+      setTimeout(() => {
+        current++;
+        if (current < questions.length) {
+          showQuestion();
+        } else {
+          // All questions answered, show analysis
+          showAnalysis();
+        }
+      }, 500);
+    }
+
+    function showAnalysis() {
+      // Hide the main content
+      document.querySelector('.content').style.display = 'none';
+      
+      // Show analysis container
+      analysisContainer.classList.add('active');
+      
+      // Generate analysis text based on user answers
+      const analysisLines = generateAnalysis();
+      
+      // Add analysis lines to container
+      analysisContainer.innerHTML = '';
+      analysisLines.forEach((line, index) => {
+        const lineElement = document.createElement('div');
+        lineElement.className = 'analysis-line';
+        lineElement.textContent = line;
+        analysisContainer.appendChild(lineElement);
+        
+        // Animate each line with a delay
+        setTimeout(() => {
+          lineElement.classList.add('visible');
+        }, (index + 1) * 800);
+      });
+      
+      // Add play again button after all lines
+      setTimeout(() => {
+        const playAgainBtn = document.createElement('button');
+        playAgainBtn.className = 'play-again-btn';
+        playAgainBtn.textContent = 'PLAY AGAIN';
+        playAgainBtn.onclick = () => location.reload();
+        analysisContainer.appendChild(playAgainBtn);
+        
+        // Animate button appearance
+        setTimeout(() => {
+          playAgainBtn.classList.add('visible');
+        }, 500);
+        
+        // Add restart entire story button
+        setTimeout(() => {
+          const restartBtn = document.createElement('button');
+          restartBtn.className = 'play-again-btn';
+          restartBtn.textContent = 'RESTART ENTIRE STORY';
+          restartBtn.onclick = () => {
+            // If in iframe, send message to parent to scroll to top
+            if (window.parent !== window) {
+              window.parent.postMessage({ type: 'scrollToTop' }, '*');
+            } else {
+              // If not in iframe, scroll to top of current page
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          };
+          analysisContainer.appendChild(restartBtn);
+          
+          // Animate button appearance
+          setTimeout(() => {
+            restartBtn.classList.add('visible');
+          }, 500);
+        }, 600);
+      }, (analysisLines.length + 1) * 800);
+    }
+
+    function generateAnalysis() {
+      const lines = [];
+      
+      // First line - what they're looking for
+      const lookingFor = userAnswers[0];
+      lines.push(`You prefer to look for or would look for ${lookingFor.toLowerCase()} online.`);
+      
+      // Second line - how they met their partner
+      const howMet = userAnswers[2];
+      if (howMet.toLowerCase() === "other/never had a partner") {
+        lines.push(`You met your partner through some other method or never had a partner.`);
+      } else {
+        lines.push(`You met your partner through ${howMet.toLowerCase()}.`);
+      }
+      
+      // Third line - how often they use dating apps
+      const usage = userAnswers[1];
+      if (usage.toLowerCase() === 'never') {
+        lines.push('You never use dating apps.');
+      } else {
+      lines.push(`You use or would use dating apps ${usage.toLowerCase()}.`);
+      }
+      
+      // Fourth line - percentage of similar respondents
+      const avgPercentage = calculateSimilarityPercentage();
+      lines.push(`${avgPercentage}% of respondents (Harvard and general users) exactly answered like you.`);
+      
+      return lines;
+    }
+
+    function calculateSimilarityPercentage() {
+      let totalPercentage = 0;
+      
+      // For each question, calculate the percentage of people who gave the same answer
+      for (let i = 0; i < questions.length; i++) {
+        const userAnswer = userAnswers[i];
+        const userIndex = questions[i].options.indexOf(userAnswer);
+        
+        // Average of Harvard and General data for the selected option
+        const harvardPercentage = questions[i].harvardData[userIndex];
+        const generalPercentage = questions[i].generalData[userIndex];
+        const avgPercentage = Math.round((harvardPercentage + generalPercentage) / 2);
+        
+        totalPercentage += avgPercentage;
+      }
+      
+      // Return the average across all questions
+      return Math.round(totalPercentage / questions.length);
+    }
+
+    // Don't show question on load - wait for start button
+  </script>
+</body>
+</html>
