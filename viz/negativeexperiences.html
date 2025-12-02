@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Negative Experiences in Online Dating</title>
+    <style>
+        @font-face {
+            font-family: 'ValentineCute';
+            src: url("../Valentine Cute.ttf") format("truetype");
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+        }
+
+        body {
+            background: transparent;
+            color: #8f304e;
+            height: 100%;
+            padding: clamp(20px, 3vh, 40px) clamp(8px, 1.2vw, 16px) clamp(10px, 1.5vh, 20px);
+            image-rendering: pixelated;
+            display: flex;
+            flex-direction: column;
+            transition: color 0.5s ease;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        body.harvard-theme {
+            color: #a51c30;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(8px, 1.2vh, 16px);
+            min-height: 0;
+            justify-content: center;
+        }
+
+        header {
+            margin-bottom: clamp(6px, 1vh, 12px);
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+
+        h1 {
+            font-size: clamp(1.4rem, 2.5vw + 1.2vh, 2.4rem);
+            color: #8f304e;
+            margin-bottom: clamp(6px, 1vh, 12px);
+            letter-spacing: -0.04em;
+            transition: color 0.5s ease;
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            line-height: 1.2;
+        }
+
+        body.harvard-theme h1 {
+            color: #a51c30;
+        }
+
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: clamp(18px, 3vw, 36px);
+            margin: 0 auto;
+            flex: 1;
+            min-height: 0;
+            align-content: center;
+            justify-items: center;
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chart-title {
+            font-size: clamp(0.65rem, 1vw + 0.4vh, 0.85rem);
+            color: #8f304e;
+            text-align: center;
+            margin-bottom: clamp(6px, 0.8vh, 10px);
+            min-height: clamp(28px, 3.5vh, 36px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.5s ease;
+            line-height: 1.2;
+        }
+
+        body.harvard-theme .chart-title {
+            color: #a51c30;
+        }
+
+        .chart-wrapper {
+            position: relative;
+            width: clamp(90px, 12vw, 140px);
+            height: clamp(90px, 12vw, 140px);
+            margin: 0 auto clamp(6px, 0.8vh, 10px);
+        }
+
+        .chart {
+            width: 100%;
+            height: 100%;
+            transform: rotate(-90deg);
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .chart-bg {
+            fill: none;
+            stroke: #e6acbe;
+            stroke-width: 10;
+            transition: stroke 0.5s ease;
+        }
+
+        body.harvard-theme .chart-bg {
+            stroke: #d4a5a5;
+        }
+
+        .chart-progress {
+            fill: none;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
+            transition: stroke-dashoffset 1.5s ease-in-out, stroke 0.5s ease;
+            stroke: #8f304e;
+        }
+
+        body.harvard-theme .chart-progress {
+            stroke: #a51c30;
+        }
+
+        .chart-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(1.4rem, 2vw, 2rem);
+            color: #8f304e;
+            width: clamp(50px, 7vw, 80px);
+            height: clamp(50px, 7vw, 80px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.5s ease;
+        }
+
+        body.harvard-theme .chart-icon {
+            color: #a51c30;
+        }
+
+        .percentage {
+            font-size: clamp(0.9rem, 1.3vw + 0.6vh, 1.1rem);
+            color: #8f304e;
+            margin-top: clamp(4px, 0.6vh, 6px);
+            transition: color 0.5s ease;
+        }
+
+        body.harvard-theme .percentage {
+            color: #a51c30;
+        }
+
+        .percentage::after {
+            content: '%';
+            font-size: 1rem;
+            margin-left: 2px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: clamp(10px, 1.5vh, 20px);
+            color: #8f304e;
+            font-size: clamp(0.6rem, 0.9vw + 0.4vh, 0.7rem);
+            transition: color 0.5s ease;
+            flex-shrink: 0;
+        }
+
+        body.harvard-theme footer {
+            color: #a51c30;
+        }
+
+        @media (max-width: 768px) {
+            .visualization-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: clamp(10px, 1.5vw, 18px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .visualization-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 8-bit pixel art styles */
+        .pixel-art {
+            image-rendering: pixelated;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: crisp-edges;
+        }
+
+        /* Catfish / Scammer silhouette */
+        .silhouette {
+            background: #8f304e;
+            width: 60px;
+            height: 80px;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            overflow: visible;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .silhouette {
+            background: #a51c30;
+        }
+        .silhouette .head {
+            position: absolute;
+            width: clamp(29px, 4vw, 44px);
+            height: clamp(29px, 4vw, 44px);
+            background: #8f304e;
+            border-radius: 50%;
+            top: clamp(-14px, -2vw, -22px);
+            left: clamp(5px, 0.7vw, 8px);
+            box-shadow: 0 0 0 3px #8f304e inset;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .silhouette .head {
+            background: #a51c30;
+            box-shadow: 0 0 0 3px #a51c30 inset;
+        }
+        .silhouette .hat-brim {
+            position: absolute;
+            width: clamp(47px, 6.4vw, 70px);
+            height: clamp(5px, 0.7vw, 8px);
+            background: #2b2b2b;
+            top: clamp(-9px, -1.2vw, -14px);
+            left: clamp(-3px, -0.4vw, -5px);
+            border-radius: 4px;
+            transform: rotate(-4deg);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+        }
+        .silhouette .hat-crown {
+            position: absolute;
+            width: clamp(29px, 4vw, 44px);
+            height: clamp(12px, 1.6vw, 18px);
+            background: #2b2b2b;
+            top: clamp(-19px, -2.5vw, -28px);
+            left: clamp(5px, 0.7vw, 8px);
+            border-radius: 6px 6px 2px 2px;
+            transform: rotate(-4deg);
+        }
+        .silhouette .eye {
+            position: absolute;
+            width: clamp(5px, 0.7vw, 8px);
+            height: clamp(5px, 0.7vw, 8px);
+            background: #fff9cc;
+            border-radius: 50%;
+            top: clamp(-2px, -0.3vw, -3px);
+            box-shadow: 0 0 8px rgba(255,255,150,0.6);
+            transform-origin: center;
+            animation: blink-slow 3.2s ease-in-out infinite;
+        }
+        .silhouette .eye.left { left: clamp(12px, 1.6vw, 18px); animation-delay: 0s; }
+        .silhouette .eye.right { left: clamp(23px, 3vw, 34px); animation-delay: 0.15s; }
+
+        @keyframes blink-slow {
+            0%, 92% { transform: scaleY(1); }
+            94% { transform: scaleY(0.12); }
+            96% { transform: scaleY(0.02); }
+            98% { transform: scaleY(0.12); }
+            100% { transform: scaleY(1); }
+        }
+
+        /* Lips (Unwanted sexual images) */
+        .lips-container {
+            position: relative;
+            width: clamp(50px, 7vw, 80px);
+            height: clamp(31px, 4.3vw, 50px);
+        }
+        .lips {
+            position: absolute;
+            width: clamp(40px, 5.5vw, 64px);
+            height: clamp(23px, 3.2vw, 36px);
+            top: clamp(4px, 0.6vw, 7px);
+            left: clamp(5px, 0.7vw, 8px);
+            transform-origin: center;
+            animation: kiss 1.5s infinite alternate;
+        }
+        .lips::before {
+            content: "";
+            position: absolute;
+            width: 64px;
+            height: 18px;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, #8f304e 0%, #8f304e 100%);
+            border-radius: 36px 36px 18px 18px;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .lips::before {
+            background: linear-gradient(180deg, #a51c30 0%, #7a1522 100%);
+        }
+        .lips::after {
+            content: "";
+            position: absolute;
+            width: 56px;
+            height: 18px;
+            left: 4px;
+            bottom: 0;
+            background: linear-gradient(180deg, #8f304e 0%, #8f304e 100%);
+            border-radius: 18px 18px 36px 36px;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .lips::after {
+            background: linear-gradient(180deg, #7a1522 0%, #a51c30 100%);
+        }
+        @keyframes kiss {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.22); }
+            100% { transform: scale(1); }
+        }
+
+        /* Phone + wifi waves */
+        .phone {
+            width: clamp(28px, 3.8vw, 44px);
+            height: clamp(47px, 6.4vw, 74px);
+            background: #8f304e;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 2px 0 rgba(0,0,0,0.05) inset;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .phone {
+            background: #a51c30;
+        }
+        .phone .screen {
+            position: absolute;
+            width: 32px;
+            height: 46px;
+            background: #8f304e;
+            border-radius: 4px;
+            top: 8px;
+            left: 6px;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .phone .screen {
+            background: #d4a5a5;
+        }
+        .phone .home {
+            position: absolute;
+            width: clamp(6px, 0.8vw, 10px);
+            height: clamp(6px, 0.8vw, 10px);
+            background: #8f304e;
+            border-radius: 50%;
+            bottom: clamp(4px, 0.5vw, 6px);
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 1px 0 rgba(0,0,0,0.08) inset;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .phone .home {
+            background: #8b1a2a;
+        }
+        .wifi-waves {
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 44px;
+            height: 44px;
+            pointer-events: none;
+        }
+        .wifi-wave {
+            position: absolute;
+            border: 2px solid #8f304e;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+            opacity: 0.9;
+            transition: border-color 0.5s ease;
+        }
+        body.harvard-theme .wifi-wave {
+            border-color: #a51c30;
+        }
+        .wifi-wave:nth-child(1) { width: 8px; height: 8px; top: 18px; left: 18px; animation-delay: 0s; }
+        .wifi-wave:nth-child(2) { width: 16px; height: 16px; top: 12px; left: 12px; animation-delay: 0.18s; }
+        .wifi-wave:nth-child(3) { width: 24px; height: 24px; top: 6px; left: 6px; animation-delay: 0.36s; }
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(0.9); }
+            100% { opacity: 0; transform: scale(1.45); }
+        }
+
+        /* Offensive text */
+        .offensive-text {
+            font-size: clamp(0.7rem, 1vw, 1rem);
+            color: #8f304e;
+            animation: calm 3s infinite;
+            display: inline-block;
+            transition: color 0.5s ease;
+        }
+        body.harvard-theme .offensive-text {
+            color: #a51c30;
+        }
+        @keyframes rapid-rotate {
+            0% { transform: rotate(0deg); }
+            10% { transform: rotate(-8deg); }
+            20% { transform: rotate(8deg); }
+            30% { transform: rotate(-8deg); }
+            40% { transform: rotate(8deg); }
+            50% { transform: rotate(-6deg); }
+            60% { transform: rotate(6deg); }
+            100% { transform: rotate(0deg); }
+        }
+        @keyframes calm {
+            0%, 88% { transform: scale(1); color: #8f304e; }
+            90% { transform: scale(1.5) translateX(2px); color: #8f304e; animation: rapid-rotate 0.28s linear infinite; }
+            100% { transform: scale(1); color: #8f304e; }
+        }
+        body.harvard-theme .offensive-text {
+            animation-name: calm-blue;
+        }
+        @keyframes calm-blue {
+            0%, 88% { transform: scale(1); color: #a51c30; }
+            90% { transform: scale(1.5) translateX(2px); color: #7a1522; animation: rapid-rotate 0.28s linear infinite; }
+            100% { transform: scale(1); color: #a51c30; }
+        }
+
+        /* Ghosting */
+        .ghost {
+            width: clamp(40px, 5.5vw, 60px);
+            height: clamp(47px, 6.4vw, 70px);
+            background: #8f304e;
+            border-radius: 30px 30px 0 0;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .ghost {
+            background: #a51c30;
+        }
+        .ghost-bottom {
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 100%;
+            height: 26px;
+            background: transparent;
+            background-image:
+                radial-gradient(circle at 8% 0%, #8f304e 14px, transparent 15px),
+                radial-gradient(circle at 30% 0%, #8f304e 14px, transparent 15px),
+                radial-gradient(circle at 52% 0%, #8f304e 14px, transparent 15px),
+                radial-gradient(circle at 74% 0%, #8f304e 14px, transparent 15%),
+                radial-gradient(circle at 96% 0%, #8f304e 14px, transparent 15%);
+            background-repeat: no-repeat;
+            background-size: 16% 100%;
+            transition: background-image 0.5s ease;
+        }
+        body.harvard-theme .ghost-bottom {
+            background-image:
+                radial-gradient(circle at 8% 0%, #a51c30 14px, transparent 15px),
+                radial-gradient(circle at 30% 0%, #a51c30 14px, transparent 15px),
+                radial-gradient(circle at 52% 0%, #a51c30 14px, transparent 15px),
+                radial-gradient(circle at 74% 0%, #a51c30 14px, transparent 15%),
+                radial-gradient(circle at 96% 0%, #a51c30 14px, transparent 15%);
+        }
+        .ghost .eye {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #e6acbe;
+            border-radius: 50%;
+            top: 22px;
+            box-shadow: 0 0 6px rgba(230,172,190,0.6);
+            transform-origin: center;
+            animation: eye-dart 1s infinite steps(3);
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .ghost .eye {
+            background: #d4a5a5;
+            box-shadow: 0 0 6px rgba(212,165,165,0.6);
+        }
+        .ghost .eye.left { left: 18px; animation-delay: 0s; }
+        .ghost .eye.right { right: 18px; animation-delay: 0s; }
+        @keyframes eye-dart {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-4px); }
+            50% { transform: translateX(0); }
+            75% { transform: translateX(4px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* Knife */
+        .knife-container {
+            position: relative;
+            width: clamp(44px, 6vw, 70px);
+            height: clamp(14px, 1.9vw, 22px);
+            transform: rotate(-8deg);
+        }
+        .knife-handle {
+            width: clamp(9px, 1.2vw, 14px);
+            height: clamp(17px, 2.3vw, 26px);
+            background: #8f304e;
+            position: absolute;
+            border-radius: 2px 4px 4px 2px;
+            top: clamp(-1px, -0.2vw, -2px);
+            right: 0;
+            z-index: 2;
+            box-shadow: 2px 0 0 rgba(0,0,0,0.1);
+            transition: background 0.5s ease;
+        }
+        body.harvard-theme .knife-handle {
+            background: #a51c30;
+        }
+        .knife-blade {
+            position: absolute;
+            width: clamp(35px, 4.8vw, 56px);
+            height: clamp(10px, 1.4vw, 16px);
+            background: linear-gradient(90deg, #ffffff, #e6e6e6, #cfcfcf);
+            top: clamp(2px, 0.3vw, 3px);
+            left: 0;
+            transform: skew(-10deg);
+            border-radius: 2px 0 0 2px;
+            box-shadow: 0 1px 0 rgba(255,255,255,0.6) inset;
+            animation: blade-shimmer 1.6s linear infinite;
+            background-size: 200% 100%;
+            z-index: 1;
+        }
+        @keyframes blade-shimmer {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 0%; }
+            100% { background-position: 0% 0%; }
+        }
+        .sparkle {
+            position: absolute;
+            width: clamp(3px, 0.4vw, 4px);
+            height: clamp(3px, 0.4vw, 4px);
+            background: white;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+            opacity: 0;
+            z-index: 1;
+        }
+        .sparkle:nth-child(1) { top: clamp(3px, 0.4vw, 5px); left: clamp(5px, 0.7vw, 8px); animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: clamp(6px, 0.8vw, 9px); left: clamp(13px, 1.7vw, 20px); animation-delay: 0.4s; }
+        .sparkle:nth-child(3) { top: clamp(2px, 0.3vw, 3px); left: clamp(21px, 2.8vw, 32px); animation-delay: 0.9s; }
+        .sparkle:nth-child(4) { top: clamp(8px, 1.1vw, 12px); left: clamp(32px, 4.3vw, 50px); animation-delay: 1.3s; }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Negative Experiences Reported by Dating App Users</h1>
+        </header>
+
+        <div class="visualization-grid">
+            <!-- Chart 1 -->
+            <div class="chart-container">
+                <h3 class="chart-title">Catfishing / Scammer</h3>
+                <div class="chart-wrapper">
+                    <svg class="chart" viewBox="0 0 140 140">
+                        <circle class="chart-bg" cx="70" cy="70" r="60"></circle>
+                        <circle class="chart-progress" cx="70" cy="70" r="60"></circle>
+                    </svg>
+                    <div class="chart-icon">
+                        <div class="silhouette">
+                            <div class="head"></div>
+                            <div class="hat-brim"></div>
+                            <div class="hat-crown"></div>
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="percentage">52</div>
+            </div>
+
+            <!-- Chart 2 -->
+            <div class="chart-container">
+                <h3 class="chart-title">Unwanted Sexual Images</h3>
+                <div class="chart-wrapper">
+                    <svg class="chart" viewBox="0 0 140 140">
+                        <circle class="chart-bg" cx="70" cy="70" r="60"></circle>
+                        <circle class="chart-progress" cx="70" cy="70" r="60"></circle>
+                    </svg>
+                    <div class="chart-icon">
+                        <div class="lips-container">
+                            <div class="lips"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="percentage">38</div>
+            </div>
+
+            <!-- Chart 3 -->
+            <div class="chart-container">
+                <h3 class="chart-title">Unwanted Contact</h3>
+                <div class="chart-wrapper">
+                    <svg class="chart" viewBox="0 0 140 140">
+                        <circle class="chart-bg" cx="70" cy="70" r="60"></circle>
+                        <circle class="chart-progress" cx="70" cy="70" r="60"></circle>
+                    </svg>
+                    <div class="chart-icon" style="flex-direction: column; gap:6px;">
+                        <div class="wifi-waves" aria-hidden="true">
+                            <div class="wifi-wave"></div>
+                            <div class="wifi-wave"></div>
+                            <div class="wifi-wave"></div>
+                        </div>
+                        <div class="phone" role="img" aria-label="phone icon">
+                            <div class="screen"></div>
+                            <div class="home"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="percentage">30</div>
+            </div>
+
+            <!-- Chart 4 -->
+            <div class="chart-container">
+                <h3 class="chart-title">Offensive Language</h3>
+                <div class="chart-wrapper">
+                    <svg class="chart" viewBox="0 0 140 140">
+                        <circle class="chart-bg" cx="70" cy="70" r="60"></circle>
+                        <circle class="chart-progress" cx="70" cy="70" r="60"></circle>
+                    </svg>
+                    <div class="chart-icon">
+                        <div class="offensive-text">$&^#&$@</div>
+                    </div>
+                </div>
+                <div class="percentage">29</div>
+            </div>
+
+            <!-- Chart 5 -->
+            <div class="chart-container">
+                <h3 class="chart-title">Ghosting</h3>
+                <div class="chart-wrapper">
+                    <svg class="chart" viewBox="0 0 140 140">
+                        <circle class="chart-bg" cx="70" cy="70" r="60"></circle>
+                        <circle class="chart-progress" cx="70" cy="70" r="60"></circle>
+                    </svg>
+                    <div class="chart-icon">
+                        <div class="ghost">
+                            <div class="eye left"></div>
+                            <div class="eye right"></div>
+                            <div class="ghost-bottom"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="percentage">24</div>
+            </div>
+
+            <!-- Chart 6 -->
+            <div class="chart-container">
+                <h3 class="chart-title">Threats of Physical Harm</h3>
+                <div class="chart-wrapper">
+                    <svg class="chart" viewBox="0 0 140 140">
+                        <circle class="chart-bg" cx="70" cy="70" r="60"></circle>
+                        <circle class="chart-progress" cx="70" cy="70" r="60"></circle>
+                    </svg>
+                    <div class="chart-icon">
+                        <div class="knife-container">
+                            <div class="knife-blade">
+                                <div class="sparkle"></div>
+                                <div class="sparkle"></div>
+                                <div class="sparkle"></div>
+                                <div class="sparkle"></div>
+                            </div>
+                            <div class="knife-handle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="percentage">6</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Harvard survey data (simulated since we don't have the actual CSV)
+        // In a real implementation, you would parse the CSV file
+        const harvardData = {
+            "Catfishing / Scammer": 48,
+            "Unwanted Sexual Images": 42,
+            "Unwanted Contact": 35,
+            "Offensive Language": 33,
+            "Ghosting": 28,
+            "Threats of Physical Harm": 9
+        };
+
+        // Current general data (from the existing page)
+        const generalData = {
+            "Catfishing / Scammer": 52,
+            "Unwanted Sexual Images": 38,
+            "Unwanted Contact": 30,
+            "Offensive Language": 29,
+            "Ghosting": 24,
+            "Threats of Physical Harm": 6
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const progressCircles = document.querySelectorAll('.chart-progress');
+            const percentages = document.querySelectorAll('.percentage');
+            const heading = document.querySelector('h1');
+            let isHarvardTheme = false;
+
+            // Initialize with general data
+            updateChartPercentages(generalData);
+            animateCharts();
+
+            // Function to toggle Harvard theme
+            function toggleHarvardTheme() {
+                isHarvardTheme = !isHarvardTheme;
+                
+                if (isHarvardTheme) {
+                    document.body.classList.add('harvard-theme');
+                    heading.textContent = 'Negative Experiences Reported by Harvard Students';
+                    updateChartPercentages(harvardData);
+                } else {
+                    document.body.classList.remove('harvard-theme');
+                    heading.textContent = 'Negative Experiences Reported by Dating App Users';
+                    updateChartPercentages(generalData);
+                }
+                
+                animateCharts();
+            }
+
+            /
