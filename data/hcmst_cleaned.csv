@@ -1,0 +1,2995 @@
+"either_internet","how_long_ago_first_met","how_long_ago_first_romantic","how_long_relationship","married","relationship_quality","relationship_quality_num"
+"Yes",7,7,7,"not married","good",3
+"No",9,8,8,"married","good",3
+"Yes",8,8,8,"not married","good",3
+"No",12,12,12,"not married","good",3
+"No",30,30,30,"married","good",3
+"Yes",3,3,4,"not married","excellent",4
+"No",29,27,27,"not married","excellent",4
+"No",15,15,15,"not married","excellent",4
+"No",16,14,14,"married","excellent",4
+"Yes",14,14,14,"not married","excellent",4
+"Yes",0,0,0.15,"not married","fair",2
+"Yes",19,19,19,"not married","good",3
+"Yes",2,2,2.5,"not married","good",3
+"No",0,0,0.15,"not married","good",3
+"No",13,11,11,"married","excellent",4
+"Yes",4,4,4,"married","good",3
+"No",43,43,43,"married","excellent",4
+"No",13,0,0.45,"not married","excellent",4
+"No",53,46,46,"married","excellent",4
+"No",3,2,2.5,"not married","good",3
+"Yes",0,0,0.45,"not married","good",3
+"Yes",5,5,5,"not married","good",3
+"No",12,12,12,"not married","excellent",4
+"No",10,10,10,"not married","good",3
+"No",3,3,4,"not married","excellent",4
+"No",1,0,0.15,"not married","good",3
+"No",2,1,0.75,"not married","good",3
+"No",7,7,7,"married","excellent",4
+"Yes",1,1,0.75,"not married","excellent",4
+"Yes",1,1,0.75,"not married","good",3
+"No",20,20,20,"married","good",3
+"No",6,6,6,"married","good",3
+"No",37,11,11,"not married","good",3
+"No",39,29,29,"married","very poor",0
+"No",29,29,29,"married","good",3
+"No",5,5,5,"married","excellent",4
+"No",17,16,16,"married","good",3
+"Yes",27,26,26,"married","good",3
+"No",30,30,30,"not married","excellent",4
+"Yes",3,3,2.5,"not married","excellent",4
+"No",26,26,26,"married","good",3
+"No",23,23,23,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",35,35,35,"not married","excellent",4
+"No",15,14,14,"married","good",3
+"No",25,25,25,"married","fair",2
+"No",0,0,0.45,"not married","excellent",4
+"No",43,40,40,"married","excellent",4
+"No",12,11,11,"married","good",3
+"Yes",4,4,4,"not married","excellent",4
+"Yes",3,3,4,"not married","excellent",4
+"No",9,9,9,"not married","good",3
+"Yes",20,19,19,"married","fair",2
+"No",27,27,27,"married","excellent",4
+"No",7,4,4,"not married","good",3
+"No",30,30,30,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",6,5,5,"married","excellent",4
+"No",11,11,11,"not married","good",3
+"Yes",7,7,7,"married","excellent",4
+"Yes",16,14,14,"married","good",3
+"Yes",8,8,8,"married","excellent",4
+"No",20,20,20,"not married","good",3
+"No",21,21,21,"married","excellent",4
+"No",18,7,7,"not married","good",3
+"No",26,24,24,"married","excellent",4
+"No",6,6,6,"not married","fair",2
+"No",7,6,6,"married","excellent",4
+"Yes",3,3,2.5,"married","excellent",4
+"No",1,1,2.5,"married","excellent",4
+"No",39,38,38,"married","excellent",4
+"No",36,36,36,"married","excellent",4
+"Yes",2,2,2.5,"not married","excellent",4
+"Yes",0,0,0.75,"not married","excellent",4
+"No",18,18,18,"not married","excellent",4
+"Yes",1,1,1.5,"not married","good",3
+"No",0,0,2.5,"not married","excellent",4
+"No",32,31,31,"married","excellent",4
+"No",42,39,39,"married","excellent",4
+"No",43,43,43,"not married","excellent",4
+"No",17,17,17,"not married","excellent",4
+"No",41,41,41,"married","excellent",4
+"No",1,0,0.75,"not married","fair",2
+"Yes",19,19,19,"not married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",74,59,59,"married","fair",2
+"No",29,29,29,"married","good",3
+"No",35,35,35,"married","excellent",4
+"Yes",8,8,8,"not married","excellent",4
+"No",11,11,11,"married","good",3
+"Yes",8,8,8,"married","excellent",4
+"No",52,51,51,"not married","excellent",4
+"No",29,29,29,"married","good",3
+"No",0,0,0.15,"not married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",6,5,5,"not married","excellent",4
+"No",24,21,21,"married","excellent",4
+"No",3,3,0.45,"married","good",3
+"No",14,13,13,"married","excellent",4
+"No",49,49,49,"married","good",3
+"No",10,10,10,"not married","excellent",4
+"Yes",2,2,2.5,"not married","excellent",4
+"No",14,14,14,"not married","good",3
+"No",22,22,22,"married","good",3
+"No",17,17,17,"married","excellent",4
+"No",14,14,14,"not married","excellent",4
+"No",1,1,1.5,"not married","good",3
+"No",11,11,11,"married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",2,2,1.5,"not married","excellent",4
+"No",37,36,36,"married","good",3
+"No",11,11,11,"married","good",3
+"Yes",6,6,6,"not married","fair",2
+"No",28,28,28,"married","good",3
+"No",71,71,71,"married","excellent",4
+"No",23,17,17,"not married","good",3
+"No",7,7,7,"married","excellent",4
+"No",36,36,36,"married","excellent",4
+"Yes",2,2,2.5,"not married","fair",2
+"No",40,39,39,"married","good",3
+"No",20,20,20,"married","excellent",4
+"No",37,35,35,"married","excellent",4
+"Yes",14,13,13,"not married","fair",2
+"No",40,40,40,"married","excellent",4
+"Yes",1,0,0.75,"not married","good",3
+"No",32,32,32,"married","excellent",4
+"No",2,2,1.5,"not married","fair",2
+"Yes",0,0,0.45,"not married","excellent",4
+"No",12,12,12,"not married","excellent",4
+"No",11,11,11,"married","excellent",4
+"Yes",1,1,0.75,"not married","excellent",4
+"No",7,5,5,"married","excellent",4
+"No",22,22,22,"not married","good",3
+"No",23,23,23,"married","good",3
+"Yes",31,30,30,"not married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",17,16,16,"not married","good",3
+"No",8,8,8,"married","good",3
+"Yes",38,38,38,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",20,20,20,"married","excellent",4
+"No",4,1,0.05,"not married","good",3
+"Yes",6,6,6,"not married","excellent",4
+"No",42,41,41,"married","excellent",4
+"No",4,1,0.75,"not married","good",3
+"No",23,23,23,"married","good",3
+"No",45,45,45,"married","good",3
+"No",24,21,21,"married","excellent",4
+"No",22,22,22,"not married","good",3
+"No",23,23,23,"married","good",3
+"Yes",13,13,13,"married","excellent",4
+"No",59,58,58,"married","excellent",4
+"No",10,10,10,"not married","good",3
+"No",5,5,5,"not married","excellent",4
+"No",9,1,1.5,"not married","good",3
+"Yes",20,20,20,"married","excellent",4
+"No",65,65,65,"married","excellent",4
+"Yes",4,4,4,"married","excellent",4
+"No",15,15,15,"married","good",3
+"No",23,22,22,"married","excellent",4
+"No",21,21,21,"married","good",3
+"No",15,14,14,"married","excellent",4
+"No",21,20,20,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",0,0,0.05,"not married","good",3
+"No",36,32,32,"not married","excellent",4
+"No",25,14,14,"not married","good",3
+"Yes",15,15,15,"married","fair",2
+"No",31,31,31,"married","excellent",4
+"No",24,24,24,"not married","excellent",4
+"No",45,45,45,"not married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",0,0,0.75,"not married","good",3
+"No",13,12,12,"married","fair",2
+"No",43,43,43,"married","excellent",4
+"No",3,3,4,"married","excellent",4
+"No",2,2,1.5,"not married","good",3
+"No",6,5,5,"married","excellent",4
+"No",15,14,14,"not married","excellent",4
+"Yes",5,1,2.5,"not married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",13,13,13,"not married","fair",2
+"No",25,23,23,"married","excellent",4
+"No",5,5,5,"not married","excellent",4
+"No",14,14,14,"not married","excellent",4
+"No",31,30,30,"married","excellent",4
+"No",51,50,50,"married","excellent",4
+"Yes",1,1,1.5,"not married","very poor",0
+"No",37,37,37,"married","excellent",4
+"Yes",7,7,7,"married","good",3
+"Yes",4,2,2.5,"not married","excellent",4
+"No",12,12,12,"married","excellent",4
+"Yes",13,12,12,"married","excellent",4
+"No",12,11,11,"married","excellent",4
+"Yes",0,0,0.75,"not married","excellent",4
+"No",31,31,31,"married","excellent",4
+"No",2,1,2.5,"not married","good",3
+"Yes",2,2,2.5,"married","good",3
+"Yes",3,3,1.5,"not married","good",3
+"No",12,12,12,"married","good",3
+"No",31,31,31,"married","good",3
+"No",27,22,22,"married","good",3
+"No",16,16,16,"married","good",3
+"No",26,26,26,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",15,9,9,"married","good",3
+"No",26,26,26,"married","good",3
+"No",43,30,30,"not married","excellent",4
+"No",51,50,50,"married","good",3
+"No",20,20,20,"married","excellent",4
+"No",8,8,8,"married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",8,6,6,"not married","excellent",4
+"No",38,38,38,"married","excellent",4
+"No",36,34,34,"not married","good",3
+"Yes",4,4,4,"married","good",3
+"No",20,19,19,"not married","good",3
+"No",29,26,26,"married","excellent",4
+"No",12,9,9,"not married","excellent",4
+"No",10,10,10,"married","poor",1
+"No",19,19,19,"married","excellent",4
+"No",20,17,17,"not married","good",3
+"No",7,5,5,"not married","good",3
+"No",56,56,56,"married","excellent",4
+"No",1,1,0.75,"not married","good",3
+"No",22,15,15,"married","excellent",4
+"No",12,11,11,"married","excellent",4
+"No",8,8,8,"married","good",3
+"No",65,60,60,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",6,6,6,"married","good",3
+"No",10,8,8,"not married","excellent",4
+"No",34,34,34,"married","excellent",4
+"No",61,61,61,"married","excellent",4
+"No",6,4,4,"not married","excellent",4
+"No",28,28,28,"married","very poor",0
+"No",47,46,46,"married","excellent",4
+"No",55,43,43,"married","fair",2
+"No",33,33,33,"married","good",3
+"No",12,11,11,"married","good",3
+"No",18,14,14,"married","very poor",0
+"Yes",8,8,8,"not married","excellent",4
+"Yes",2,2,2.5,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",4,4,4,"married","excellent",4
+"No",12,9,9,"married","excellent",4
+"No",29,23,23,"married","good",3
+"No",11,11,11,"not married","excellent",4
+"No",57,54,54,"married","excellent",4
+"No",28,28,28,"married","good",3
+"No",8,8,8,"married","excellent",4
+"No",0,0,0.45,"married","fair",2
+"No",12,12,12,"married","excellent",4
+"No",43,43,43,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",19,15,15,"married","excellent",4
+"No",16,16,16,"married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"Yes",1,1,0.75,"not married","excellent",4
+"Yes",2,2,2.5,"married","fair",2
+"No",28,27,27,"married","excellent",4
+"No",52,51,51,"married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",8,8,8,"not married","fair",2
+"No",18,18,18,"married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",65,65,65,"married","excellent",4
+"No",8,8,8,"not married","excellent",4
+"No",28,28,28,"married","good",3
+"No",19,19,19,"married","good",3
+"No",20,20,20,"married","good",3
+"No",36,36,36,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",61,61,61,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",3,2,2.5,"married","good",3
+"No",15,15,15,"married","good",3
+"No",43,42,42,"married","excellent",4
+"Yes",6,6,6,"not married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",15,15,15,"not married","good",3
+"No",19,19,19,"married","excellent",4
+"Yes",12,12,12,"not married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",31,31,31,"married","good",3
+"No",36,36,36,"married","excellent",4
+"No",7,7,7,"not married","good",3
+"No",69,6,6,"not married","good",3
+"No",3,1,0.75,"not married","good",3
+"No",19,19,19,"married","excellent",4
+"No",16,8,8,"married","good",3
+"No",3,3,4,"married","good",3
+"No",10,9,9,"not married","excellent",4
+"No",26,26,26,"not married","excellent",4
+"No",37,37,37,"married","fair",2
+"No",35,35,35,"married","good",3
+"Yes",13,12,12,"not married","excellent",4
+"No",36,36,36,"married","excellent",4
+"No",35,34,34,"married","good",3
+"No",46,44,44,"married","excellent",4
+"No",7,7,7,"married","good",3
+"No",3,2,2.5,"not married","excellent",4
+"No",3,3,2.5,"not married","excellent",4
+"Yes",0,0,0.05,"not married","excellent",4
+"Yes",2,2,1.5,"not married","excellent",4
+"Yes",2,2,4,"married","excellent",4
+"No",7,7,7,"not married","good",3
+"No",55,55,55,"married","excellent",4
+"No",24,21,21,"married","excellent",4
+"No",10,1,1.5,"not married","good",3
+"No",30,29,29,"married","excellent",4
+"No",19,15,15,"married","excellent",4
+"No",17,17,17,"married","good",3
+"Yes",5,4,4,"not married","good",3
+"No",12,12,12,"not married","excellent",4
+"No",61,58,58,"married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",22,22,22,"married","excellent",4
+"No",35,35,35,"married","excellent",4
+"No",20,20,20,"married","very poor",0
+"No",19,16,16,"married","good",3
+"No",24,5,5,"married","excellent",4
+"No",58,55,55,"married","excellent",4
+"No",36,36,36,"married","excellent",4
+"Yes",0,0,0.75,"not married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",63,63,63,"married","excellent",4
+"No",17,17,17,"married","good",3
+"No",4,2,1.5,"not married","excellent",4
+"No",41,19,19,"married","good",3
+"No",3,3,4,"not married","good",3
+"No",21,5,5,"married","excellent",4
+"No",27,25,25,"married","excellent",4
+"No",16,12,12,"married","excellent",4
+"No",5,3,4,"not married","excellent",4
+"No",4,2,4,"not married","excellent",4
+"No",13,12,12,"married","good",3
+"No",29,29,29,"married","excellent",4
+"Yes",3,0,0.75,"not married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",17,15,15,"married","fair",2
+"No",2,1,1.5,"not married","good",3
+"No",18,17,17,"married","fair",2
+"No",13,13,13,"not married","good",3
+"No",18,18,18,"married","excellent",4
+"No",30,30,30,"married","excellent",4
+"No",29,28,28,"not married","excellent",4
+"No",2,2,1.5,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",35,35,35,"married","excellent",4
+"No",11,11,11,"married","good",3
+"No",17,17,17,"married","excellent",4
+"No",28,28,28,"married","fair",2
+"No",22,22,22,"married","excellent",4
+"No",45,45,45,"married","good",3
+"No",12,11,11,"married","excellent",4
+"No",20,19,19,"married","good",3
+"No",37,37,37,"married","excellent",4
+"Yes",1,1,0.75,"not married","good",3
+"No",16,13,13,"married","excellent",4
+"No",5,3,2.5,"not married","excellent",4
+"No",35,35,35,"married","good",3
+"No",15,15,15,"married","excellent",4
+"No",31,30,30,"married","excellent",4
+"No",42,42,42,"married","excellent",4
+"No",12,10,10,"married","good",3
+"No",18,18,18,"married","fair",2
+"No",37,37,37,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",2,0,0.15,"not married","excellent",4
+"No",36,36,36,"married","fair",2
+"No",2,1,1.5,"not married","good",3
+"No",39,39,39,"married","good",3
+"Yes",6,6,6,"married","excellent",4
+"Yes",6,6,6,"married","good",3
+"No",6,5,5,"married","excellent",4
+"No",55,55,55,"married","excellent",4
+"No",3,3,4,"not married","good",3
+"No",14,14,14,"married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"No",11,11,11,"not married","excellent",4
+"No",41,40,40,"married","poor",1
+"Yes",1,1,0.75,"not married","fair",2
+"No",31,31,31,"married","good",3
+"No",5,5,5,"not married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",75,68,68,"married","good",3
+"No",29,28,28,"married","poor",1
+"No",35,21,21,"married","good",3
+"No",14,14,14,"married","good",3
+"No",16,16,16,"married","excellent",4
+"No",48,47,47,"married","excellent",4
+"No",7,4,4,"married","good",3
+"Yes",3,3,4,"not married","good",3
+"No",76,76,76,"married","excellent",4
+"No",1,0,1.5,"not married","excellent",4
+"No",21,21,21,"not married","good",3
+"No",20,20,20,"not married","fair",2
+"No",50,50,50,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",21,21,21,"not married","good",3
+"No",17,17,17,"married","good",3
+"No",3,2,1.5,"not married","fair",2
+"No",6,4,4,"not married","good",3
+"No",57,56,56,"married","excellent",4
+"No",17,17,17,"married","good",3
+"Yes",6,6,6,"married","good",3
+"No",20,20,20,"not married","good",3
+"No",66,66,66,"married","excellent",4
+"No",23,23,23,"married","good",3
+"Yes",4,4,4,"not married","excellent",4
+"Yes",11,11,11,"not married","excellent",4
+"No",6,5,5,"married","good",3
+"No",29,29,29,"married","excellent",4
+"No",27,25,25,"married","good",3
+"No",49,49,49,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",51,48,48,"married","excellent",4
+"No",22,21,21,"married","excellent",4
+"No",50,49,49,"married","excellent",4
+"No",8,6,6,"not married","excellent",4
+"No",0,0,0.05,"not married","excellent",4
+"No",7,5,5,"not married","excellent",4
+"No",14,14,14,"not married","good",3
+"No",0,0,0.75,"not married","good",3
+"No",8,8,8,"married","good",3
+"No",2,2,2.5,"not married","excellent",4
+"Yes",0,0,0.45,"not married","excellent",4
+"No",8,8,8,"not married","good",3
+"Yes",9,9,9,"married","good",3
+"No",21,20,20,"not married","excellent",4
+"No",11,11,11,"not married","excellent",4
+"No",3,3,4,"not married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",2,2,1.5,"married","good",3
+"Yes",0,0,0.05,"not married","good",3
+"No",24,24,24,"not married","excellent",4
+"No",6,6,6,"not married","poor",1
+"Yes",3,3,4,"not married","excellent",4
+"No",28,28,28,"married","good",3
+"No",16,15,15,"married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",37,35,35,"not married","excellent",4
+"No",3,1,1.5,"not married","excellent",4
+"No",0,0,0.75,"not married","good",3
+"No",0,0,0.05,"not married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",28,26,26,"married","excellent",4
+"No",2,1,1.5,"married","excellent",4
+"No",21,21,21,"not married","excellent",4
+"No",22,22,22,"married","excellent",4
+"No",15,11,11,"not married","good",3
+"No",17,17,17,"married","good",3
+"No",60,60,60,"married","good",3
+"No",60,59,59,"married","excellent",4
+"No",46,13,13,"married","fair",2
+"No",7,6,6,"not married","fair",2
+"No",5,5,5,"married","excellent",4
+"No",10,8,8,"not married","excellent",4
+"No",21,21,21,"married","good",3
+"Yes",1,NA,NA,"not married","good",3
+"No",33,33,33,"married","excellent",4
+"No",12,7,7,"married","excellent",4
+"No",16,13,13,"married","excellent",4
+"Yes",9,9,9,"not married","excellent",4
+"No",38,38,38,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",13,10,10,"married","excellent",4
+"No",21,20,20,"married","fair",2
+"No",9,9,9,"not married","good",3
+"No",21,21,21,"not married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",1,1,1.5,"married","excellent",4
+"No",14,14,14,"married","good",3
+"No",13,13,13,"married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",15,13,13,"married","excellent",4
+"No",19,18,18,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",55,3,4,"not married","good",3
+"Yes",7,7,7,"married","good",3
+"No",23,23,23,"married","excellent",4
+"No",21,21,21,"not married","excellent",4
+"No",62,60,60,"married","excellent",4
+"No",49,44,44,"married","excellent",4
+"No",8,7,7,"not married","excellent",4
+"No",14,5,5,"married","excellent",4
+"No",11,11,11,"married","good",3
+"No",18,18,18,"married","good",3
+"No",31,31,31,"not married","good",3
+"No",7,6,6,"not married","excellent",4
+"No",11,11,11,"not married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",9,9,9,"married","poor",1
+"No",2,1,0.75,"not married","fair",2
+"Yes",15,NA,NA,"married","excellent",4
+"No",34,32,32,"married","fair",2
+"No",4,4,4,"not married","good",3
+"No",2,2,2.5,"not married","good",3
+"No",36,36,36,"married","excellent",4
+"No",26,0,1.5,"not married","good",3
+"No",8,8,8,"married","excellent",4
+"No",7,4,4,"not married","fair",2
+"No",57,54,54,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",9,7,7,"not married","good",3
+"No",48,48,48,"married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",23,23,23,"married","excellent",4
+"No",28,28,28,"not married","excellent",4
+"No",41,41,41,"married","excellent",4
+"No",7,7,7,"married","good",3
+"Yes",2,2,2.5,"not married","excellent",4
+"No",69,69,69,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"Yes",2,2,2.5,"not married","excellent",4
+"No",43,17,17,"married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",23,23,23,"married","excellent",4
+"No",38,37,37,"married","excellent",4
+"No",7,7,7,"not married","excellent",4
+"No",1,0,0.75,"not married","excellent",4
+"Yes",2,2,2.5,"not married","excellent",4
+"No",9,9,9,"not married","excellent",4
+"Yes",1,1,0.45,"not married","excellent",4
+"No",41,41,41,"married","excellent",4
+"Yes",4,1,1.5,"not married","excellent",4
+"No",0,0,0.15,"not married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",20,18,18,"married","good",3
+"No",12,10,10,"married","excellent",4
+"No",34,34,34,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"Yes",2,2,2.5,"married","excellent",4
+"No",14,13,13,"married","good",3
+"No",13,13,13,"married","excellent",4
+"No",27,25,25,"not married","excellent",4
+"No",14,14,14,"married","good",3
+"No",30,30,30,"married","good",3
+"No",63,58,58,"married","excellent",4
+"Yes",9,9,9,"married","excellent",4
+"No",42,42,42,"married","excellent",4
+"No",13,13,13,"married","very poor",0
+"No",53,53,53,"married","fair",2
+"No",2,2,1.5,"not married","good",3
+"No",22,14,14,"not married","good",3
+"No",3,3,4,"not married","fair",2
+"No",14,3,2.5,"not married","excellent",4
+"Yes",4,4,4,"married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",3,3,2.5,"not married","good",3
+"No",23,23,23,"married","excellent",4
+"No",41,34,34,"married","excellent",4
+"No",0,0,0.15,"not married","poor",1
+"No",29,26,26,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",1,1,1.5,"not married","good",3
+"No",34,34,34,"married","good",3
+"No",5,5,5,"not married","very poor",0
+"No",31,18,18,"married","fair",2
+"No",22,21,21,"not married","good",3
+"No",12,12,12,"not married","excellent",4
+"No",1,1,1.5,"not married","fair",2
+"No",12,12,12,"married","excellent",4
+"No",39,39,39,"married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",5,5,5,"not married","excellent",4
+"No",56,22,22,"married","excellent",4
+"No",33,19,19,"married","excellent",4
+"No",1,1,0.45,"not married","fair",2
+"No",8,8,8,"married","excellent",4
+"No",10,10,10,"not married","excellent",4
+"No",14,12,12,"married","fair",2
+"No",5,0,0.15,"not married","good",3
+"No",40,27,27,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",16,16,16,"not married","good",3
+"No",43,42,42,"not married","good",3
+"No",25,25,25,"married","excellent",4
+"Yes",1,1,0.05,"not married","excellent",4
+"Yes",1,1,0.45,"not married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",6,6,6,"married","good",3
+"No",27,27,27,"married","fair",2
+"No",26,25,25,"married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"Yes",26,26,26,"not married","excellent",4
+"No",19,19,19,"married","good",3
+"No",29,29,29,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",5,5,5,"married","good",3
+"No",35,35,35,"married","excellent",4
+"No",11,10,10,"not married","good",3
+"No",25,25,25,"married","good",3
+"No",10,10,10,"married","good",3
+"No",10,10,10,"married","good",3
+"Yes",8,8,8,"not married","poor",1
+"No",23,20,20,"not married","fair",2
+"No",21,21,21,"married","good",3
+"No",48,48,48,"married","good",3
+"No",55,55,55,"married","excellent",4
+"No",9,7,7,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",25,25,25,"married","excellent",4
+"No",38,38,38,"married","excellent",4
+"No",54,54,54,"married","fair",2
+"No",49,48,48,"married","excellent",4
+"No",53,49,49,"married","excellent",4
+"No",2,2,4,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",28,28,28,"married","good",3
+"No",35,35,35,"married","good",3
+"No",34,33,33,"married","good",3
+"No",19,19,19,"married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",37,23,23,"not married","excellent",4
+"Yes",6,6,6,"not married","good",3
+"No",9,9,9,"married","good",3
+"No",14,14,14,"married","good",3
+"No",9,9,9,"married","excellent",4
+"No",4,4,4,"married","good",3
+"No",34,34,34,"married","excellent",4
+"No",53,53,53,"married","good",3
+"No",10,10,10,"married","excellent",4
+"No",58,57,57,"married","good",3
+"No",30,22,22,"married","fair",2
+"No",25,25,25,"married","excellent",4
+"No",10,6,6,"married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",51,51,51,"married","good",3
+"No",14,14,14,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",17,16,16,"married","excellent",4
+"No",32,32,32,"married","excellent",4
+"No",44,44,44,"married","good",3
+"No",60,59,59,"married","good",3
+"No",40,40,40,"married","excellent",4
+"No",55,54,54,"married","excellent",4
+"No",18,16,16,"not married","excellent",4
+"No",7,7,7,"married","good",3
+"No",44,39,39,"married","excellent",4
+"No",26,24,24,"married","excellent",4
+"No",24,16,16,"married","excellent",4
+"No",39,38,38,"married","excellent",4
+"No",17,17,17,"not married","excellent",4
+"No",19,19,19,"not married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",0,0,0.75,"not married","good",3
+"No",10,10,10,"not married","fair",2
+"No",31,31,31,"married","excellent",4
+"No",4,4,4,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",60,60,60,"married","excellent",4
+"No",43,42,42,"married","excellent",4
+"No",45,45,45,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",2,2,2.5,"not married","excellent",4
+"No",10,10,10,"not married","good",3
+"No",16,16,16,"not married","excellent",4
+"No",2,0,0.45,"not married","good",3
+"No",11,8,8,"not married","excellent",4
+"No",34,33,33,"married","excellent",4
+"No",34,27,27,"married","excellent",4
+"Yes",2,1,1.5,"not married","good",3
+"Yes",5,5,5,"not married","excellent",4
+"No",9,9,9,"married","good",3
+"No",26,24,24,"married","good",3
+"No",65,65,65,"married","fair",2
+"No",10,10,10,"married","excellent",4
+"No",27,27,27,"married","excellent",4
+"No",3,3,2.5,"not married","excellent",4
+"No",55,55,55,"married","excellent",4
+"No",17,17,17,"not married","excellent",4
+"No",16,16,16,"not married","excellent",4
+"No",22,5,5,"not married","good",3
+"No",35,35,35,"married","excellent",4
+"No",3,2,4,"not married","excellent",4
+"No",31,3,4,"not married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",18,18,18,"not married","good",3
+"Yes",10,10,10,"married","excellent",4
+"No",16,5,5,"married","excellent",4
+"No",7,2,4,"not married","good",3
+"No",47,45,45,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",29,29,29,"married","good",3
+"No",31,31,31,"married","excellent",4
+"No",36,34,34,"married","excellent",4
+"No",20,20,20,"not married","good",3
+"No",37,37,37,"married","poor",1
+"No",15,15,15,"married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",4,3,4,"married","fair",2
+"No",48,48,48,"married","excellent",4
+"No",8,3,4,"not married","excellent",4
+"No",44,44,44,"married","excellent",4
+"No",7,6,6,"married","excellent",4
+"No",33,33,33,"married","excellent",4
+"No",45,45,45,"married","excellent",4
+"No",4,0,0.75,"not married","good",3
+"No",33,32,32,"married","excellent",4
+"No",42,42,42,"married","excellent",4
+"No",15,14,14,"married","excellent",4
+"Yes",10,8,8,"married","fair",2
+"No",14,14,14,"married","good",3
+"No",10,10,10,"not married","fair",2
+"No",38,38,38,"married","excellent",4
+"No",13,13,13,"married","good",3
+"No",6,6,6,"married","excellent",4
+"No",24,24,24,"married","good",3
+"No",3,3,4,"married","excellent",4
+"No",3,3,4,"not married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",2,1,4,"not married","good",3
+"No",60,0,1.5,"not married","good",3
+"No",31,31,31,"married","excellent",4
+"No",12,12,12,"married","fair",2
+"No",44,44,44,"married","fair",2
+"No",28,28,28,"not married","excellent",4
+"No",56,55,55,"married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",29,28,28,"not married","good",3
+"No",42,42,42,"married","excellent",4
+"No",56,55,55,"married","excellent",4
+"No",5,4,4,"not married","good",3
+"No",66,59,59,"married","good",3
+"No",0,0,0.75,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",61,61,61,"married","excellent",4
+"No",13,13,13,"married","fair",2
+"No",22,20,20,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",1,0,0.45,"not married","excellent",4
+"No",44,44,44,"married","excellent",4
+"Yes",11,11,11,"married","fair",2
+"No",13,13,13,"not married","excellent",4
+"No",65,65,65,"married","excellent",4
+"No",36,32,32,"married","good",3
+"No",22,22,22,"married","excellent",4
+"No",2,2,1.5,"not married","excellent",4
+"No",61,61,61,"married","fair",2
+"No",20,20,20,"not married","good",3
+"No",7,7,7,"married","good",3
+"No",22,22,22,"married","fair",2
+"No",35,35,35,"married","very poor",0
+"No",14,14,14,"married","excellent",4
+"No",56,50,50,"married","excellent",4
+"No",20,20,20,"married","excellent",4
+"Yes",2,2,1.5,"not married","good",3
+"No",47,47,47,"married","excellent",4
+"No",27,27,27,"not married","good",3
+"No",53,53,53,"married","fair",2
+"Yes",2,2,0.45,"not married","excellent",4
+"No",28,28,28,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",50,50,50,"married","excellent",4
+"Yes",4,3,4,"not married","good",3
+"No",12,12,12,"not married","good",3
+"No",13,10,10,"married","fair",2
+"No",70,70,70,"married","excellent",4
+"No",29,29,29,"married","excellent",4
+"No",49,49,49,"married","good",3
+"No",31,31,31,"married","excellent",4
+"Yes",0,0,0.15,"not married","excellent",4
+"No",43,43,43,"married","good",3
+"No",3,0,0.45,"not married","excellent",4
+"No",29,29,29,"married","good",3
+"No",34,34,34,"married","excellent",4
+"No",15,15,15,"married","good",3
+"No",12,12,12,"not married","good",3
+"No",10,10,10,"not married","good",3
+"No",30,29,29,"married","excellent",4
+"No",51,50,50,"married","excellent",4
+"No",47,47,47,"married","excellent",4
+"Yes",3,3,2.5,"not married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",5,5,5,"married","excellent",4
+"Yes",8,8,8,"not married","excellent",4
+"No",60,60,60,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",16,16,16,"married","excellent",4
+"No",54,54,54,"married","excellent",4
+"No",15,14,14,"not married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",8,8,8,"married","good",3
+"No",3,2,4,"married","excellent",4
+"No",59,59,59,"married","excellent",4
+"No",17,17,17,"not married","good",3
+"No",23,22,22,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",40,36,36,"married","excellent",4
+"No",15,15,15,"not married","good",3
+"No",7,3,4,"not married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",0,0,0.45,"not married","fair",2
+"No",25,24,24,"married","excellent",4
+"No",29,28,28,"married","excellent",4
+"No",4,3,4,"not married","fair",2
+"No",3,3,2.5,"not married","excellent",4
+"Yes",6,6,6,"not married","fair",2
+"No",37,37,37,"married","excellent",4
+"No",55,53,53,"married","excellent",4
+"No",37,37,37,"not married","good",3
+"No",3,2,4,"not married","excellent",4
+"No",2,2,2.5,"not married","good",3
+"No",15,15,15,"married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",51,51,51,"married","excellent",4
+"No",48,42,42,"married","excellent",4
+"No",72,70,70,"married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",37,37,37,"not married","excellent",4
+"Yes",2,2,1.5,"not married","excellent",4
+"No",29,29,29,"married","excellent",4
+"No",62,57,57,"married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",3,3,4,"not married","excellent",4
+"No",62,62,62,"married","excellent",4
+"Yes",1,1,0.75,"not married","excellent",4
+"No",12,10,10,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"Yes",2,2,2.5,"married","excellent",4
+"Yes",9,1,4,"not married","excellent",4
+"No",18,17,17,"married","fair",2
+"No",5,5,5,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",26,24,24,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",15,15,15,"not married","excellent",4
+"No",40,39,39,"married","excellent",4
+"No",2,2,2.5,"not married","good",3
+"No",6,4,4,"married","excellent",4
+"No",3,1,1.5,"not married","excellent",4
+"No",53,53,53,"married","excellent",4
+"Yes",7,7,7,"married","excellent",4
+"Yes",1,1,0.75,"not married","good",3
+"No",29,29,29,"not married","good",3
+"No",32,32,32,"married","excellent",4
+"Yes",3,3,4,"not married","excellent",4
+"Yes",0,0,0.15,"not married","good",3
+"No",6,6,6,"married","excellent",4
+"No",60,54,54,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",59,58,58,"married","excellent",4
+"No",2,2,2.5,"not married","excellent",4
+"No",52,52,52,"married","excellent",4
+"No",8,6,6,"not married","good",3
+"No",3,3,2.5,"not married","good",3
+"No",15,13,13,"married","excellent",4
+"No",57,57,57,"married","excellent",4
+"No",3,0,0.75,"not married","excellent",4
+"No",24,17,17,"married","excellent",4
+"No",11,11,11,"not married","fair",2
+"No",52,52,52,"married","excellent",4
+"No",23,18,18,"married","excellent",4
+"No",2,2,1.5,"not married","fair",2
+"No",51,51,51,"married","excellent",4
+"No",36,36,36,"married","good",3
+"No",4,4,4,"not married","good",3
+"No",62,61,61,"married","excellent",4
+"No",54,54,54,"married","fair",2
+"No",12,8,8,"married","excellent",4
+"No",26,24,24,"not married","excellent",4
+"No",1,1,0.75,"not married","excellent",4
+"No",14,9,9,"married","good",3
+"No",46,46,46,"married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",2,1,1.5,"not married","good",3
+"No",15,3,4,"not married","excellent",4
+"No",8,8,8,"not married","fair",2
+"No",15,15,15,"married","excellent",4
+"No",6,6,6,"not married","good",3
+"No",8,7,7,"not married","good",3
+"No",16,15,15,"married","fair",2
+"No",20,20,20,"married","good",3
+"No",25,25,25,"married","good",3
+"No",37,37,37,"married","excellent",4
+"No",31,31,31,"married","excellent",4
+"No",41,40,40,"married","fair",2
+"No",35,35,35,"married","excellent",4
+"No",23,23,23,"not married","excellent",4
+"No",48,41,41,"married","excellent",4
+"Yes",10,10,10,"not married","good",3
+"No",4,4,4,"married","good",3
+"No",58,58,58,"married","excellent",4
+"No",5,3,4,"not married","excellent",4
+"No",20,18,18,"married","good",3
+"No",40,40,40,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"Yes",3,3,2.5,"not married","excellent",4
+"No",27,23,23,"married","excellent",4
+"No",39,39,39,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",38,38,38,"not married","good",3
+"No",14,14,14,"married","good",3
+"No",0,0,0.05,"not married","good",3
+"No",39,39,39,"married","good",3
+"No",55,54,54,"married","excellent",4
+"No",3,2,1.5,"not married","excellent",4
+"No",1,1,0.75,"not married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",29,29,29,"married","excellent",4
+"No",1,1,0.75,"not married","good",3
+"No",17,17,17,"married","excellent",4
+"No",2,1,0.45,"not married","good",3
+"No",31,31,31,"married","good",3
+"No",3,1,0.05,"not married","good",3
+"No",17,17,17,"married","good",3
+"No",13,13,13,"married","good",3
+"No",62,62,62,"married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",13,12,12,"married","excellent",4
+"No",0,0,0.15,"not married","excellent",4
+"No",26,15,15,"married","excellent",4
+"Yes",17,17,17,"married","excellent",4
+"No",13,8,8,"married","good",3
+"No",21,21,21,"married","excellent",4
+"No",37,36,36,"not married","good",3
+"No",1,0,0.45,"not married","excellent",4
+"No",29,27,27,"married","excellent",4
+"No",24,15,15,"married","excellent",4
+"No",26,26,26,"not married","good",3
+"No",48,48,48,"married","excellent",4
+"No",10,9,9,"married","good",3
+"No",2,2,1.5,"not married","excellent",4
+"No",37,37,37,"not married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",46,43,43,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",37,36,36,"married","good",3
+"No",61,NA,NA,"married","excellent",4
+"No",9,9,9,"not married","excellent",4
+"No",24,9,9,"not married","good",3
+"No",16,16,16,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",29,29,29,"married","good",3
+"No",15,15,15,"married","excellent",4
+"No",14,14,14,"not married","good",3
+"No",46,46,46,"married","excellent",4
+"No",38,37,37,"married","good",3
+"No",27,27,27,"married","excellent",4
+"No",9,7,7,"married","excellent",4
+"No",11,10,10,"not married","fair",2
+"No",26,26,26,"married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",35,35,35,"not married","good",3
+"No",39,39,39,"married","excellent",4
+"No",59,59,59,"married","excellent",4
+"No",39,30,30,"married","poor",1
+"No",34,34,34,"married","excellent",4
+"No",38,38,38,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",50,49,49,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"Yes",20,0,0.15,"not married","good",3
+"No",19,11,11,"married","very poor",0
+"No",31,29,29,"married","good",3
+"No",9,9,9,"married","good",3
+"No",12,12,12,"not married","excellent",4
+"No",13,10,10,"married","excellent",4
+"No",10,10,10,"not married","good",3
+"Yes",1,1,0.75,"not married","excellent",4
+"No",3,2,1.5,"not married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",42,41,41,"married","excellent",4
+"No",31,29,29,"married","good",3
+"Yes",3,3,4,"married","excellent",4
+"No",63,63,63,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",55,54,54,"married","excellent",4
+"Yes",7,2,1.5,"not married","excellent",4
+"Yes",1,0,0.45,"not married","excellent",4
+"No",8,7,7,"married","good",3
+"No",8,8,8,"not married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",25,25,25,"married","excellent",4
+"No",64,64,64,"married","excellent",4
+"Yes",1,0,0.05,"married","good",3
+"No",1,1,0.75,"not married","good",3
+"No",0,0,0.05,"not married","good",3
+"No",15,15,15,"not married","excellent",4
+"No",2,1,0.75,"not married","good",3
+"No",6,6,6,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",51,49,49,"married","excellent",4
+"No",2,1,0.15,"not married","excellent",4
+"No",5,2,0.75,"not married","good",3
+"No",25,25,25,"not married","good",3
+"Yes",8,8,8,"not married","excellent",4
+"No",5,4,4,"married","good",3
+"No",15,15,15,"married","excellent",4
+"Yes",9,8,8,"not married","excellent",4
+"No",1,1,1.5,"not married","fair",2
+"No",41,41,41,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",54,54,54,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",25,25,25,"not married","good",3
+"No",19,19,19,"married","excellent",4
+"No",2,0,0.75,"not married","excellent",4
+"No",22,21,21,"married","excellent",4
+"No",36,0,0.15,"not married","fair",2
+"No",15,15,15,"married","excellent",4
+"No",5,5,5,"not married","fair",2
+"Yes",4,4,4,"not married","good",3
+"No",21,21,21,"married","good",3
+"No",5,5,5,"married","excellent",4
+"No",15,15,15,"married","good",3
+"No",20,20,20,"married","good",3
+"No",3,3,4,"married","excellent",4
+"No",64,63,63,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",32,32,32,"married","excellent",4
+"No",4,4,4,"married","good",3
+"No",55,51,51,"married","excellent",4
+"No",32,32,32,"married","excellent",4
+"No",17,17,17,"married","very poor",0
+"No",3,3,2.5,"married","excellent",4
+"No",13,12,12,"married","excellent",4
+"No",10,9,9,"not married","excellent",4
+"No",16,7,7,"not married","good",3
+"No",54,54,54,"married","good",3
+"Yes",8,8,8,"not married","good",3
+"Yes",3,2,2.5,"not married","excellent",4
+"No",10,6,6,"married","excellent",4
+"No",0,0,0.45,"not married","excellent",4
+"Yes",1,1,1.5,"not married","excellent",4
+"No",12,12,12,"married","excellent",4
+"No",8,8,8,"married","very poor",0
+"No",41,41,41,"married","good",3
+"No",14,14,14,"married","good",3
+"No",32,32,32,"married","excellent",4
+"No",61,61,61,"married","fair",2
+"No",63,63,63,"married","excellent",4
+"Yes",6,6,6,"married","excellent",4
+"No",32,22,22,"married","excellent",4
+"No",52,51,51,"married","excellent",4
+"No",16,16,16,"married","good",3
+"No",2,2,2.5,"not married","fair",2
+"No",66,64,64,"married","good",3
+"No",52,48,48,"married","fair",2
+"Yes",4,4,4,"not married","good",3
+"No",21,7,7,"not married","excellent",4
+"No",17,16,16,"married","excellent",4
+"No",48,48,48,"married","fair",2
+"No",8,7,7,"married","excellent",4
+"No",11,10,10,"married","excellent",4
+"No",55,55,55,"married","good",3
+"No",10,8,8,"married","excellent",4
+"Yes",3,3,2.5,"not married","excellent",4
+"No",32,23,23,"married","excellent",4
+"No",4,3,4,"not married","excellent",4
+"No",3,3,2.5,"not married","fair",2
+"No",15,15,15,"married","excellent",4
+"No",5,5,5,"not married","fair",2
+"No",67,27,27,"married","excellent",4
+"No",3,2,1.5,"not married","good",3
+"No",0,0,0.15,"not married","good",3
+"No",2,2,2.5,"not married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",13,12,12,"not married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",8,8,8,"married","good",3
+"No",24,24,24,"not married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",20,16,16,"not married","excellent",4
+"No",4,4,4,"married","poor",1
+"No",35,NA,NA,"married","excellent",4
+"No",28,28,28,"married","fair",2
+"No",15,14,14,"not married","excellent",4
+"No",32,32,32,"not married","excellent",4
+"No",43,43,43,"married","excellent",4
+"No",30,30,30,"married","good",3
+"No",45,44,44,"married","good",3
+"No",5,5,5,"not married","good",3
+"No",30,26,26,"married","good",3
+"Yes",9,9,9,"married","good",3
+"No",25,24,24,"married","excellent",4
+"Yes",2,1,1.5,"not married","fair",2
+"No",20,20,20,"married","excellent",4
+"No",9,9,9,"not married","fair",2
+"No",28,28,28,"married","excellent",4
+"No",2,2,1.5,"not married","good",3
+"No",46,46,46,"married","excellent",4
+"No",59,49,49,"married","excellent",4
+"No",1,1,2.5,"not married","good",3
+"No",3,2,1.5,"not married","excellent",4
+"No",3,1,0.15,"not married","good",3
+"No",7,7,7,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",40,40,40,"married","excellent",4
+"No",8,5,5,"married","excellent",4
+"Yes",3,3,4,"married","excellent",4
+"No",8,7,7,"not married","fair",2
+"No",56,54,54,"married","excellent",4
+"No",33,33,33,"married","good",3
+"No",19,6,6,"married","excellent",4
+"Yes",4,4,4,"not married","excellent",4
+"No",46,43,43,"married","excellent",4
+"No",16,13,13,"married","good",3
+"No",45,45,45,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",21,20,20,"married","good",3
+"No",15,14,14,"married","good",3
+"No",27,16,16,"married","excellent",4
+"Yes",0,0,0.05,"not married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",16,16,16,"married","good",3
+"No",27,26,26,"married","good",3
+"No",14,14,14,"married","fair",2
+"No",19,19,19,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",5,5,5,"not married","excellent",4
+"No",6,6,6,"married","good",3
+"No",9,8,8,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",22,22,22,"married","poor",1
+"No",8,8,8,"not married","excellent",4
+"No",39,38,38,"not married","excellent",4
+"No",27,26,26,"married","excellent",4
+"No",55,55,55,"married","excellent",4
+"Yes",0,0,0.15,"not married","excellent",4
+"No",6,6,6,"not married","good",3
+"No",71,69,69,"married","excellent",4
+"Yes",8,8,8,"married","excellent",4
+"No",28,28,28,"married","excellent",4
+"No",40,39,39,"married","excellent",4
+"No",11,11,11,"not married","excellent",4
+"No",2,1,2.5,"not married","excellent",4
+"No",3,3,4,"not married","excellent",4
+"No",35,35,35,"married","excellent",4
+"No",9,8,8,"not married","good",3
+"No",5,5,5,"not married","good",3
+"No",14,14,14,"married","excellent",4
+"No",6,6,6,"married","fair",2
+"No",6,6,6,"married","excellent",4
+"No",50,50,50,"married","excellent",4
+"Yes",9,9,9,"married","good",3
+"No",11,4,4,"not married","excellent",4
+"No",12,9,9,"not married","good",3
+"No",13,12,12,"not married","fair",2
+"No",16,16,16,"married","good",3
+"No",20,20,20,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",44,NA,NA,"married","excellent",4
+"No",39,37,37,"married","good",3
+"No",6,6,6,"married","excellent",4
+"No",19,17,17,"married","excellent",4
+"No",12,6,6,"married","excellent",4
+"Yes",1,1,0.75,"not married","excellent",4
+"No",18,18,18,"married","excellent",4
+"No",2,2,2.5,"not married","excellent",4
+"No",12,11,11,"married","excellent",4
+"No",4,4,4,"not married","good",3
+"No",3,3,4,"not married","good",3
+"No",6,6,6,"not married","fair",2
+"No",42,41,41,"married","good",3
+"No",52,49,49,"married","excellent",4
+"Yes",13,13,13,"married","good",3
+"No",13,11,11,"married","excellent",4
+"No",44,43,43,"married","good",3
+"No",19,19,19,"not married","good",3
+"No",16,16,16,"married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",41,41,41,"not married","good",3
+"No",18,16,16,"married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",14,13,13,"married","poor",1
+"No",4,4,4,"married","good",3
+"No",11,11,11,"married","excellent",4
+"No",19,19,19,"not married","good",3
+"No",12,12,12,"married","excellent",4
+"No",3,2,1.5,"not married","excellent",4
+"No",15,15,15,"not married","excellent",4
+"No",50,50,50,"not married","good",3
+"No",4,4,4,"married","good",3
+"Yes",1,1,1.5,"not married","excellent",4
+"No",0,0,0.45,"not married","good",3
+"No",12,12,12,"married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"Yes",8,8,8,"married","excellent",4
+"No",29,29,29,"married","excellent",4
+"No",20,14,14,"married","excellent",4
+"No",6,6,6,"not married","good",3
+"No",6,4,4,"not married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",47,47,47,"married","fair",2
+"No",20,19,19,"married","good",3
+"No",6,5,5,"not married","good",3
+"No",5,5,5,"married","excellent",4
+"No",54,53,53,"married","excellent",4
+"No",12,8,8,"married","excellent",4
+"No",20,20,20,"not married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",27,27,27,"married","good",3
+"No",26,26,26,"married","excellent",4
+"No",20,20,20,"not married","fair",2
+"No",1,0,0.45,"not married","excellent",4
+"No",14,14,14,"not married","good",3
+"No",15,6,6,"married","excellent",4
+"No",30,30,30,"married","excellent",4
+"Yes",12,9,9,"not married","excellent",4
+"Yes",14,0,0.05,"not married","good",3
+"No",14,14,14,"married","fair",2
+"No",16,16,16,"married","good",3
+"No",9,8,8,"married","fair",2
+"No",35,35,35,"married","good",3
+"Yes",7,7,7,"married","good",3
+"No",27,27,27,"married","good",3
+"No",0,0,0.75,"not married","good",3
+"Yes",2,2,2.5,"not married","excellent",4
+"No",2,1,1.5,"not married","excellent",4
+"No",53,50,50,"married","excellent",4
+"No",12,9,9,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",17,16,16,"not married","excellent",4
+"No",34,34,34,"married","excellent",4
+"Yes",11,11,11,"married","excellent",4
+"No",27,27,27,"married","good",3
+"No",0,0,0.75,"not married","good",3
+"No",18,13,13,"married","excellent",4
+"No",3,3,2.5,"not married","good",3
+"No",16,16,16,"not married","excellent",4
+"No",11,10,10,"married","excellent",4
+"No",14,11,11,"married","excellent",4
+"No",10,9,9,"married","excellent",4
+"No",14,13,13,"married","fair",2
+"No",37,37,37,"not married","excellent",4
+"No",0,0,1.5,"not married","fair",2
+"No",34,33,33,"married","excellent",4
+"No",12,12,12,"not married","good",3
+"No",17,16,16,"married","good",3
+"No",48,47,47,"married","excellent",4
+"No",33,32,32,"married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",12,12,12,"not married","good",3
+"No",11,11,11,"married","good",3
+"No",9,8,8,"married","good",3
+"No",8,7,7,"married","excellent",4
+"No",49,47,47,"married","good",3
+"No",11,10,10,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",18,8,8,"not married","good",3
+"Yes",9,8,8,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",16,15,15,"married","excellent",4
+"No",12,12,12,"married","good",3
+"No",22,19,19,"married","poor",1
+"No",15,15,15,"married","excellent",4
+"No",34,33,33,"married","excellent",4
+"No",12,11,11,"married","good",3
+"No",24,22,22,"married","excellent",4
+"No",55,53,53,"married","good",3
+"No",14,12,12,"not married","excellent",4
+"No",9,5,5,"not married","fair",2
+"No",19,19,19,"married","fair",2
+"No",7,6,6,"not married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",35,34,34,"married","excellent",4
+"No",29,29,29,"married","good",3
+"No",19,19,19,"married","excellent",4
+"Yes",6,6,6,"not married","good",3
+"No",12,7,7,"married","excellent",4
+"No",40,40,40,"married","excellent",4
+"No",43,34,34,"married","excellent",4
+"No",16,16,16,"not married","excellent",4
+"No",44,41,41,"married","excellent",4
+"No",35,35,35,"not married","good",3
+"No",55,55,55,"married","excellent",4
+"No",41,40,40,"married","good",3
+"No",21,20,20,"married","excellent",4
+"No",22,21,21,"married","excellent",4
+"No",36,35,35,"not married","excellent",4
+"No",3,3,4,"not married","excellent",4
+"No",20,20,20,"married","excellent",4
+"No",55,55,55,"married","excellent",4
+"Yes",0,0,0.75,"not married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",8,7,7,"married","good",3
+"No",10,9,9,"married","good",3
+"Yes",0,0,0.05,"not married","excellent",4
+"No",13,13,13,"not married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",15,15,15,"not married","excellent",4
+"No",16,16,16,"not married","excellent",4
+"No",23,16,16,"married","fair",2
+"No",31,31,31,"married","good",3
+"No",9,8,8,"not married","good",3
+"No",1,1,0.75,"not married","excellent",4
+"Yes",29,3,4,"married","good",3
+"No",21,20,20,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",2,2,2.5,"married","excellent",4
+"No",12,11,11,"married","excellent",4
+"No",54,54,54,"married","good",3
+"No",57,57,57,"married","excellent",4
+"No",54,54,54,"married","excellent",4
+"Yes",1,0,0.45,"not married","good",3
+"No",2,2,2.5,"not married","excellent",4
+"No",33,33,33,"married","good",3
+"No",0,0,0.15,"not married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",42,42,42,"married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",4,3,4,"not married","excellent",4
+"No",51,49,49,"married","excellent",4
+"No",25,20,20,"married","excellent",4
+"Yes",9,9,9,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",8,7,7,"married","good",3
+"Yes",11,11,11,"married","excellent",4
+"No",10,9,9,"not married","excellent",4
+"No",3,0,0.75,"not married","excellent",4
+"No",25,25,25,"not married","fair",2
+"No",1,1,1.5,"not married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",2,2,2.5,"not married","poor",1
+"No",47,46,46,"married","good",3
+"No",51,51,51,"married","good",3
+"No",60,58,58,"not married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",31,30,30,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",22,17,17,"married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",12,12,12,"not married","excellent",4
+"No",34,32,32,"married","excellent",4
+"No",11,8,8,"married","fair",2
+"No",15,15,15,"not married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",21,21,21,"not married","good",3
+"No",56,56,56,"married","excellent",4
+"No",41,41,41,"not married","good",3
+"No",21,3,4,"not married","excellent",4
+"No",15,14,14,"not married","good",3
+"No",15,15,15,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",60,60,60,"married","excellent",4
+"Yes",2,1,0.75,"not married","good",3
+"No",9,9,9,"married","fair",2
+"No",17,17,17,"married","fair",2
+"No",7,7,7,"married","excellent",4
+"No",24,15,15,"married","excellent",4
+"No",39,39,39,"married","excellent",4
+"No",3,3,4,"not married","fair",2
+"No",53,51,51,"married","good",3
+"No",15,15,15,"not married","good",3
+"Yes",5,5,5,"not married","excellent",4
+"Yes",2,2,2.5,"not married","fair",2
+"No",1,1,1.5,"not married","fair",2
+"No",22,22,22,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",3,1,1.5,"not married","excellent",4
+"No",14,14,14,"not married","excellent",4
+"Yes",10,10,10,"married","good",3
+"No",8,8,8,"not married","fair",2
+"No",30,30,30,"married","good",3
+"No",44,41,41,"married","excellent",4
+"Yes",1,1,2.5,"married","good",3
+"No",27,27,27,"married","good",3
+"No",5,5,5,"not married","good",3
+"No",17,16,16,"married","good",3
+"No",9,9,9,"married","excellent",4
+"No",31,31,31,"married","excellent",4
+"No",33,33,33,"married","excellent",4
+"No",47,42,42,"married","good",3
+"No",39,38,38,"married","excellent",4
+"No",8,8,8,"not married","fair",2
+"No",50,39,39,"married","excellent",4
+"No",25,24,24,"married","fair",2
+"No",6,4,4,"married","good",3
+"No",23,23,23,"not married","fair",2
+"No",55,55,55,"married","fair",2
+"No",67,61,61,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",43,42,42,"married","good",3
+"No",31,31,31,"married","excellent",4
+"Yes",9,9,9,"married","good",3
+"No",12,12,12,"married","excellent",4
+"No",10,10,10,"not married","excellent",4
+"No",47,46,46,"married","good",3
+"No",8,6,6,"married","excellent",4
+"No",31,30,30,"married","good",3
+"No",6,6,6,"married","excellent",4
+"No",10,10,10,"not married","fair",2
+"No",11,11,11,"married","excellent",4
+"No",21,14,14,"not married","excellent",4
+"No",15,15,15,"not married","good",3
+"No",14,13,13,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",26,24,24,"married","good",3
+"No",6,6,6,"married","excellent",4
+"No",30,30,30,"married","good",3
+"No",16,16,16,"not married","excellent",4
+"No",27,27,27,"married","excellent",4
+"No",8,6,6,"married","excellent",4
+"No",45,6,6,"not married","excellent",4
+"No",3,0,0.75,"not married","excellent",4
+"No",39,34,34,"married","excellent",4
+"No",59,58,58,"married","excellent",4
+"No",31,29,29,"married","good",3
+"No",23,23,23,"married","good",3
+"No",25,23,23,"married","good",3
+"No",3,1,0.75,"not married","fair",2
+"No",46,46,46,"married","excellent",4
+"No",20,20,20,"not married","excellent",4
+"Yes",7,7,7,"not married","good",3
+"No",11,11,11,"married","excellent",4
+"No",NA,54,54,"married","excellent",4
+"No",3,3,4,"married","good",3
+"No",38,38,38,"married","excellent",4
+"No",36,36,36,"married","good",3
+"No",15,15,15,"married","excellent",4
+"No",18,5,5,"married","excellent",4
+"No",1,1,2.5,"not married","good",3
+"No",6,6,6,"married","excellent",4
+"No",16,14,14,"married","good",3
+"No",8,8,8,"married","excellent",4
+"Yes",1,1,1.5,"married","excellent",4
+"No",42,42,42,"married","good",3
+"No",1,1,4,"not married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",1,1,0.75,"not married","good",3
+"Yes",11,11,11,"married","good",3
+"No",28,22,22,"married","good",3
+"No",52,51,51,"married","good",3
+"No",22,22,22,"not married","excellent",4
+"No",39,36,36,"married","excellent",4
+"No",16,4,4,"not married","excellent",4
+"No",12,11,11,"married","excellent",4
+"No",10,9,9,"not married","excellent",4
+"No",53,47,47,"married","excellent",4
+"No",18,17,17,"married","fair",2
+"No",18,18,18,"married","excellent",4
+"No",11,6,6,"not married","good",3
+"No",8,8,8,"not married","excellent",4
+"No",24,24,24,"married","good",3
+"No",36,32,32,"married","excellent",4
+"No",3,3,4,"not married","poor",1
+"No",10,10,10,"married","good",3
+"No",66,66,66,"married","excellent",4
+"No",50,48,48,"married","excellent",4
+"No",39,39,39,"married","poor",1
+"No",2,2,2.5,"not married","excellent",4
+"No",1,1,0.75,"married","excellent",4
+"No",15,14,14,"not married","very poor",0
+"No",14,13,13,"married","fair",2
+"No",NA,NA,NA,"not married","good",3
+"No",33,33,33,"not married","good",3
+"No",10,10,10,"married","good",3
+"No",10,10,10,"married","good",3
+"No",20,20,20,"married","good",3
+"No",7,7,7,"married","fair",2
+"No",23,23,23,"married","excellent",4
+"No",42,42,42,"married","good",3
+"No",8,8,8,"married","excellent",4
+"Yes",4,4,4,"not married","excellent",4
+"No",13,13,13,"married","good",3
+"No",39,38,38,"married","excellent",4
+"No",6,3,4,"married","excellent",4
+"No",10,9,9,"married","poor",1
+"No",37,37,37,"married","good",3
+"No",28,27,27,"married","excellent",4
+"No",30,29,29,"married","good",3
+"No",12,12,12,"not married","good",3
+"No",20,20,20,"married","good",3
+"No",14,11,11,"married","fair",2
+"No",22,NA,NA,"married","excellent",4
+"Yes",5,5,5,"not married","excellent",4
+"No",41,40,40,"married","excellent",4
+"No",26,26,26,"married","excellent",4
+"Yes",2,2,2.5,"not married","good",3
+"No",32,8,8,"not married","excellent",4
+"No",55,8,8,"married","excellent",4
+"No",23,23,23,"married","good",3
+"No",20,20,20,"not married","excellent",4
+"No",26,24,24,"married","excellent",4
+"No",2,2,1.5,"not married","excellent",4
+"No",41,40,40,"married","excellent",4
+"No",47,47,47,"married","fair",2
+"No",34,34,34,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",18,18,18,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",16,16,16,"not married","excellent",4
+"No",37,37,37,"married","poor",1
+"No",2,2,2.5,"not married","excellent",4
+"Yes",9,9,9,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"Yes",7,7,7,"married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",33,33,33,"married","excellent",4
+"No",0,0,0.45,"not married","excellent",4
+"No",12,12,12,"not married","good",3
+"Yes",2,2,4,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",14,14,14,"not married","excellent",4
+"No",11,10,10,"married","good",3
+"Yes",8,7,7,"married","excellent",4
+"No",13,13,13,"married","good",3
+"No",4,4,4,"married","excellent",4
+"No",9,9,9,"not married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",39,38,38,"married","good",3
+"No",9,9,9,"not married","good",3
+"No",16,16,16,"not married","good",3
+"No",2,2,1.5,"not married","good",3
+"No",60,33,33,"married","excellent",4
+"Yes",3,3,4,"not married","good",3
+"No",1,1,1.5,"not married","good",3
+"No",25,24,24,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",7,7,7,"not married","good",3
+"No",17,16,16,"married","good",3
+"No",11,11,11,"married","good",3
+"Yes",5,5,5,"married","good",3
+"Yes",8,8,8,"married","excellent",4
+"No",22,20,20,"married","good",3
+"No",10,8,8,"married","good",3
+"No",61,NA,NA,"married","fair",2
+"No",10,10,10,"married","fair",2
+"No",14,10,10,"married","excellent",4
+"No",4,4,4,"not married","good",3
+"No",20,20,20,"married","very poor",0
+"No",14,14,14,"married","fair",2
+"No",17,14,14,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",24,23,23,"married","excellent",4
+"No",33,32,32,"married","good",3
+"No",47,47,47,"married","excellent",4
+"No",24,23,23,"married","excellent",4
+"No",15,15,15,"married","good",3
+"No",13,13,13,"married","fair",2
+"No",40,37,37,"married","excellent",4
+"No",0,0,0.05,"not married","good",3
+"No",2,2,4,"not married","excellent",4
+"No",11,11,11,"not married","fair",2
+"No",14,14,14,"married","excellent",4
+"No",7,6,6,"not married","fair",2
+"No",16,16,16,"married","excellent",4
+"No",13,12,12,"not married","excellent",4
+"No",26,24,24,"married","good",3
+"No",35,25,25,"married","good",3
+"Yes",6,6,6,"married","excellent",4
+"No",33,33,33,"married","excellent",4
+"No",45,45,45,"married","excellent",4
+"No",3,3,4,"married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",28,28,28,"married","excellent",4
+"No",44,44,44,"married","excellent",4
+"No",5,4,4,"not married","excellent",4
+"No",11,10,10,"married","excellent",4
+"Yes",2,2,1.5,"married","excellent",4
+"No",30,30,30,"married","good",3
+"Yes",1,1,1.5,"married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",1,1,0.75,"not married","excellent",4
+"No",9,8,8,"not married","fair",2
+"No",9,8,8,"married","excellent",4
+"No",13,10,10,"not married","good",3
+"No",20,20,20,"not married","excellent",4
+"No",22,22,22,"married","excellent",4
+"Yes",0,0,1.5,"not married","excellent",4
+"No",26,NA,NA,"not married","excellent",4
+"No",2,1,0.75,"not married","good",3
+"No",11,10,10,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",22,21,21,"not married","excellent",4
+"No",18,16,16,"not married","fair",2
+"No",20,18,18,"not married","excellent",4
+"No",16,2,2.5,"not married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",8,8,8,"not married","excellent",4
+"No",26,13,13,"not married","excellent",4
+"No",21,21,21,"married","good",3
+"No",30,27,27,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",14,14,14,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",8,8,8,"married","good",3
+"Yes",4,4,4,"not married","fair",2
+"No",54,54,54,"married","excellent",4
+"No",3,3,4,"married","excellent",4
+"Yes",3,2,4,"not married","excellent",4
+"No",50,49,49,"married","excellent",4
+"No",23,21,21,"married","good",3
+"No",14,13,13,"not married","good",3
+"No",21,21,21,"not married","excellent",4
+"No",17,17,17,"not married","good",3
+"No",55,36,36,"not married","excellent",4
+"No",1,0,0.15,"not married","good",3
+"No",17,16,16,"married","good",3
+"No",2,2,4,"not married","good",3
+"No",19,19,19,"not married","excellent",4
+"No",3,2,1.5,"not married","poor",1
+"No",57,57,57,"married","excellent",4
+"No",39,39,39,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",11,10,10,"not married","good",3
+"No",9,9,9,"married","fair",2
+"No",22,14,14,"married","fair",2
+"No",34,30,30,"married","excellent",4
+"No",37,9,9,"married","excellent",4
+"No",0,0,0.45,"not married","good",3
+"No",43,42,42,"married","good",3
+"Yes",3,3,0.05,"not married","good",3
+"No",12,12,12,"not married","fair",2
+"No",23,23,23,"married","excellent",4
+"No",31,30,30,"married","good",3
+"No",20,20,20,"married","poor",1
+"Yes",25,7,7,"married","good",3
+"No",10,9,9,"married","fair",2
+"No",20,20,20,"married","excellent",4
+"No",19,19,19,"not married","good",3
+"No",24,2,2.5,"not married","good",3
+"No",29,28,28,"married","excellent",4
+"No",2,2,2.5,"not married","fair",2
+"No",42,42,42,"married","excellent",4
+"No",1,1,0.15,"not married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",21,21,21,"married","good",3
+"Yes",5,4,4,"not married","excellent",4
+"No",13,13,13,"married","good",3
+"No",7,7,7,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",2,1,0.75,"not married","excellent",4
+"No",35,8,8,"not married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",33,32,32,"married","excellent",4
+"Yes",2,2,2.5,"not married","excellent",4
+"No",20,20,20,"married","good",3
+"Yes",5,5,5,"married","excellent",4
+"No",35,35,35,"married","excellent",4
+"No",21,20,20,"married","excellent",4
+"No",43,7,7,"not married","excellent",4
+"No",1,1,0.75,"not married","good",3
+"No",14,14,14,"married","good",3
+"No",8,5,5,"married","good",3
+"No",34,34,34,"married","excellent",4
+"No",10,10,10,"not married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",11,10,10,"not married","excellent",4
+"No",15,12,12,"married","good",3
+"No",10,10,10,"married","excellent",4
+"No",18,17,17,"married","excellent",4
+"No",5,4,4,"married","excellent",4
+"No",3,3,0.15,"not married","good",3
+"Yes",2,2,2.5,"not married","excellent",4
+"No",14,14,14,"not married","good",3
+"No",19,18,18,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",14,12,12,"married","excellent",4
+"No",10,9,9,"not married","good",3
+"No",53,51,51,"married","excellent",4
+"No",2,1,2.5,"not married","excellent",4
+"No",28,28,28,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"Yes",6,5,5,"not married","good",3
+"No",15,14,14,"married","excellent",4
+"No",3,2,2.5,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",63,62,62,"married","excellent",4
+"No",34,32,32,"not married","good",3
+"No",12,12,12,"married","good",3
+"No",3,3,2.5,"not married","fair",2
+"No",10,10,10,"not married","excellent",4
+"No",19,18,18,"married","excellent",4
+"No",46,44,44,"not married","good",3
+"Yes",4,3,4,"not married","good",3
+"No",10,10,10,"married","fair",2
+"No",6,0,0.15,"not married","excellent",4
+"No",20,20,20,"married","excellent",4
+"No",1,0,0.45,"not married","fair",2
+"No",52,51,51,"married","excellent",4
+"No",25,25,25,"married","poor",1
+"No",15,15,15,"married","excellent",4
+"No",11,10,10,"married","good",3
+"No",23,22,22,"married","good",3
+"No",56,56,56,"married","excellent",4
+"No",5,1,1.5,"not married","good",3
+"No",32,32,32,"not married","excellent",4
+"No",35,18,18,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",26,23,23,"married","good",3
+"No",37,0,0.75,"not married","good",3
+"No",17,17,17,"not married","excellent",4
+"Yes",1,0,0.75,"not married","good",3
+"No",25,19,19,"not married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",15,14,14,"married","good",3
+"No",13,13,13,"married","excellent",4
+"No",11,7,7,"married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",31,23,23,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",10,10,10,"married","excellent",4
+"No",25,25,25,"married","good",3
+"No",27,27,27,"married","good",3
+"No",5,5,5,"not married","good",3
+"No",28,27,27,"married","excellent",4
+"No",19,19,19,"not married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",28,13,13,"married","good",3
+"No",0,0,0.15,"not married","good",3
+"No",23,23,23,"not married","good",3
+"No",14,4,4,"not married","good",3
+"No",20,20,20,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",30,30,30,"married","excellent",4
+"No",29,29,29,"married","good",3
+"No",38,36,36,"married","excellent",4
+"No",19,19,19,"not married","good",3
+"No",16,14,14,"married","excellent",4
+"No",22,4,4,"married","excellent",4
+"No",12,11,11,"married","excellent",4
+"No",35,35,35,"married","poor",1
+"No",15,15,15,"not married","good",3
+"Yes",3,2,4,"married","good",3
+"No",10,8,8,"not married","excellent",4
+"No",7,7,7,"married","fair",2
+"No",30,30,30,"married","excellent",4
+"No",21,20,20,"married","excellent",4
+"No",57,56,56,"married","excellent",4
+"No",16,16,16,"not married","good",3
+"No",15,15,15,"married","fair",2
+"Yes",9,9,9,"married","good",3
+"No",1,1,0.75,"not married","excellent",4
+"No",42,41,41,"married","excellent",4
+"No",9,9,9,"not married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",11,11,11,"married","good",3
+"Yes",10,10,10,"married","good",3
+"No",30,27,27,"married","excellent",4
+"No",2,2,2.5,"not married","fair",2
+"No",22,22,22,"not married","excellent",4
+"No",23,14,14,"married","good",3
+"No",12,12,12,"married","fair",2
+"No",10,10,10,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",31,31,31,"not married","good",3
+"No",40,31,31,"married","good",3
+"No",12,11,11,"married","excellent",4
+"No",10,0,4,"not married","fair",2
+"No",5,5,5,"not married","good",3
+"No",34,33,33,"married","good",3
+"No",7,6,6,"married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",35,34,34,"married","excellent",4
+"No",42,42,42,"married","fair",2
+"No",6,6,6,"married","fair",2
+"No",33,33,33,"married","good",3
+"No",10,6,6,"not married","excellent",4
+"Yes",1,1,2.5,"not married","excellent",4
+"No",15,13,13,"not married","excellent",4
+"No",16,16,16,"not married","excellent",4
+"No",35,23,23,"married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",37,14,14,"not married","excellent",4
+"No",54,53,53,"married","excellent",4
+"No",38,38,38,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",22,22,22,"not married","excellent",4
+"No",17,16,16,"married","excellent",4
+"No",5,2,1.5,"not married","excellent",4
+"No",22,22,22,"married","excellent",4
+"No",40,28,28,"married","good",3
+"No",12,12,12,"not married","good",3
+"No",38,38,38,"married","excellent",4
+"No",9,9,9,"not married","good",3
+"No",6,6,6,"married","excellent",4
+"No",23,23,23,"not married","excellent",4
+"No",24,8,8,"married","excellent",4
+"Yes",1,1,0.15,"not married","good",3
+"No",7,5,5,"married","good",3
+"No",16,14,14,"married","excellent",4
+"No",2,2,2.5,"not married","excellent",4
+"Yes",0,0,0.15,"not married","fair",2
+"No",1,1,1.5,"not married","fair",2
+"No",55,55,55,"married","excellent",4
+"No",29,29,29,"not married","excellent",4
+"No",55,54,54,"married","good",3
+"Yes",13,13,13,"not married","good",3
+"No",10,9,9,"not married","excellent",4
+"No",41,41,41,"not married","excellent",4
+"No",35,35,35,"married","good",3
+"No",2,2,2.5,"not married","good",3
+"No",21,21,21,"not married","excellent",4
+"No",5,5,5,"not married","excellent",4
+"No",0,0,0.15,"not married","excellent",4
+"No",44,44,44,"married","excellent",4
+"No",28,28,28,"married","excellent",4
+"No",11,11,11,"married","good",3
+"No",3,2,2.5,"not married","good",3
+"No",23,23,23,"married","good",3
+"No",24,23,23,"married","good",3
+"No",58,58,58,"married","excellent",4
+"No",40,36,36,"married","excellent",4
+"No",30,17,17,"not married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",9,1,0.75,"not married","excellent",4
+"No",18,18,18,"married","good",3
+"No",18,18,18,"married","excellent",4
+"No",13,11,11,"married","excellent",4
+"Yes",5,1,4,"not married","good",3
+"No",14,13,13,"married","good",3
+"No",35,33,33,"married","excellent",4
+"No",25,24,24,"married","excellent",4
+"No",28,20,20,"married","good",3
+"No",3,3,4,"not married","excellent",4
+"No",52,52,52,"married","excellent",4
+"No",22,21,21,"married","excellent",4
+"No",6,6,6,"married","good",3
+"No",4,3,4,"not married","excellent",4
+"Yes",4,2,2.5,"not married","good",3
+"No",16,15,15,"married","excellent",4
+"No",54,54,54,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"Yes",1,1,1.5,"not married","good",3
+"No",10,9,9,"married","excellent",4
+"No",3,3,4,"married","good",3
+"No",49,49,49,"married","excellent",4
+"Yes",0,0,0.45,"not married","good",3
+"No",6,6,6,"not married","excellent",4
+"Yes",0,0,0.75,"not married","good",3
+"No",37,11,11,"not married","fair",2
+"No",24,23,23,"married","good",3
+"No",25,24,24,"not married","excellent",4
+"No",20,20,20,"married","excellent",4
+"Yes",4,4,4,"not married","excellent",4
+"No",15,15,15,"not married","excellent",4
+"No",15,15,15,"married","excellent",4
+"Yes",8,8,8,"not married","fair",2
+"No",24,18,18,"married","fair",2
+"No",34,24,24,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",42,42,42,"married","good",3
+"No",12,12,12,"married","good",3
+"No",47,46,46,"married","good",3
+"No",9,9,9,"not married","good",3
+"No",10,9,9,"married","good",3
+"No",3,3,2.5,"not married","good",3
+"Yes",1,1,0.75,"not married","excellent",4
+"No",6,NA,NA,"married","excellent",4
+"Yes",0,0,0.15,"not married","excellent",4
+"No",36,36,36,"not married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",35,35,35,"married","excellent",4
+"No",6,0,0.05,"not married","excellent",4
+"No",7,6,6,"married","excellent",4
+"No",12,10,10,"not married","excellent",4
+"Yes",12,12,12,"not married","excellent",4
+"No",10,10,10,"not married","fair",2
+"No",2,1,2.5,"not married","good",3
+"No",53,52,52,"married","excellent",4
+"Yes",2,2,0.15,"married","excellent",4
+"No",60,60,60,"married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",3,2,2.5,"not married","good",3
+"No",54,54,54,"married","good",3
+"No",5,5,5,"married","excellent",4
+"No",22,22,22,"married","good",3
+"No",6,6,6,"not married","excellent",4
+"No",19,19,19,"not married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",6,5,5,"married","excellent",4
+"No",2,1,1.5,"not married","excellent",4
+"No",10,3,1.5,"not married","fair",2
+"No",16,13,13,"not married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",28,28,28,"married","good",3
+"No",16,12,12,"married","good",3
+"No",7,7,7,"married","excellent",4
+"No",2,2,1.5,"not married","excellent",4
+"No",31,31,31,"married","excellent",4
+"No",40,40,40,"married","poor",1
+"No",5,1,0.45,"not married","good",3
+"No",23,23,23,"married","very poor",0
+"No",21,21,21,"not married","good",3
+"No",24,24,24,"married","good",3
+"No",61,61,61,"married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",13,13,13,"not married","excellent",4
+"No",17,17,17,"married","poor",1
+"No",14,14,14,"not married","excellent",4
+"No",0,0,1.5,"not married","fair",2
+"No",9,7,7,"not married","fair",2
+"No",1,1,1.5,"not married","good",3
+"Yes",9,9,9,"not married","excellent",4
+"No",10,3,2.5,"not married","good",3
+"No",15,14,14,"married","excellent",4
+"No",4,4,4,"not married","good",3
+"No",12,11,11,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",43,29,29,"not married","excellent",4
+"No",6,5,5,"married","good",3
+"No",18,17,17,"married","excellent",4
+"No",3,1,0.75,"not married","good",3
+"No",1,1,1.5,"married","excellent",4
+"No",14,14,14,"not married","fair",2
+"No",17,12,12,"married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",29,28,28,"married","good",3
+"Yes",8,8,8,"married","good",3
+"No",16,16,16,"married","excellent",4
+"No",1,0,0.75,"not married","excellent",4
+"No",13,12,12,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",1,1,0.75,"not married","fair",2
+"No",10,9,9,"married","good",3
+"No",13,13,13,"not married","fair",2
+"No",8,6,6,"married","very poor",0
+"No",43,41,41,"not married","good",3
+"No",15,13,13,"married","fair",2
+"No",62,54,54,"married","excellent",4
+"No",35,34,34,"married","good",3
+"No",4,4,4,"not married","fair",2
+"No",14,14,14,"married","good",3
+"No",29,29,29,"married","excellent",4
+"Yes",6,4,4,"not married","good",3
+"No",58,56,56,"married","excellent",4
+"No",2,0,0.45,"not married","fair",2
+"Yes",6,6,6,"married","excellent",4
+"No",26,25,25,"married","good",3
+"Yes",4,4,4,"not married","good",3
+"No",23,23,23,"married","excellent",4
+"Yes",6,6,6,"not married","excellent",4
+"No",14,12,12,"married","excellent",4
+"Yes",1,1,0.75,"not married","excellent",4
+"No",64,64,64,"married","excellent",4
+"No",10,0,0.15,"not married","good",3
+"No",43,42,42,"married","excellent",4
+"No",13,13,13,"married","good",3
+"No",15,15,15,"married","excellent",4
+"No",2,2,1.5,"not married","fair",2
+"No",7,6,6,"married","good",3
+"No",20,19,19,"married","good",3
+"No",2,2,2.5,"not married","good",3
+"No",30,30,30,"married","good",3
+"No",40,8,8,"not married","excellent",4
+"No",22,22,22,"married","good",3
+"No",18,18,18,"married","good",3
+"No",4,4,4,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"No",1,0,0.45,"not married","good",3
+"Yes",2,2,1.5,"married","excellent",4
+"No",34,34,34,"married","excellent",4
+"No",18,18,18,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",49,34,34,"married","excellent",4
+"Yes",0,0,0.45,"not married","good",3
+"No",2,2,2.5,"not married","fair",2
+"No",15,12,12,"married","good",3
+"No",1,1,2.5,"not married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",40,40,40,"married","good",3
+"No",51,51,51,"married","excellent",4
+"No",25,17,17,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",24,22,22,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"Yes",0,0,0.75,"not married","fair",2
+"No",24,24,24,"married","good",3
+"No",10,10,10,"married","excellent",4
+"No",2,2,2.5,"married","excellent",4
+"No",52,51,51,"married","good",3
+"No",29,27,27,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",33,33,33,"not married","excellent",4
+"No",4,4,4,"not married","good",3
+"No",8,6,6,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"No",39,39,39,"married","poor",1
+"No",3,3,0.75,"married","fair",2
+"No",2,2,1.5,"not married","excellent",4
+"No",52,52,52,"married","good",3
+"No",11,10,10,"married","excellent",4
+"No",45,45,45,"married","good",3
+"No",16,9,9,"married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",4,4,4,"married","excellent",4
+"No",36,36,36,"married","excellent",4
+"No",23,23,23,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",37,37,37,"married","good",3
+"No",2,2,1.5,"not married","fair",2
+"No",2,2,4,"not married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",41,40,40,"married","fair",2
+"No",15,15,15,"married","good",3
+"No",12,11,11,"married","excellent",4
+"No",17,7,7,"married","excellent",4
+"No",19,19,19,"married","fair",2
+"No",13,13,13,"married","good",3
+"Yes",33,32,32,"not married","excellent",4
+"No",24,20,20,"married","excellent",4
+"No",39,4,4,"not married","fair",2
+"No",2,0,1.5,"not married","fair",2
+"Yes",4,4,4,"married","excellent",4
+"No",7,7,7,"not married","fair",2
+"No",16,16,16,"married","good",3
+"No",20,19,19,"married","excellent",4
+"No",2,2,2.5,"not married","fair",2
+"Yes",3,1,0.75,"not married","excellent",4
+"No",18,18,18,"married","fair",2
+"No",23,22,22,"married","good",3
+"No",22,22,22,"not married","excellent",4
+"No",1,0,0.45,"not married","excellent",4
+"No",27,26,26,"married","good",3
+"No",36,36,36,"married","good",3
+"No",26,26,26,"not married","good",3
+"No",47,46,46,"married","good",3
+"Yes",3,3,4,"not married","good",3
+"No",12,12,12,"not married","fair",2
+"No",11,10,10,"married","good",3
+"No",12,12,12,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",40,39,39,"married","excellent",4
+"Yes",2,2,1.5,"not married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",25,25,25,"married","good",3
+"No",46,46,46,"married","excellent",4
+"No",29,29,29,"married","fair",2
+"No",16,13,13,"married","excellent",4
+"No",5,2,1.5,"not married","excellent",4
+"No",13,11,11,"married","excellent",4
+"No",34,34,34,"married","excellent",4
+"No",16,15,15,"married","excellent",4
+"No",6,6,6,"not married","good",3
+"No",5,5,5,"married","good",3
+"No",8,8,8,"married","excellent",4
+"No",9,9,9,"not married","fair",2
+"No",8,8,8,"not married","excellent",4
+"No",9,4,4,"not married","excellent",4
+"No",2,2,4,"not married","fair",2
+"No",17,17,17,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",49,49,49,"married","excellent",4
+"No",47,47,47,"married","good",3
+"No",43,40,40,"married","excellent",4
+"No",32,32,32,"married","excellent",4
+"No",50,50,50,"married","good",3
+"No",13,13,13,"married","excellent",4
+"No",46,26,26,"not married","excellent",4
+"No",0,0,0.45,"not married","excellent",4
+"No",20,17,17,"married","fair",2
+"No",31,30,30,"married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",4,4,4,"not married","fair",2
+"No",2,2,2.5,"not married","good",3
+"No",5,5,5,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"Yes",0,0,0.45,"not married","fair",2
+"No",26,26,26,"married","excellent",4
+"No",62,61,61,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",48,48,48,"married","excellent",4
+"No",0,0,1.5,"not married","good",3
+"No",9,9,9,"not married","good",3
+"No",12,2,4,"not married","excellent",4
+"No",7,6,6,"married","fair",2
+"No",54,54,54,"not married","excellent",4
+"No",8,8,8,"married","good",3
+"No",0,0,0.05,"not married","good",3
+"No",33,33,33,"married","good",3
+"No",9,6,6,"married","good",3
+"No",25,23,23,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",2,1,2.5,"not married","good",3
+"No",22,22,22,"married","excellent",4
+"No",1,0,0.05,"not married","excellent",4
+"No",16,15,15,"married","excellent",4
+"No",22,22,22,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",6,5,5,"married","excellent",4
+"No",20,3,4,"not married","excellent",4
+"No",54,53,53,"married","good",3
+"No",11,11,11,"married","excellent",4
+"Yes",2,2,2.5,"not married","good",3
+"No",24,24,24,"married","fair",2
+"No",19,7,7,"not married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",33,33,33,"married","excellent",4
+"Yes",1,0,0.75,"not married","fair",2
+"No",15,5,5,"not married","excellent",4
+"No",7,6,6,"not married","good",3
+"No",15,13,13,"married","excellent",4
+"No",22,22,22,"married","good",3
+"No",16,16,16,"married","good",3
+"No",27,27,27,"not married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",27,27,27,"married","good",3
+"No",21,15,15,"married","good",3
+"No",25,25,25,"married","excellent",4
+"No",2,1,1.5,"not married","good",3
+"No",2,0,0.15,"not married","excellent",4
+"No",19,11,11,"married","excellent",4
+"No",41,41,41,"married","good",3
+"No",32,31,31,"married","excellent",4
+"No",0,0,0.45,"not married","good",3
+"No",20,20,20,"not married","excellent",4
+"No",33,33,33,"married","excellent",4
+"No",17,15,15,"married","poor",1
+"No",9,9,9,"married","excellent",4
+"No",6,5,5,"married","good",3
+"No",16,16,16,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"No",59,11,11,"not married","excellent",4
+"Yes",6,6,6,"not married","excellent",4
+"Yes",9,9,9,"not married","fair",2
+"No",42,41,41,"married","excellent",4
+"No",21,17,17,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",2,2,1.5,"not married","good",3
+"No",19,19,19,"married","excellent",4
+"No",10,10,10,"not married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",30,30,30,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",3,3,4,"not married","good",3
+"No",25,24,24,"married","good",3
+"No",24,24,24,"married","excellent",4
+"No",17,16,16,"not married","fair",2
+"No",22,22,22,"married","good",3
+"No",25,25,25,"married","excellent",4
+"No",30,30,30,"married","good",3
+"No",34,13,13,"married","good",3
+"No",36,25,25,"married","good",3
+"Yes",4,3,4,"not married","good",3
+"No",61,55,55,"married","excellent",4
+"No",13,9,9,"married","excellent",4
+"Yes",NA,0,0.05,"not married","fair",2
+"No",7,7,7,"married","excellent",4
+"No",32,32,32,"not married","good",3
+"No",11,7,7,"married","excellent",4
+"No",21,21,21,"not married","excellent",4
+"No",50,48,48,"married","excellent",4
+"No",42,34,34,"married","good",3
+"No",14,8,8,"not married","excellent",4
+"No",14,14,14,"not married","excellent",4
+"No",1,1,1.5,"not married","good",3
+"No",11,11,11,"married","fair",2
+"No",11,11,11,"married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",7,7,7,"married","good",3
+"No",41,41,41,"married","excellent",4
+"Yes",7,7,7,"married","excellent",4
+"No",56,55,55,"married","good",3
+"No",11,10,10,"not married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",25,25,25,"married","excellent",4
+"No",21,20,20,"married","good",3
+"No",59,58,58,"married","good",3
+"No",6,6,6,"married","excellent",4
+"No",28,27,27,"not married","good",3
+"No",41,38,38,"married","good",3
+"No",10,10,10,"married","good",3
+"No",12,12,12,"not married","excellent",4
+"No",8,7,7,"married","excellent",4
+"No",13,13,13,"married","good",3
+"No",69,60,60,"married","excellent",4
+"No",35,25,25,"not married","good",3
+"No",11,11,11,"married","excellent",4
+"No",17,16,16,"married","excellent",4
+"No",NA,11,11,"married","excellent",4
+"No",17,17,17,"married","excellent",4
+"No",41,38,38,"married","good",3
+"No",25,25,25,"married","good",3
+"No",0,0,0.15,"not married","excellent",4
+"No",35,34,34,"married","excellent",4
+"No",8,8,8,"married","good",3
+"No",12,12,12,"not married","good",3
+"No",1,1,1.5,"married","good",3
+"No",19,19,19,"married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",14,14,14,"married","good",3
+"No",8,8,8,"married","excellent",4
+"No",16,12,12,"married","excellent",4
+"Yes",1,1,1.5,"not married","fair",2
+"No",2,2,2.5,"married","good",3
+"No",4,3,4,"married","excellent",4
+"No",7,6,6,"married","good",3
+"No",10,9,9,"married","good",3
+"No",19,17,17,"married","fair",2
+"No",41,40,40,"married","excellent",4
+"No",3,1,4,"not married","good",3
+"No",10,8,8,"married","good",3
+"No",2,2,2.5,"not married","good",3
+"No",26,24,24,"married","good",3
+"No",13,3,4,"not married","fair",2
+"No",9,8,8,"married","excellent",4
+"Yes",0,0,0.05,"not married","good",3
+"No",24,22,22,"married","excellent",4
+"No",7,4,4,"married","excellent",4
+"No",2,1,1.5,"not married","excellent",4
+"No",58,57,57,"married","good",3
+"Yes",20,19,19,"married","good",3
+"No",10,9,9,"married","excellent",4
+"No",23,22,22,"married","excellent",4
+"No",45,44,44,"married","excellent",4
+"Yes",4,4,4,"not married","excellent",4
+"No",17,17,17,"not married","excellent",4
+"No",15,14,14,"not married","fair",2
+"No",17,17,17,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",12,9,9,"not married","fair",2
+"No",15,15,15,"married","good",3
+"No",1,1,0.75,"not married","fair",2
+"Yes",7,6,6,"not married","good",3
+"Yes",12,12,12,"married","good",3
+"No",7,6,6,"married","good",3
+"No",56,56,56,"married","excellent",4
+"Yes",5,4,4,"married","good",3
+"No",11,11,11,"married","excellent",4
+"No",29,29,29,"married","excellent",4
+"Yes",2,2,1.5,"not married","good",3
+"No",23,21,21,"married","good",3
+"No",2,1,1.5,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",46,44,44,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",11,11,11,"not married","good",3
+"No",20,18,18,"married","excellent",4
+"No",48,46,46,"married","excellent",4
+"No",32,24,24,"not married","excellent",4
+"No",15,15,15,"married","excellent",4
+"No",20,20,20,"married","good",3
+"No",23,23,23,"not married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",23,15,15,"married","excellent",4
+"No",18,18,18,"not married","good",3
+"No",22,8,8,"married","excellent",4
+"No",16,15,15,"married","excellent",4
+"No",50,49,49,"married","good",3
+"No",26,26,26,"married","excellent",4
+"No",45,40,40,"married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",13,10,10,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",2,1,0.75,"not married","excellent",4
+"No",59,51,51,"married","excellent",4
+"No",30,29,29,"married","excellent",4
+"No",44,44,44,"married","excellent",4
+"No",5,5,5,"not married","fair",2
+"No",30,30,30,"married","good",3
+"Yes",2,2,1.5,"not married","good",3
+"No",26,25,25,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",1,1,0.15,"not married","excellent",4
+"No",26,26,26,"married","excellent",4
+"No",25,19,19,"married","good",3
+"No",2,1,1.5,"not married","good",3
+"No",11,11,11,"not married","excellent",4
+"No",1,0,0.15,"not married","fair",2
+"Yes",24,23,23,"married","excellent",4
+"No",16,15,15,"married","excellent",4
+"No",36,32,32,"married","excellent",4
+"No",5,4,4,"not married","excellent",4
+"No",0,0,0.75,"not married","excellent",4
+"No",20,20,20,"not married","good",3
+"Yes",0,0,0.15,"not married","good",3
+"No",32,32,32,"married","excellent",4
+"No",7,7,7,"not married","excellent",4
+"Yes",12,12,12,"married","excellent",4
+"Yes",2,2,1.5,"not married","good",3
+"No",48,47,47,"married","excellent",4
+"No",0,0,0.05,"not married","excellent",4
+"No",NA,NA,NA,"not married","excellent",4
+"No",14,14,14,"not married","excellent",4
+"No",21,7,7,"married","excellent",4
+"No",23,1,2.5,"not married","fair",2
+"No",37,37,37,"married","excellent",4
+"No",36,34,34,"married","excellent",4
+"Yes",7,6,6,"not married","excellent",4
+"Yes",4,4,4,"not married","excellent",4
+"No",0,0,0.45,"not married","excellent",4
+"No",14,14,14,"married","excellent",4
+"No",7,7,7,"married","fair",2
+"No",49,49,49,"married","good",3
+"No",30,28,28,"not married","good",3
+"No",19,16,16,"married","good",3
+"No",26,26,26,"not married","excellent",4
+"No",45,40,40,"married","excellent",4
+"No",7,5,5,"not married","excellent",4
+"No",2,1,0.75,"not married","good",3
+"No",18,18,18,"married","good",3
+"No",9,0,2.5,"not married","good",3
+"No",9,9,9,"not married","fair",2
+"No",15,15,15,"not married","excellent",4
+"No",27,27,27,"married","fair",2
+"No",2,2,2.5,"married","good",3
+"No",35,32,32,"married","excellent",4
+"No",25,24,24,"married","good",3
+"No",4,4,4,"not married","excellent",4
+"No",15,15,15,"not married","excellent",4
+"No",23,23,23,"married","excellent",4
+"No",NA,NA,NA,"married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",24,23,23,"married","excellent",4
+"No",6,6,6,"not married","good",3
+"No",11,11,11,"not married","excellent",4
+"Yes",12,12,12,"married","excellent",4
+"No",23,12,12,"married","excellent",4
+"No",1,1,4,"married","excellent",4
+"No",11,8,8,"married","good",3
+"No",2,0,0.45,"not married","excellent",4
+"No",54,54,54,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",37,37,37,"married","excellent",4
+"No",12,12,12,"married","good",3
+"No",15,9,9,"not married","good",3
+"No",11,11,11,"married","excellent",4
+"No",17,16,16,"married","excellent",4
+"No",16,14,14,"married","excellent",4
+"No",10,9,9,"married","excellent",4
+"No",59,58,58,"married","good",3
+"No",49,48,48,"not married","good",3
+"No",19,19,19,"married","good",3
+"No",2,1,1.5,"not married","good",3
+"No",1,1,0.75,"not married","poor",1
+"No",3,3,4,"not married","excellent",4
+"No",35,35,35,"married","excellent",4
+"No",6,6,6,"not married","good",3
+"No",1,1,0.75,"not married","excellent",4
+"No",9,7,7,"not married","good",3
+"No",24,24,24,"married","excellent",4
+"No",24,24,24,"married","fair",2
+"No",15,15,15,"married","excellent",4
+"No",33,33,33,"married","fair",2
+"No",19,19,19,"married","poor",1
+"No",51,51,51,"married","excellent",4
+"No",26,26,26,"not married","excellent",4
+"Yes",9,8,8,"not married","good",3
+"No",7,7,7,"married","poor",1
+"No",8,8,8,"not married","excellent",4
+"No",11,10,10,"not married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"Yes",1,1,0.15,"not married","excellent",4
+"No",38,33,33,"married","good",3
+"No",5,4,4,"not married","excellent",4
+"No",33,32,32,"married","good",3
+"No",10,10,10,"married","excellent",4
+"Yes",9,9,9,"married","good",3
+"No",1,1,1.5,"not married","fair",2
+"No",21,20,20,"not married","excellent",4
+"Yes",7,6,6,"married","good",3
+"No",9,8,8,"not married","excellent",4
+"No",59,NA,NA,"married","excellent",4
+"No",7,2,4,"married","good",3
+"No",22,22,22,"married","excellent",4
+"No",13,13,13,"married","good",3
+"Yes",5,5,5,"not married","good",3
+"No",20,12,12,"married","excellent",4
+"No",16,13,13,"not married","good",3
+"No",43,43,43,"married","excellent",4
+"Yes",3,3,4,"not married","fair",2
+"No",20,20,20,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",11,11,11,"married","good",3
+"No",54,54,54,"married","excellent",4
+"No",18,18,18,"married","excellent",4
+"No",35,4,4,"married","good",3
+"No",25,25,25,"not married","excellent",4
+"No",4,4,4,"not married","fair",2
+"No",21,21,21,"married","good",3
+"Yes",0,0,0.45,"not married","poor",1
+"Yes",2,2,1.5,"not married","poor",1
+"No",18,17,17,"married","excellent",4
+"No",31,31,31,"married","excellent",4
+"No",14,14,14,"married","poor",1
+"No",8,8,8,"married","excellent",4
+"Yes",1,0,0.75,"not married","excellent",4
+"No",38,36,36,"married","fair",2
+"No",11,5,5,"married","excellent",4
+"No",11,6,6,"not married","good",3
+"No",42,42,42,"married","good",3
+"No",40,40,40,"married","excellent",4
+"No",1,1,0.45,"not married","excellent",4
+"Yes",8,8,8,"married","good",3
+"Yes",0,0,0.05,"not married","fair",2
+"No",47,47,47,"married","fair",2
+"No",19,18,18,"not married","fair",2
+"No",27,27,27,"married","good",3
+"No",23,23,23,"married","excellent",4
+"No",21,NA,NA,"not married","good",3
+"No",8,8,8,"not married","good",3
+"Yes",3,3,4,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",10,10,10,"not married","good",3
+"No",25,22,22,"married","good",3
+"No",15,15,15,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",4,4,4,"not married","excellent",4
+"No",45,42,42,"married","excellent",4
+"No",50,NA,NA,"married","excellent",4
+"No",17,17,17,"not married","excellent",4
+"No",3,0,0.15,"not married","good",3
+"No",27,17,17,"married","excellent",4
+"No",22,2,0.75,"not married","excellent",4
+"No",2,1,0.45,"not married","excellent",4
+"No",4,4,4,"not married","good",3
+"No",58,55,55,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",14,2,1.5,"not married","good",3
+"No",17,17,17,"married","good",3
+"No",11,8,8,"married","fair",2
+"No",11,6,6,"not married","excellent",4
+"No",43,42,42,"married","good",3
+"No",27,27,27,"married","excellent",4
+"Yes",1,1,1.5,"not married","good",3
+"No",47,45,45,"married","good",3
+"No",11,11,11,"married","excellent",4
+"No",2,2,1.5,"not married","good",3
+"No",0,0,0.05,"not married","excellent",4
+"No",9,9,9,"married","good",3
+"No",25,25,25,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"Yes",5,5,5,"married","excellent",4
+"No",61,61,61,"married","excellent",4
+"No",34,34,34,"married","excellent",4
+"No",3,3,4,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",3,2,2.5,"not married","good",3
+"No",31,31,31,"married","good",3
+"No",28,27,27,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",20,20,20,"not married","excellent",4
+"No",7,7,7,"married","excellent",4
+"No",10,9,9,"married","good",3
+"No",3,3,2.5,"married","good",3
+"No",28,28,28,"not married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",0,0,0.15,"not married","fair",2
+"No",8,8,8,"married","excellent",4
+"No",0,0,4,"married","excellent",4
+"No",12,9,9,"married","fair",2
+"No",29,29,29,"not married","good",3
+"No",4,4,4,"not married","excellent",4
+"No",1,1,0.45,"not married","good",3
+"No",9,9,9,"married","excellent",4
+"Yes",1,1,2.5,"not married","excellent",4
+"No",29,20,20,"married","excellent",4
+"No",34,NA,NA,"married","good",3
+"No",6,6,6,"married","excellent",4
+"No",14,14,14,"married","good",3
+"No",1,1,0.45,"not married","excellent",4
+"No",15,15,15,"married","fair",2
+"No",14,14,14,"not married","good",3
+"No",2,2,1.5,"not married","excellent",4
+"No",12,12,12,"married","good",3
+"No",11,6,6,"married","excellent",4
+"No",19,16,16,"married","good",3
+"No",18,17,17,"married","excellent",4
+"No",13,13,13,"not married","good",3
+"No",59,59,59,"married","fair",2
+"No",15,14,14,"not married","good",3
+"No",NA,NA,NA,"married","excellent",4
+"No",NA,25,25,"married","good",3
+"No",32,26,26,"married","excellent",4
+"No",15,14,14,"married","fair",2
+"No",14,14,14,"married","good",3
+"No",6,6,6,"not married","poor",1
+"No",33,33,33,"married","excellent",4
+"No",12,12,12,"not married","fair",2
+"No",6,6,6,"married","excellent",4
+"No",6,6,6,"not married","fair",2
+"No",43,43,43,"married","excellent",4
+"No",41,39,39,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",23,23,23,"married","good",3
+"No",3,2,4,"not married","good",3
+"No",26,26,26,"married","excellent",4
+"No",14,14,14,"married","good",3
+"No",16,16,16,"not married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",8,8,8,"not married","excellent",4
+"No",14,8,8,"not married","excellent",4
+"Yes",0,0,0.75,"not married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",12,10,10,"not married","excellent",4
+"No",56,56,56,"married","good",3
+"No",7,7,7,"not married","excellent",4
+"No",52,25,25,"married","excellent",4
+"No",3,3,4,"not married","good",3
+"No",2,1,0.75,"not married","good",3
+"No",16,16,16,"married","excellent",4
+"No",47,46,46,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",30,30,30,"married","excellent",4
+"No",29,29,29,"married","good",3
+"Yes",1,1,1.5,"not married","good",3
+"No",19,19,19,"married","excellent",4
+"No",20,19,19,"married","excellent",4
+"No",19,3,4,"not married","good",3
+"No",10,5,5,"not married","excellent",4
+"No",28,27,27,"married","poor",1
+"No",16,10,10,"married","excellent",4
+"No",2,1,0.75,"not married","good",3
+"No",24,24,24,"married","excellent",4
+"Yes",2,2,2.5,"not married","good",3
+"No",10,10,10,"not married","good",3
+"No",34,33,33,"married","excellent",4
+"No",11,11,11,"not married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"Yes",3,3,4,"married","poor",1
+"No",4,3,4,"married","excellent",4
+"No",1,1,2.5,"not married","good",3
+"No",11,11,11,"married","excellent",4
+"No",5,5,5,"not married","good",3
+"No",21,17,17,"married","excellent",4
+"No",10,8,8,"not married","good",3
+"Yes",0,0,0.45,"not married","good",3
+"No",6,6,6,"not married","excellent",4
+"No",17,12,12,"not married","excellent",4
+"No",21,21,21,"married","poor",1
+"No",6,5,5,"not married","excellent",4
+"No",19,18,18,"married","excellent",4
+"No",2,2,2.5,"not married","excellent",4
+"No",19,14,14,"married","excellent",4
+"No",2,0,2.5,"not married","good",3
+"No",7,7,7,"married","excellent",4
+"No",42,41,41,"married","good",3
+"No",25,24,24,"married","excellent",4
+"Yes",5,5,5,"married","good",3
+"No",5,4,4,"not married","fair",2
+"Yes",6,5,5,"married","good",3
+"No",2,2,2.5,"not married","fair",2
+"Yes",2,2,1.5,"not married","good",3
+"No",33,33,33,"married","excellent",4
+"No",1,0,1.5,"not married","good",3
+"No",8,7,7,"not married","good",3
+"No",19,13,13,"married","good",3
+"No",1,1,0.45,"not married","fair",2
+"No",7,7,7,"married","good",3
+"No",15,15,15,"not married","excellent",4
+"No",15,14,14,"married","good",3
+"Yes",8,4,4,"married","good",3
+"No",14,14,14,"not married","excellent",4
+"No",13,13,13,"married","fair",2
+"No",3,3,4,"not married","fair",2
+"No",11,10,10,"married","excellent",4
+"No",16,15,15,"not married","excellent",4
+"No",4,4,4,"married","fair",2
+"Yes",7,7,7,"not married","excellent",4
+"No",29,29,29,"married","excellent",4
+"No",1,1,2.5,"not married","excellent",4
+"Yes",0,0,0.15,"not married","good",3
+"No",10,9,9,"married","excellent",4
+"No",35,34,34,"married","excellent",4
+"No",40,40,40,"married","fair",2
+"Yes",3,3,4,"not married","excellent",4
+"No",3,3,4,"not married","good",3
+"No",11,9,9,"not married","excellent",4
+"No",4,2,4,"not married","excellent",4
+"No",12,12,12,"not married","fair",2
+"No",11,11,11,"married","fair",2
+"No",37,37,37,"not married","good",3
+"No",31,31,31,"married","fair",2
+"No",16,16,16,"not married","excellent",4
+"No",32,32,NA,"married","good",3
+"No",20,19,19,"not married","excellent",4
+"No",11,11,11,"married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",17,17,17,"not married","good",3
+"No",16,16,16,"not married","fair",2
+"No",28,13,13,"married","good",3
+"No",10,9,9,"married","excellent",4
+"Yes",1,0,0.75,"not married","excellent",4
+"No",12,12,12,"married","good",3
+"No",2,2,4,"married","good",3
+"Yes",2,1,1.5,"not married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",44,40,40,"married","very poor",0
+"No",16,4,4,"married","excellent",4
+"No",16,16,16,"married","excellent",4
+"Yes",1,1,0.05,"not married","good",3
+"No",9,9,9,"not married","good",3
+"No",8,8,8,"married","excellent",4
+"No",25,25,25,"not married","excellent",4
+"No",1,1,1.5,"not married","excellent",4
+"No",43,41,41,"not married","fair",2
+"No",8,7,7,"married","good",3
+"No",20,20,20,"married","fair",2
+"No",25,24,24,"married","excellent",4
+"No",9,4,4,"not married","good",3
+"No",13,11,11,"married","excellent",4
+"No",8,8,8,"married","good",3
+"No",18,17,17,"married","good",3
+"No",1,0,1.5,"not married","excellent",4
+"No",12,11,11,"married","excellent",4
+"Yes",7,7,7,"married","good",3
+"No",13,12,12,"married","excellent",4
+"No",2,0,0.15,"not married","good",3
+"No",7,7,7,"married","excellent",4
+"No",22,22,22,"married","fair",2
+"Yes",0,0,0.45,"not married","good",3
+"No",22,21,21,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",24,20,20,"not married","good",3
+"No",38,37,37,"married","good",3
+"No",16,16,16,"not married","good",3
+"No",4,4,4,"married","excellent",4
+"No",56,56,56,"married","good",3
+"No",0,0,0.75,"not married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",10,9,9,"married","excellent",4
+"No",5,5,5,"not married","excellent",4
+"No",33,29,29,"married","excellent",4
+"No",6,4,4,"married","excellent",4
+"No",34,34,34,"not married","good",3
+"No",37,35,35,"married","fair",2
+"No",9,9,9,"not married","excellent",4
+"No",54,54,54,"married","excellent",4
+"No",4,3,4,"not married","excellent",4
+"No",17,13,13,"married","poor",1
+"No",7,7,7,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",13,12,12,"married","fair",2
+"No",14,12,12,"married","excellent",4
+"No",1,NA,NA,"not married","good",3
+"No",20,20,20,"married","excellent",4
+"No",5,5,5,"married","excellent",4
+"No",6,6,6,"not married","fair",2
+"Yes",1,1,0.75,"not married","fair",2
+"No",9,8,8,"not married","fair",2
+"No",8,8,8,"married","good",3
+"No",39,38,38,"married","excellent",4
+"No",10,10,10,"married","good",3
+"No",25,25,25,"married","excellent",4
+"No",39,39,39,"not married","excellent",4
+"No",16,16,16,"married","excellent",4
+"No",14,13,13,"married","excellent",4
+"Yes",0,0,0.45,"not married","fair",2
+"No",8,8,8,"married","fair",2
+"No",10,10,10,"married","excellent",4
+"No",15,14,14,"married","excellent",4
+"Yes",9,2,2.5,"not married","fair",2
+"No",11,10,10,"married","good",3
+"No",26,25,25,"married","excellent",4
+"No",12,0,0.45,"not married","excellent",4
+"Yes",2,2,2.5,"not married","good",3
+"No",13,11,11,"married","excellent",4
+"No",2,2,2.5,"not married","good",3
+"No",31,30,30,"married","good",3
+"No",7,7,7,"married","good",3
+"No",15,15,15,"married","excellent",4
+"No",0,0,0,"not married","excellent",4
+"No",27,26,26,"not married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",33,33,33,"not married","excellent",4
+"No",34,33,33,"not married","excellent",4
+"No",10,10,10,"not married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",49,32,32,"not married","fair",2
+"No",23,23,23,"married","excellent",4
+"Yes",3,3,2.5,"not married","good",3
+"No",32,32,32,"married","poor",1
+"No",4,1,1.5,"not married","excellent",4
+"No",57,56,56,"married","excellent",4
+"No",31,31,31,"not married","fair",2
+"No",14,1,0.45,"not married","excellent",4
+"No",NA,NA,NA,"married","excellent",4
+"No",29,28,28,"married","good",3
+"No",11,11,11,"married","excellent",4
+"No",23,23,23,"married","good",3
+"No",40,38,38,"married","excellent",4
+"Yes",2,2,1.5,"not married","excellent",4
+"No",9,8,8,"married","excellent",4
+"No",16,16,16,"married","poor",1
+"No",24,23,23,"married","fair",2
+"No",41,41,41,"married","excellent",4
+"No",47,47,47,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",11,6,6,"married","excellent",4
+"Yes",4,4,4,"married","excellent",4
+"No",40,23,23,"married","fair",2
+"No",1,1,1.5,"not married","excellent",4
+"No",23,20,20,"married","excellent",4
+"No",54,36,36,"married","excellent",4
+"No",27,27,27,"not married","good",3
+"No",6,5,5,"married","excellent",4
+"No",15,13,13,"married","excellent",4
+"No",29,29,29,"married","good",3
+"No",34,34,34,"married","excellent",4
+"No",19,19,19,"married","excellent",4
+"No",56,56,56,"married","excellent",4
+"No",59,58,58,"married","good",3
+"No",60,59,59,"married","excellent",4
+"No",3,2,2.5,"not married","good",3
+"No",27,9,9,"married","excellent",4
+"No",2,2,1.5,"not married","good",3
+"No",17,16,16,"married","excellent",4
+"No",29,29,29,"married","excellent",4
+"No",29,NA,NA,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",11,11,11,"married","excellent",4
+"No",20,20,20,"married","excellent",4
+"Yes",3,3,2.5,"married","excellent",4
+"No",3,3,1.5,"married","excellent",4
+"No",10,9,9,"married","excellent",4
+"No",17,17,17,"married","fair",2
+"No",7,3,4,"not married","good",3
+"No",24,22,22,"married","excellent",4
+"No",2,2,0.45,"married","excellent",4
+"No",36,36,36,"married","excellent",4
+"No",47,47,47,"married","excellent",4
+"No",55,55,55,"married","fair",2
+"No",17,NA,NA,"married","excellent",4
+"No",5,4,4,"married","good",3
+"No",1,1,1.5,"married","excellent",4
+"No",39,36,36,"married","good",3
+"No",44,44,44,"married","excellent",4
+"No",9,4,4,"not married","excellent",4
+"No",0,0,0.15,"not married","fair",2
+"No",53,53,53,"married","good",3
+"No",14,13,13,"not married","excellent",4
+"No",7,7,7,"married","good",3
+"Yes",0,0,0.45,"not married","excellent",4
+"No",14,14,14,"married","fair",2
+"No",21,20,20,"married","excellent",4
+"No",55,54,54,"married","excellent",4
+"No",32,32,32,"married","fair",2
+"No",70,66,66,"married","excellent",4
+"No",2,2,1.5,"not married","good",3
+"No",20,20,20,"married","good",3
+"No",30,0,0.45,"not married","excellent",4
+"No",35,34,34,"married","good",3
+"No",6,6,6,"not married","fair",2
+"No",25,25,25,"married","good",3
+"No",56,55,55,"married","excellent",4
+"No",0,0,0.05,"not married","excellent",4
+"No",9,9,9,"married","excellent",4
+"Yes",7,7,7,"not married","fair",2
+"No",30,30,30,"married","good",3
+"No",25,24,24,"married","good",3
+"No",39,39,39,"married","excellent",4
+"Yes",11,11,11,"married","excellent",4
+"No",18,17,17,"married","good",3
+"No",13,13,13,"not married","fair",2
+"No",24,24,24,"married","excellent",4
+"No",37,37,37,"married","excellent",4
+"No",18,18,18,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"No",59,55,55,"married","excellent",4
+"No",2,1,2.5,"married","fair",2
+"No",12,12,12,"not married","excellent",4
+"No",31,31,31,"married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",20,20,20,"married","excellent",4
+"Yes",6,6,6,"married","excellent",4
+"No",4,4,4,"married","excellent",4
+"No",14,14,14,"not married","good",3
+"No",10,8,8,"not married","good",3
+"No",5,4,4,"married","excellent",4
+"Yes",2,2,2.5,"not married","excellent",4
+"No",59,59,59,"married","good",3
+"No",11,11,11,"married","good",3
+"No",6,6,6,"not married","good",3
+"No",27,24,24,"married","excellent",4
+"No",8,1,1.5,"not married","good",3
+"No",10,10,10,"married","excellent",4
+"No",31,31,31,"married","good",3
+"No",29,29,29,"married","fair",2
+"No",54,54,54,"married","excellent",4
+"No",25,25,25,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",21,21,21,"not married","good",3
+"No",64,63,63,"married","excellent",4
+"Yes",2,NA,NA,"married","excellent",4
+"Yes",3,2,1.5,"not married","fair",2
+"No",39,39,39,"married","excellent",4
+"No",20,20,20,"married","excellent",4
+"No",60,60,60,"married","excellent",4
+"No",46,44,44,"married","excellent",4
+"No",19,18,18,"married","excellent",4
+"No",48,48,48,"married","excellent",4
+"No",44,39,39,"married","excellent",4
+"No",0,0,0.15,"not married","good",3
+"No",27,27,27,"married","excellent",4
+"No",23,23,23,"married","excellent",4
+"No",16,16,16,"married","very poor",0
+"No",40,40,40,"married","excellent",4
+"No",6,6,6,"not married","excellent",4
+"No",10,4,4,"not married","excellent",4
+"No",9,7,7,"not married","good",3
+"No",58,58,58,"married","excellent",4
+"No",36,36,36,"married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",50,40,40,"married","excellent",4
+"Yes",9,9,9,"not married","good",3
+"No",19,18,18,"married","good",3
+"No",39,39,39,"married","good",3
+"No",23,19,19,"married","excellent",4
+"No",55,NA,NA,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",13,12,12,"married","excellent",4
+"No",1,0,1.5,"not married","excellent",4
+"No",19,8,8,"married","excellent",4
+"No",25,25,25,"married","good",3
+"No",28,25,25,"married","excellent",4
+"No",33,33,33,"married","excellent",4
+"Yes",5,5,5,"married","good",3
+"No",67,66,66,"married","excellent",4
+"No",47,47,47,"married","excellent",4
+"No",20,19,19,"married","excellent",4
+"No",54,52,52,"married","good",3
+"No",11,10,10,"married","excellent",4
+"No",21,21,21,"married","fair",2
+"No",43,42,42,"married","excellent",4
+"No",9,6,6,"not married","good",3
+"No",40,1,2.5,"not married","good",3
+"No",42,42,42,"married","excellent",4
+"No",25,25,25,"married","excellent",4
+"No",58,58,58,"married","excellent",4
+"No",24,24,24,"not married","excellent",4
+"No",41,41,41,"married","excellent",4
+"No",0,0,0.05,"not married","good",3
+"No",12,12,12,"married","good",3
+"No",35,35,35,"married","good",3
+"No",15,15,15,"not married","good",3
+"No",1,1,1.5,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",12,12,12,"married","excellent",4
+"No",21,21,21,"married","excellent",4
+"No",7,6,6,"not married","fair",2
+"No",3,3,4,"married","excellent",4
+"No",22,20,20,"not married","poor",1
+"Yes",1,1,0.15,"not married","fair",2
+"No",28,18,18,"married","fair",2
+"No",4,4,4,"not married","excellent",4
+"No",46,12,12,"not married","excellent",4
+"No",7,5,5,"not married","excellent",4
+"No",2,2,1.5,"not married","excellent",4
+"No",27,27,27,"married","excellent",4
+"No",27,26,26,"married","excellent",4
+"No",0,0,0.45,"not married","good",3
+"No",7,7,7,"not married","good",3
+"No",17,17,17,"married","good",3
+"No",41,41,41,"married","excellent",4
+"No",12,11,11,"not married","good",3
+"No",NA,3,1.5,"not married","good",3
+"No",38,38,38,"married","excellent",4
+"No",23,23,23,"married","excellent",4
+"No",4,4,4,"married","excellent",4
+"No",47,45,45,"married","excellent",4
+"Yes",0,0,0.45,"not married","fair",2
+"No",11,11,11,"not married","excellent",4
+"No",33,33,33,"married","excellent",4
+"No",18,18,18,"married","good",3
+"Yes",0,0,0.75,"not married","excellent",4
+"No",21,20,20,"married","good",3
+"No",17,17,17,"married","excellent",4
+"No",0,0,0.15,"not married","fair",2
+"No",26,26,26,"married","excellent",4
+"No",16,16,16,"not married","excellent",4
+"No",47,47,47,"married","fair",2
+"No",2,2,2.5,"not married","excellent",4
+"No",14,14,14,"married","good",3
+"No",1,1,1.5,"married","excellent",4
+"No",NA,46,46,"married","good",3
+"No",5,4,4,"not married","good",3
+"No",26,26,26,"married","fair",2
+"No",9,9,9,"not married","good",3
+"No",1,1,0.75,"not married","excellent",4
+"No",27,21,21,"married","excellent",4
+"No",2,2,2.5,"not married","excellent",4
+"No",57,47,47,"married","excellent",4
+"No",12,12,12,"married","poor",1
+"No",11,11,11,"not married","good",3
+"No",28,28,28,"married","very poor",0
+"No",40,40,40,"married","excellent",4
+"No",13,13,13,"married","excellent",4
+"No",49,49,49,"married","good",3
+"Yes",1,1,0.75,"not married","excellent",4
+"No",26,13,13,"not married","excellent",4
+"No",51,51,51,"married","excellent",4
+"No",1,1,0.75,"not married","excellent",4
+"No",10,10,10,"not married","excellent",4
+"No",12,12,12,"married","good",3
+"No",20,18,18,"married","excellent",4
+"No",48,48,48,"married","good",3
+"No",36,36,36,"married","very poor",0
+"No",11,11,11,"married","excellent",4
+"No",8,8,8,"married","excellent",4
+"No",9,9,9,"married","excellent",4
+"No",10,9,9,"not married","good",3
+"No",34,34,34,"married","excellent",4
+"No",46,46,46,"married","excellent",4
+"Yes",6,6,6,"married","excellent",4
+"No",27,23,23,"married","good",3
+"No",11,10,10,"married","excellent",4
+"No",13,12,12,"married","good",3
+"Yes",4,2,1.5,"not married","excellent",4
+"Yes",2,2,1.5,"not married","excellent",4
+"No",23,23,23,"married","good",3
+"No",66,66,66,"married","excellent",4
+"No",54,51,51,"married","excellent",4
+"No",6,0,0.05,"not married","good",3
+"No",4,4,4,"married","excellent",4
+"No",16,8,8,"married","excellent",4
+"No",13,12,12,"married","good",3
+"No",0,0,0.15,"not married","poor",1
+"No",11,11,11,"not married","good",3
+"No",13,10,10,"married","excellent",4
+"No",8,8,8,"not married","fair",2
+"Yes",9,8,8,"married","excellent",4
+"No",7,4,4,"married","excellent",4
+"No",10,10,10,"married","excellent",4
+"No",18,18,18,"married","good",3
+"No",0,0,0.05,"not married","good",3
+"No",13,13,13,"not married","excellent",4
+"No",10,10,10,"not married","excellent",4
+"No",8,8,8,"married","good",3
+"No",9,8,8,"married","good",3
+"No",0,0,0.45,"not married","excellent",4
+"No",37,36,36,"married","excellent",4
+"No",71,55,55,"married","excellent",4
+"No",11,11,11,"married","good",3
+"No",25,23,23,"married","good",3
+"No",36,36,36,"not married","good",3
+"No",20,20,20,"married","excellent",4
+"No",1,1,1.5,"not married","good",3
+"No",13,13,13,"not married","excellent",4
+"No",41,41,41,"married","excellent",4
+"No",24,24,24,"married","excellent",4
+"No",25,25,25,"married","excellent",4
+"No",7,7,7,"married","good",3
+"No",23,23,23,"married","excellent",4
+"No",27,26,26,"not married","excellent",4
+"No",35,30,30,"married","excellent",4
+"No",10,9,9,"married","excellent",4
+"No",52,50,50,"married","good",3
+"No",8,8,8,"not married","good",3
+"No",20,18,18,"married","excellent",4
+"No",14,13,13,"married","excellent",4
+"No",4,3,4,"married","excellent",4
+"No",9,9,9,"married","good",3
+"No",1,1,0.15,"not married","good",3
+"No",2,2,1.5,"not married","good",3
+"No",33,32,32,"married","excellent",4
+"No",21,21,21,"married","very poor",0
+"No",42,42,42,"married","excellent",4
+"No",13,13,13,"married","good",3
+"No",1,1,1.5,"not married","excellent",4
+"No",11,11,11,"not married","excellent",4
+"No",5,5,5,"married","good",3
+"No",45,32,32,"not married","good",3
+"No",37,35,35,"married","excellent",4
+"No",25,20,20,"married","excellent",4
+"No",37,35,35,"married","excellent",4
+"No",42,42,42,"married","excellent",4
+"No",8,8,8,"not married","good",3
+"No",6,6,6,"married","good",3
+"No",21,20,20,"married","good",3
+"No",13,13,13,"married","excellent",4
+"No",15,14,14,"married","excellent",4
+"Yes",10,10,10,"not married","excellent",4
+"No",6,6,6,"married","excellent",4
+"No",6,5,5,"married","good",3
