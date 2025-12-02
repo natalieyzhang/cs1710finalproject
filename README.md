@@ -4,7 +4,7 @@
 
 ### A Scrollytelling Data Visualization Website Built using D3.js
 
-**VisualizationShip** is an interactive scrollytelling website exploring modern dating behavior and online dating among Harvard students and beyond. Find out what relationships look like today, and how you compare.
+**VisualizationShip** is an interactive data-driven scrollytelling website exploring modern dating behavior and online dating among Harvard students and beyond. Find out what relationships look like today, and how you compare.
 
 ## How to Run the Project
 The project can be accessed via our website or on a local server.
