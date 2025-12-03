@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine Text-Message Bar Chart</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent; /* transparent for embedding */
+      color: #111827;
+    }
+
+    #container {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #viz {
+      width: 100%;
+      height: 100%;
+      flex: 1;
+      min-height: 0;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .controls {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .controls button {
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: none;
+      background: #db2777;
+      color: #fdf2f8;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .controls button:hover {
+      filter: brightness(1.05);
+    }
+
+    .grid line {
+      stroke: rgba(148, 163, 184, 0.25);
+      stroke-dasharray: 2 4;
+    }
+
+    .grid path {
+      display: none;
+    }
+
+    .axis path,
+    .axis line {
+      stroke: rgba(148, 163, 184, 0.6);
+    }
+
+    .axis text {
+      fill: #374151;
+      font-size: 11px;
+    }
+
+    .y-axis text {
+      font-weight: 500;
+    }
+
+    .axis-label {
+      fill: #4b5563;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .subtitle {
+      fill: #6b7280;
+      font-size: 11px;
+    }
+
+    /* Message bubbles */
+
+    .bubble-group {
+      cursor: pointer;
+    }
+
+    .bubble-group:hover .msg-rect {
+      opacity: 1;
+    }
+
+    .bubble-group.locked .msg-rect {
+      stroke-width: 1.6px;
+      stroke: rgba(15, 23, 42, 0.4);
+    }
+
+    .msg-rect {
+      opacity: 0.95;
+    }
+
+    .msg-rect-outline {
+      fill: none;
+      stroke: rgba(15, 23, 42, 0.45);
+      stroke-width: 1.2px;
+    }
+
+    .bubble-yes .msg-rect {
+      fill: #db2777;
+    }
+
+    .bubble-no .msg-rect {
+      fill: #ff9fb3;
+    }
+
+    .pct-label {
+      fill: #fdf2f8;
+      font-size: 11px;
+      pointer-events: none;
+      font-weight: 500;
+      display: none;
+    }
+
+    /* Tooltip anchored to bubbles */
+
+    .tooltip {
+      position: absolute;
+      pointer-events: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      background: #8f304e;
+      color: #f9fafb;
+      border: 1px solid black;
+      opacity: 0;
+      transform: translate(-50%, -120%);
+      transition: opacity 0.15s ease-out;
+      white-space: nowrap;
+      z-index: 20;
+    }
+
+    /* Legend captions */
+
+    .legend-label {
+      fill: #4b5563;
+      font-size: 11px;
+    }
+
+    .legend-swatch {
+      rx: 999px;
+    }
+    header {
+      flex-shrink: 0;
+      padding: clamp(8px, 1.2vh, 16px) clamp(12px, 2vw, 20px);
+    }
+
+    header h1 {
+      font-size: clamp(1.6rem, 2.5vw + 1.2vh, 2.3rem);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #c9184a;
+      margin-bottom: clamp(4px, 0.6vh, 6px);
+    }
+    
+    .intro-heading {
+      text-align: center;
+      font-size: clamp(1rem, 1.8vw + 0.8vh, 1.4rem);
+      color: #8f304e;
+      margin-bottom: clamp(4px, 0.6vh, 8px);
+      font-weight: 500;
+      padding: 0 clamp(12px, 2vw, 20px);
+      flex-shrink: 0;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+  <header>
+      <h2 class="intro-heading">The distributions of self-reported relationship quality between couples who met online and offline are roughly the same: </h2>
+  </header>
+<body>
+  <div id="container">
+    <div id="viz"></div>
+    <div id="tooltip" class="tooltip"></div>
+    <div class="controls">
+      <button id="toggleView">Compare</button>
+    </div>
+  </div>
+
+  <script>
+    const outerWidth = 960;
+    const outerHeight = 540;
+
+    const margin = { top: 60, right: 80, bottom: 70, left: 140 };
+    const chartWidth = outerWidth - margin.left - margin.right;
+    const chartHeight = outerHeight - margin.top - margin.bottom;
+
+    const orderedLabels = ["very poor", "poor", "fair", "good", "excellent"];
+    const qualityMap = {
+      0: "very poor",
+      1: "poor",
+      2: "good",
+      3: "fair",
+      4: "excellent",
+      "0": "very poor",
+      "1": "poor",
+      "2": "good",
+      "3": "fair",
+      "4": "excellent"
+    };
+
+    const svg = d3.select("#viz")
+      .append("svg")
+      .attr("viewBox", `0 0 ${outerWidth} ${outerHeight}`)
+      .attr("preserveAspectRatio", "xMidYMid meet");
+
+    const chartG = svg.append("g")
+      .attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const tooltip = d3.select("#tooltip");
+    const toggleBtn = d3.select("#toggleView");
+    let isGrouped = false;
+
+    // Gradients for Yes / No bubbles
+    const defs = svg.append("defs");
+
+    const gradYes = defs.append("linearGradient")
+      .attr("id", "bubbleYesGradient")
+      .attr("x1", "0%").attr("y1", "0%")
+      .attr("x2", "100%").attr("y2", "0%");
+    gradYes.append("stop")
+      .attr("offset", "0%")
+      .attr("stop-color", "#f973aF");
+    gradYes.append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", "#db2777");
+
+    const gradNo = defs.append("linearGradient")
+      .attr("id", "bubbleNoGradient")
+      .attr("x1", "0%").attr("y1", "0%")
+      .attr("x2", "100%").attr("y2", "0%");
+    gradNo.append("stop")
+      .attr("offset", "0%")
+      .attr("stop-color", "#c4b5fd");
+    gradNo.append("stop")
+      .attr("offset", "100%")
+      .attr("stop-color", "#7c3aed");
+
+    // Helper: tooltip anchored to bubble rect
+    function showTooltipForBubble(bubbleSelection, text) {
+      const rectNode = bubbleSelection.select("rect.msg-rect").node();
+      if (!rectNode) return;
+
+      const bbox = rectNode.getBoundingClientRect();
+      const centerX = bbox.x + bbox.width / 2;
+      const topY = bbox.y;
+
+      tooltip
+        .style("left", centerX + "px")
+        .style("top", (topY - 8) + "px")
+        .style("opacity", 1)
+        .text(text);
+    }
+
+    function hideTooltip() {
+      tooltip.style("opacity", 0);
+    }
+
+    d3.csv("/data/hcmst_percentage.csv", d3.autoType).then(rawData => {
+      const cleaned = rawData.map(d => {
+        const pct = +d.pct;
+        const qnum = +d.relationship_quality_num;
+        const qLabel = qualityMap[qnum] || qualityMap[d.relationship_quality_num] || String(d.relationship_quality_num);
+        return {
+          ...d,
+          pct,
+          relationship_quality_num: qnum,
+          quality_label: qLabel
+        };
+      });
+
+      // YES = met via internet; NO = met offline
+      const yesData = cleaned
+        .filter(d => d.either_internet && /yes/i.test(d.either_internet))
+        .sort((a, b) => orderedLabels.indexOf(a.quality_label) - orderedLabels.indexOf(b.quality_label));
+
+      const noData = cleaned
+        .filter(d => d.either_internet && /no/i.test(d.either_internet))
+        .sort((a, b) => orderedLabels.indexOf(a.quality_label) - orderedLabels.indexOf(b.quality_label));
+
+      const allPoints = yesData.concat(noData);
+      const maxPct = d3.max(allPoints, d => d.pct) || 1;
+
+      const x = d3.scaleLinear()
+        .domain([0, maxPct])
+        .nice()
+        .range([0, chartWidth]);
+
+      const y = d3.scaleBand()
+        .domain(orderedLabels)
+        .range([0, chartHeight])
+        .paddingInner(0.4)
+        .paddingOuter(0.1);
+
+      const band = y.bandwidth();
+      const bubbleConfig = {
+        height: band * 0.7,
+        y: band * 0.15
+      };
+
+      // Shared grid
+      const xGrid = d3.axisBottom(x)
+        .ticks(6)
+        .tickSize(-chartHeight)
+        .tickFormat("");
+
+      chartG.append("g")
+        .attr("class", "grid x-grid")
+        .attr("transform", `translate(0, ${chartHeight})`)
+        .call(xGrid);
+
+      const yGrid = d3.axisLeft(y)
+        .tickSize(-chartWidth)
+        .tickFormat("");
+
+      chartG.append("g")
+        .attr("class", "grid y-grid")
+        .call(yGrid);
+
+      // Y-axis
+      const yAxis = d3.axisLeft(y);
+      chartG.append("g")
+        .attr("class", "axis y-axis")
+        .call(yAxis);
+
+      chartG.append("text")
+        .attr("class", "axis-label")
+        .attr("x", -margin.left + 10)
+        .attr("y", -20)
+        .attr("text-anchor", "start")
+        .text("Relationship quality");
+
+
+      // X-axis (hidden until grouped view)
+      const xAxis = d3.axisBottom(x)
+        .ticks(6)
+        .tickFormat(d => d + "%");
+
+      const xAxisG = chartG.append("g")
+        .attr("class", "axis x-axis")
+        .attr("transform", `translate(0, ${chartHeight})`)
+        .style("opacity", 0)
+        .call(xAxis);
+
+      const xAxisLabel = chartG.append("text")
+        .attr("class", "axis-label")
+        .attr("x", chartWidth)
+        .attr("y", chartHeight + 44)
+        .attr("text-anchor", "end")
+        .style("opacity", 0)
+        .text("Percentage of respondents");
+
+      // Legend / captions under each side
+      const legendY = chartHeight + 60;
+      const legendG = chartG.append("g").attr("class", "legend-row");
+
+      // Yes legend (left side)
+      const yesLegend = legendG.append("g")
+        .attr("class", "legend-yes")
+        .attr("transform", `translate(${chartWidth * 0.25}, ${legendY})`);
+
+      yesLegend.append("rect")
+        .attr("class", "legend-swatch")
+        .attr("x", -40)
+        .attr("y", -8)
+        .attr("width", 20)
+        .attr("height", 16)
+        .attr("fill", "#db2777");
+
+      yesLegend.append("text")
+        .attr("class", "legend-label")
+        .attr("x", -16)
+        .attr("y", 4)
+        .attr("text-anchor", "start")
+        .text("Met online");
+
+      // No legend (right side)
+      const noLegend = legendG.append("g")
+        .attr("class", "legend-no")
+        .attr("transform", `translate(${chartWidth * 0.75}, ${legendY})`);
+
+      noLegend.append("rect")
+        .attr("class", "legend-swatch")
+        .attr("x", -40)
+        .attr("y", -8)
+        .attr("width", 20)
+        .attr("height", 16)
+        .attr("fill", "#ff9fb3");
+
+      noLegend.append("text")
+        .attr("class", "legend-label")
+        .attr("x", -16)
+        .attr("y", 4)
+        .attr("text-anchor", "start")
+        .text("Met offline");
+
+      // Phase 1 animation setup
+      const yStart = chartHeight - band * 1.1;
+      const phase1Scale = 0.45; // fraction of full width for texting layout
+
+      const maxWidthPhase1 = x(maxPct) * phase1Scale;
+      const noOriginX = chartWidth - maxWidthPhase1; // right side origin
+
+      const yesGroupG = chartG.append("g").attr("class", "bubbles-yes");
+      const noGroupG = chartG.append("g").attr("class", "bubbles-no");
+
+      // YES bubbles (left side)
+      const yesBubbles = yesGroupG.selectAll(".bubble-yes")
+        .data(yesData)
+        .enter()
+        .append("g")
+        .attr("class", "bubble-group bubble-yes")
+        .attr("transform", `translate(0, ${yStart})`)
+        .style("opacity", 0);
+
+      // NO bubbles (right side)
+      const noBubbles = noGroupG.selectAll(".bubble-no")
+        .data(noData)
+        .enter()
+        .append("g")
+        .attr("class", "bubble-group bubble-no")
+        .attr("transform", `translate(${noOriginX}, ${yStart})`)
+        .style("opacity", 0);
+
+      function addBubbleShapes(selection) {
+        const bubbleHeight = bubbleConfig.height;
+        const bubbleY = bubbleConfig.y;
+        const rx = bubbleHeight / 2.3;
+
+        // Main rounded rect
+        selection.append("rect")
+          .attr("class", "msg-rect")
+          .attr("x", 0)
+          .attr("y", bubbleY)
+          .attr("height", bubbleHeight)
+          .attr("rx", rx)
+          .attr("width", 0);
+
+        // Outline
+        selection.append("rect")
+          .attr("class", "msg-rect-outline")
+          .attr("x", 0)
+          .attr("y", bubbleY)
+          .attr("height", bubbleHeight)
+          .attr("rx", rx)
+          .attr("width", 0);
+
+        // Percentage label
+        selection.append("text")
+          .attr("class", "pct-label")
+          .attr("x", 10)
+          .attr("y", bubbleY + bubbleHeight / 2)
+          .attr("dy", "0.35em")
+          .attr("text-anchor", "start")
+          .style("opacity", 0)
+          .text(d => d.pct.toFixed(1) + "%");
+      }
+
+      addBubbleShapes(yesBubbles);
+      addBubbleShapes(noBubbles);
+
+      // Phase 1: animate like sending texts
+      const bubbleDelay = 420;
+
+      yesBubbles.each(function(d, i) {
+        const bubble = d3.select(this);
+        const wTarget = x(d.pct) * phase1Scale;
+        const finalY = y(d.quality_label);
+
+        bubble
+          .transition()
+          .delay(i * bubbleDelay)
+          .duration(250)
+          .style("opacity", 1)
+          .transition()
+          .duration(650)
+          .tween("growWidth", function() {
+            const rect = bubble.select(".msg-rect");
+            const outline = bubble.select(".msg-rect-outline");
+            const label = bubble.select(".pct-label");
+            const interp = d3.interpolate(0, wTarget);
+
+            return function(t) {
+              const w = interp(t);
+              rect.attr("width", w);
+              outline.attr("width", w);
+              label.attr("x", Math.max(12, w - 14));
+            };
+          })
+          .transition()
+          .duration(700)
+          .ease(d3.easeCubicOut)
+          .attr("transform", `translate(0, ${finalY})`);
+      });
+
+      noBubbles.each(function(d, i) {
+        const bubble = d3.select(this);
+        const wTarget = x(d.pct) * phase1Scale;
+        const finalY = y(d.quality_label);
+
+        bubble
+          .transition()
+          .delay(i * bubbleDelay)
+          .duration(250)
+          .style("opacity", 1)
+          .transition()
+          .duration(650)
+          .tween("growWidth", function() {
+            const rect = bubble.select(".msg-rect");
+            const outline = bubble.select(".msg-rect-outline");
+            const label = bubble.select(".pct-label");
+            const interp = d3.interpolate(0, wTarget);
+
+            return function(t) {
+              const w = interp(t);
+              rect.attr("width", w);
+              outline.attr("width", w);
+              label.attr("x", Math.max(12, w - 14));
+            };
+          })
+          .transition()
+          .duration(700)
+          .ease(d3.easeCubicOut)
+          .attr("transform", `translate(${noOriginX}, ${finalY})`);
+      });
+
+      // Hover / click interactions (shared)
+      function attachInteractions(selection, groupLabel) {
+        selection
+          .on("mouseenter", function(event, d) {
+            const bubble = d3.select(this);
+            bubble.select(".pct-label")
+              .transition()
+              .duration(120)
+              .style("opacity", 1);
+
+            showTooltipForBubble(
+              bubble,
+              `${groupLabel}, ${d.quality_label} relationship: ${d.pct.toFixed(1)}%`
+            );
+          })
+          .on("mouseleave", function() {
+            const bubble = d3.select(this);
+            if (!bubble.classed("locked")) {
+              bubble.select(".pct-label")
+                .transition()
+                .duration(150)
+                .style("opacity", 0);
+            }
+            hideTooltip();
+          })
+          .on("click", function(event, d) {
+            const bubble = d3.select(this);
+            const nowLocked = !bubble.classed("locked");
+            bubble.classed("locked", nowLocked);
+
+            bubble.select(".pct-label")
+              .transition()
+              .duration(120)
+              .style("opacity", nowLocked ? 1 : 0);
+
+            showTooltipForBubble(
+              bubble,
+              `${groupLabel}, ${d.quality_label} relationship: ${d.pct.toFixed(1)}%`
+            );
+          });
+      }
+
+      attachInteractions(yesBubbles, "Met online");
+      attachInteractions(noBubbles, "Met offline");
+
+      // Layout functions for toggle
+
+      function setGroupedState(grouped) {
+        if (grouped) {
+          // Show x-axis
+          xAxisG.transition().duration(600).style("opacity", 1);
+          xAxisLabel.transition().duration(600).style("opacity", 1);
+
+          const finalRectHeight = band * 0.32;
+          const yesRectY = band * 0.08;
+          const noRectY = band * 0.5;
+
+          // YES bars from shared origin
+          yesBubbles.transition()
+            .duration(800)
+            .ease(d3.easeCubicInOut)
+            .attr("transform", d => `translate(0, ${y(d.quality_label)})`);
+
+          yesBubbles.select(".msg-rect")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct))
+            .attr("height", finalRectHeight)
+            .attr("y", yesRectY);
+
+          yesBubbles.select(".msg-rect-outline")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct))
+            .attr("height", finalRectHeight)
+            .attr("y", yesRectY);
+
+          yesBubbles.select(".pct-label")
+            .transition()
+            .duration(800)
+            .attr("y", yesRectY + finalRectHeight / 2)
+            .attr("x", d => Math.max(14, x(d.pct) - 16));
+
+          // NO bars
+          noBubbles.transition()
+            .duration(800)
+            .ease(d3.easeCubicInOut)
+            .attr("transform", d => `translate(0, ${y(d.quality_label)})`);
+
+          noBubbles.select(".msg-rect")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct))
+            .attr("height", finalRectHeight)
+            .attr("y", noRectY);
+
+          noBubbles.select(".msg-rect-outline")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct))
+            .attr("height", finalRectHeight)
+            .attr("y", noRectY);
+
+          noBubbles.select(".pct-label")
+            .transition()
+            .duration(800)
+            .attr("y", noRectY + finalRectHeight / 2)
+            .attr("x", d => Math.max(14, x(d.pct) - 16));
+        } else {
+          // Separate texting view (left vs right, shorter widths)
+
+          // Hide x-axis
+          xAxisG.transition().duration(600).style("opacity", 0);
+          xAxisLabel.transition().duration(600).style("opacity", 0);
+
+          const bubbleHeight = bubbleConfig.height;
+          const bubbleY = bubbleConfig.y;
+
+          // YES back to left-side, shortened width
+          yesBubbles.transition()
+            .duration(800)
+            .ease(d3.easeCubicInOut)
+            .attr("transform", d => `translate(0, ${y(d.quality_label)})`);
+
+          yesBubbles.select(".msg-rect")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct) * phase1Scale)
+            .attr("height", bubbleHeight)
+            .attr("y", bubbleY);
+
+          yesBubbles.select(".msg-rect-outline")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct) * phase1Scale)
+            .attr("height", bubbleHeight)
+            .attr("y", bubbleY);
+
+          yesBubbles.select(".pct-label")
+            .transition()
+            .duration(800)
+            .attr("y", bubbleY + bubbleHeight / 2)
+            .attr("x", d => Math.max(12, x(d.pct) * phase1Scale - 14));
+
+          // NO back to right-side origin
+          noBubbles.transition()
+            .duration(800)
+            .ease(d3.easeCubicInOut)
+            .attr("transform", d => `translate(${noOriginX}, ${y(d.quality_label)})`);
+
+          noBubbles.select(".msg-rect")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct) * phase1Scale)
+            .attr("height", bubbleHeight)
+            .attr("y", bubbleY);
+
+          noBubbles.select(".msg-rect-outline")
+            .transition()
+            .duration(800)
+            .attr("width", d => x(d.pct) * phase1Scale)
+            .attr("height", bubbleHeight)
+            .attr("y", bubbleY);
+
+          noBubbles.select(".pct-label")
+            .transition()
+            .duration(800)
+            .attr("y", bubbleY + bubbleHeight / 2)
+            .attr("x", d => Math.max(12, x(d.pct) * phase1Scale - 14));
+        }
+      }
+
+      // Button behavior
+      toggleBtn.on("click", () => {
+        isGrouped = !isGrouped;
+        setGroupedState(isGrouped);
+        toggleBtn.text(isGrouped ? "View Separately" : "Compare");
+      });
+    }).catch(err => {
+      console.error("Error loading CSV:", err);
+    });
+  </script>
+</body>
+</html>
