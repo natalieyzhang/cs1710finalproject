@@ -41,9 +41,12 @@ Navigate to `project-root/index.html` in VS Code, right-click on the file, and s
     ├── data/
     |   ├── DATA_OVERVIEW.md
     |   ├── datingapps.csv
-    |   ├── essays.csv
+    |   ├── adjectives.csv
+    |   ├── verbs.csv
+    |   ├── nouns.csv
     |   ├── HarvardData.csv
     |   ├── hcmst_cleaned.csv
+    |   ├── hcmst_percentage.csv
     |   ├── rankedmeetingmethods.csv
     |   ├── rankedmeetingmethodsharvard.csv
     |   └── swipedata.csv
