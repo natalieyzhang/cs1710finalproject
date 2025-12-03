@@ -9,13 +9,13 @@
 ## How to Run the Project
 The project can be accessed via our website or on a local server.
 
-### Option 1 --- Website (Recommended)
-
-Our project site is hosted on GitHub. Open the following link in a browser: (https://natalieyzhang.github.io/cs1710finalproject/)
-
-### Option 2 --- VS Code Live Server
-
+### Option 1 --- VS Code Live Server (Recommended)
 Navigate to `project-root/index.html` in VS Code, right-click on the file, and select **Open with Live Server**. Refer to the folder structure below to ensure that all required files are present.
+
+### Option 2 --- Website
+Our project site is hosted on GitHub. Open the following link in a browser: (https://natalieyzhang.github.io/cs1710finalproject/). 
+
+Note: Unfortunately because 'adjectives.csv','verbs.csv', and 'nouns.csv' are over 25 MB, sometimes GitHub returns an error when retrieving these files, and the 'wordmap.html' may not be able to run.
 
 ## Folder Structure
 
@@ -99,8 +99,8 @@ The scrollytelling website takes the viewer on a journey through:
  - The gamification of online dating: directly in `project-root/index.html`
  - How men and women swipe (and match): `project-root/viz/swipesuccessbygender.html`
  - Is online dating overwhelming and causing insecurities?: `project-root/viz/balance.html`
- - People still value connection: `project-root/viz/connection_word_map_combined.html`
- - Meaningful connections continue to happen and be maintained after couples meet online: `project-root/viz/relationshipquality.html`
+ - People still value connection: `project-root/viz/wordmap.html`
+ - Meaningful connections continue to happen and be maintained after couples meet online: `project-root/viz/online_hcmst.html`
  - Negative experiences on dating apps: `project-root/viz/negativeexperiences.html`
  - How do your online dating habits compare with those of Harvard students?: `project-root/viz/endingsurvey.html`
 
