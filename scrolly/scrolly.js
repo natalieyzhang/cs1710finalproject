@@ -655,7 +655,7 @@ function typeQuotesSequentially(quoteElements, index) {
       
       // Variable typing speed - faster overall, slower for punctuation
       const delay = (char === "." || char === "," || char === "?" || char === "!") ? 80 : 
-                    (char === " ") ? 25 : 15;
+                    (char === " ") ? 12 : 7;
       
       setTimeout(typeChar, delay);
     } else {
@@ -697,7 +697,7 @@ function typeQuote(quoteElement) {
       
       // Variable typing speed - slower for punctuation, faster for regular chars
       const delay = (char === "." || char === "," || char === "?" || char === "!") ? 150 : 
-                    (char === " ") ? 50 : 30;
+                    (char === " ") ? 25 : 15;
       
       setTimeout(typeChar, delay);
     }
@@ -798,8 +798,8 @@ function typeTextSequentially(elements, index, section = null) {
       }
       
       // Variable typing speed - slower for punctuation, faster for regular chars
-      const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "—") ? 150 : 
-                    (char === " ") ? 50 : 30;
+      const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "") ? 150 : 
+                    (char === " ") ? 25 : 15;
       
       setTimeout(typeChar, delay);
     } else {
@@ -858,7 +858,7 @@ function typeText(textElement, highlightElement = null) {
       currentIndex++;
       
       // Variable typing speed - slower for punctuation, faster for regular chars
-      const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "—") ? 150 : 
+      const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "") ? 150 : 
                     (char === " ") ? 50 : 30;
       
       setTimeout(typeChar, delay);
