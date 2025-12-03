@@ -655,7 +655,7 @@ function typeQuotesSequentially(quoteElements, index) {
       
       // Variable typing speed - faster overall, slower for punctuation
       const delay = (char === "." || char === "," || char === "?" || char === "!") ? 80 : 
-                    (char === " ") ? 18 : 10.5;
+                    (char === " ") ? 21 : 12.25;
       
       setTimeout(typeChar, delay);
     } else {
