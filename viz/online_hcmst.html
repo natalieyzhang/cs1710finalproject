@@ -282,7 +282,7 @@
       tooltip.style("opacity", 0);
     }
 
-    d3.csv(".../data/hcmst_percentage.csv", d3.autoType).then(rawData => {
+    d3.csv("../data/hcmst_percentage.csv", d3.autoType).then(rawData => {
       const cleaned = rawData.map(d => {
         const pct = +d.pct;
         const qnum = +d.relationship_quality_num;
