@@ -156,3 +156,55 @@ This document describes the structure, fields, and meaning of each dataset used 
 
 **Source:** Data are derived from Swipestats The Truth Behind Dating Apps (including data generated and shared by other users via this platform/tool).
 ---
+## 8. `adjectives.csv`
+**Description:** Top 50 mentioned adjectives in essays.csv. Used in: People still value connection: (`project-root/viz/connection_word_map_combined.html)
+
+| Field | Format | Type | Description |
+|-------|------|------|-------------|
+| pos | text | categorical | Part of speech |
+| keyword | text | categorical | Top 50 mentioned adjective that the essay response contains. |
+| frequency | number | discrete | Number of times keyword shows up in dataset. |
+| essay_index | number | categorical | Unique index given to essay for randomizing purposes. |
+| essay | text | categorical | Unique essay response given by OkCupid user. |
+
+**Source:** Data derived from OKCupid Dating Site Dataset, hosted on Kaggle (by user Subham Yadav). Adjectives were extracted from essay answers, and dataset was then cleaned.
+---
+## 9. `verbs.csv`
+**Description:** Top 50 mentioned verbs in essays.csv. Used in: People still value connection: (`project-root/viz/connection_word_map_combined.html)
+
+| Field | Format | Type | Description |
+|-------|------|------|-------------|
+| pos | text | categorical | Part of speech |
+| keyword | text | categorical | Top 50 mentioned verb that the essay response contains. |
+| frequency | number | discrete | Number of times keyword shows up in dataset. |
+| essay_index | number | categorical | Unique index given to essay for randomizing purposes. |
+| essay | text | categorical | Unique essay response given by OkCupid user. |
+
+**Source:** Data derived from OKCupid Dating Site Dataset, hosted on Kaggle (by user Subham Yadav). Verbs were extracted from essay answers, and dataset was then cleaned.
+---
+## 10. `nouns.csv`
+**Description:** Top 50 mentioned nouns in essays.csv. People still value connection: (`project-root/viz/connection_word_map_combined.html)
+
+| Field | Format | Type | Description |
+|-------|------|------|-------------|
+| pos | text | categorical | Part of speech |
+| keyword | text | categorical | Top 50 mentioned noun that the essay response contains. |
+| frequency | number | discrete | Number of times keyword shows up in dataset. |
+| essay_index | number | categorical | Unique index given to essay for randomizing purposes. |
+| essay | text | categorical | Unique essay response given by OkCupid user. |
+
+**Source:** Data derived from OKCupid Dating Site Dataset, hosted on Kaggle (by user Subham Yadav). Nouns were extracted from essay answers, and dataset was then cleaned.
+---
+## 11. `hcmst_percentage.csv`
+**Description:** Self-reported relationship quality. Used in: Meaningful connections continue to happen and be maintained after couples meet online: (`project-root/viz/relationshipquality.html`).
+
+| Field | Format | Type | Description |
+|-------|------|------|-------------|
+| either_internet | text | categorical | Whether or not the couple met online. |
+| relationship_quality_num | number | ordinal | Self-reported relationship quality from 0-4. |
+| n | number | discrete | Number of cases in that category |
+| pct | number | continuous| Percentage of (yes or no in the 'either_internet) in each category|
+
+**Source:** Data derived from Stanford's How Couples Meet and Stay Together 2017 Dataset (n=99). Data was analyzed categories of relationship quality were assigned percentages of sample population.
+
+
