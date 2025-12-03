@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.append(dot);
     button.addEventListener("click", () => {
       if (scrollEnabled) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
 
@@ -655,7 +655,7 @@ function typeQuotesSequentially(quoteElements, index) {
       
       // Variable typing speed - faster overall, slower for punctuation
       const delay = (char === "." || char === "," || char === "?" || char === "!") ? 80 : 
-                    (char === " ") ? 21 : 12.25;
+                    (char === " ") ? 18 : 10.5;
       
       setTimeout(typeChar, delay);
     } else {
@@ -696,8 +696,8 @@ function typeQuote(quoteElement) {
       currentIndex++;
       
       // Variable typing speed - slower for punctuation, faster for regular chars
-      const delay = (char === "." || char === "," || char === "?" || char === "!") ? 150 : 
-                    (char === " ") ? 50 : 30;
+      const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "") ? 150 : 
+                    (char === " ") ? 37.5 : 22.5;
       
       setTimeout(typeChar, delay);
     }
@@ -744,8 +744,7 @@ function typeTextSequentially(elements, index, section = null) {
     return;
   }
   
-  // Calculate final height before typing starts to prevent vertical shifting
-  // Temporarily set the full text to measure its height
+  // Calculate final height & width before typing starts to prevent shifting
   const originalContent = highlightElement ? highlightElement.textContent : element.textContent;
   if (highlightElement) {
     highlightElement.textContent = fullText;
@@ -753,11 +752,14 @@ function typeTextSequentially(elements, index, section = null) {
     element.textContent = fullText;
   }
   
-  // Get the computed height
+  // Measure final height and width with full text
   const finalHeight = element.offsetHeight;
-  
-  // Set min-height to prevent vertical shifting during typing
+  const finalWidth  = element.offsetWidth;
+
+  // Lock both height and width so it doesn't re-center while typing
   element.style.minHeight = `${finalHeight}px`;
+  element.style.minWidth  = `${finalWidth}px`;
+  element.style.maxWidth  = `${finalWidth}px`;
   
   // Clear existing content to start typing
   if (highlightElement) {
@@ -799,7 +801,7 @@ function typeTextSequentially(elements, index, section = null) {
       
       // Variable typing speed - slower for punctuation, faster for regular chars
       const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "") ? 150 : 
-                    (char === " ") ? 50 : 30;
+                    (char === " ") ? 37.5 : 22.5;
       
       setTimeout(typeChar, delay);
     } else {
