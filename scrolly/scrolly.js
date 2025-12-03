@@ -655,7 +655,7 @@ function typeQuotesSequentially(quoteElements, index) {
       
       // Variable typing speed - faster overall, slower for punctuation
       const delay = (char === "." || char === "," || char === "?" || char === "!") ? 80 : 
-                    (char === " ") ? 12 : 7;
+                    (char === " ") ? 18 : 10.5;
       
       setTimeout(typeChar, delay);
     } else {
@@ -697,7 +697,7 @@ function typeQuote(quoteElement) {
       
       // Variable typing speed - slower for punctuation, faster for regular chars
       const delay = (char === "." || char === "," || char === "?" || char === "!") ? 150 : 
-                    (char === " ") ? 25 : 15;
+                    (char === " ") ? 37.5 : 22.5;
       
       setTimeout(typeChar, delay);
     }
@@ -799,7 +799,7 @@ function typeTextSequentially(elements, index, section = null) {
       
       // Variable typing speed - slower for punctuation, faster for regular chars
       const delay = (char === "." || char === "," || char === "?" || char === "!" || char === "") ? 150 : 
-                    (char === " ") ? 25 : 15;
+                    (char === " ") ? 37.5 : 22.5;
       
       setTimeout(typeChar, delay);
     } else {
